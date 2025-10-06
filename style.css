@@ -43,7 +43,7 @@ body {
 /* 🖼️ LOGO DE FOND FIXE SUR TOUTE LA PAGE */
 body::before {
     content: "";
-    position: fixed; /* Reste fixe au défilement */
+    position: sticky; /* Reste fixe au défilement */
     top: 0;
     left: 0;
     width: 100%;
