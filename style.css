@@ -24,11 +24,20 @@
     box-sizing: border-box;
 }
 
+/* Dégradé léger appliqué au corps entier */
 body {
+    /* Maintient le reste des styles body (police, couleur de texte) */
     font-family: var(--font-body);
     color: var(--color-primary);
-    background-color: var(--color-background);
-    line-height: 1.7; /* Améliore la lisibilité */
+    line-height: 1.7; 
+    
+    /* Le style de fond stylé : */
+    background: 
+        linear-gradient(to bottom, 
+            rgba(0, 255, 192, 0.05), /* Une touche très légère de la couleur accent */
+            rgba(255, 255, 255, 0) 50%
+        ),
+        var(--color-background); /* Revenir à la couleur de fond de base */
 }
 
 /* Conteneur principal pour centrer le contenu et ajouter de l'espace blanc */
