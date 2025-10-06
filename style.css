@@ -1,18 +1,23 @@
-/* -------------------------------------- */
-/* 1. RÉINITIALISATION & FONDATIONS */
-/* -------------------------------------- */
+/* Importation de la police Google Fonts (Poppins pour Bold/Titres et Inter pour le corps) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&family=Inter:wght@300;400;600&display=swap');
+
+/* ========================================= */
+/* 1. FONDATIONS & VARIABLES (CONTRASTES) */
+/* ========================================= */
+
 :root {
-    /* Palettes de Couleurs (Moderne & Contraste) */
-    --color-primary: #1C1C1C; /* Noir Profond pour le texte */
-    --color-secondary: #00FFC0; /* Couleur d'accent vive (Neo Mint/Cyan) */
-    --color-background: #F8F8F8; /* Gris très clair pour l'espace blanc */
-    --color-light: #FFFFFF; /* Blanc pur */
+    /* Palette de Couleurs */
+    --color-primary: #1A1A1A;     /* Noir Profond pour le texte principal */
+    --color-background: #F8F8F8;  /* Gris très clair pour l'arrière-plan (l'espace blanc) */
+    --color-accent: #00FFC0;      /* Cyan Vif pour le CTA (l'énergie, la modernité) */
+    --color-secondary: #555555;   /* Gris foncé pour le texte secondaire */
     
     /* Typographie */
-    --font-heading: 'Poppins', sans-serif; /* Style fort pour les titres */
-    --font-body: 'Inter', sans-serif; /* Lisibilité pour le corps */
+    --font-heading: 'Poppins', sans-serif; 
+    --font-body: 'Inter', sans-serif; 
 }
 
+/* Reset de base pour un look propre */
 * {
     margin: 0;
     padding: 0;
@@ -23,63 +28,184 @@ body {
     font-family: var(--font-body);
     color: var(--color-primary);
     background-color: var(--color-background);
-    line-height: 1.6;
+    line-height: 1.7; /* Améliore la lisibilité */
 }
 
-/* -------------------------------------- */
-/* 2. TYPOGRAPHIE & IMPACT */
-/* -------------------------------------- */
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    font-weight: 700; /* Gras pour l'impact */
-    letter-spacing: -0.03em; /* Léger resserrement pour le style moderne */
-}
-
-h1 {
-    font-size: 3.5rem; /* Très grand sur desktop */
-    margin-bottom: 0.5em;
-}
-
-/* -------------------------------------- */
-/* 3. LAYOUT & ESPACE BLANC (MINIMALISME) */
-/* -------------------------------------- */
+/* Conteneur principal pour centrer le contenu et ajouter de l'espace blanc */
 section {
-    padding: 100px 5%; /* Beaucoup de padding pour l'espace blanc */
-    max-width: 1200px; /* Limiter la largeur du contenu */
+    padding: 120px 5%; /* Beaucoup d'espace pour le look minimaliste */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* -------------------------------------- */
-/* 4. BOUTONS (CTA) & INTERACTION */
-/* -------------------------------------- */
-.button {
-    display: inline-block;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: all 0.3s ease; /* Pour les micro-interactions */
+/* ========================================= */
+/* 2. TYPOGRAPHIE (BOLD & IMPACT) */
+/* ========================================= */
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 800; /* Extra gras pour un style "Bold" */
+    line-height: 1.1; /* Rapproche les lignes pour l'impact */
+    margin-bottom: 0.5em;
 }
 
+/* Le titre H1 de la section Héro doit être ENORME */
+.hero-section h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem); 
+    color: var(--color-primary);
+    margin-bottom: 30px;
+}
+
+.hero-section p {
+    font-size: 1.15rem;
+    color: var(--color-secondary);
+    max-width: 600px; /* Limiter la largeur pour une meilleure lisibilité */
+    margin-bottom: 40px;
+}
+
+/* ========================================= */
+/* 3. NAVIGATION (HEADER) */
+/* ========================================= */
+
+header {
+    background: var(--color-background);
+    padding: 20px 5%;
+    position: sticky; /* Reste en haut au défilement */
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent); /* Effet moderne au survol */
+}
+
+/* ========================================= */
+/* 4. BOUTONS (CTA) & MICRO-INTERACTIONS */
+/* ========================================= */
+
+.button {
+    display: inline-block;
+    padding: 16px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Bouton Principal (Couleur d'accent) */
 .button.primary {
-    background-color: var(--color-secondary); /* Couleur vive */
-    color: var(--color-primary); /* Texte sombre pour un contraste maximal */
+    background-color: var(--color-accent);
+    color: var(--color-primary); 
+    /* Ombre subtile pour le faire ressortir */
+    box-shadow: 0 4px 15px rgba(0, 255, 192, 0.3);
 }
 
 .button.primary:hover {
-    transform: translateY(-3px); /* Effet 3D subtil au survol */
-    box-shadow: 0 5px 15px rgba(0, 255, 192, 0.4);
+    transform: translateY(-2px); /* Léger soulèvement au survol (micro-interaction) */
+    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.5);
 }
 
-/* -------------------------------------- */
-/* 5. RESPONSIVE DESIGN (Mobile First) */
-/* -------------------------------------- */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem; /* Adapter les titres pour le mobile */
+/* Bouton Secondaire (Style "Ghost" ou Outline) */
+.button.secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    margin-left: 20px;
+}
+
+.button.secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+/* ========================================= */
+/* 5. SECTIONS SPECIFIQUES (Fondations & Process) */
+/* ========================================= */
+
+.values-section h2, .process-section h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Mise en page des 3 points (Fondations) */
+.value-points, .process-steps {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+}
+
+.value-points article, .process-steps article {
+    flex: 1;
+    padding: 20px;
+    border-left: 3px solid var(--color-accent); /* Accent visuel moderne */
+}
+
+.value-points h3, .process-steps h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Preuve sociale (Logos discrets) */
+.social-proof {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #E0E0E0; /* Ligne fine et discrète */
+    color: var(--color-secondary);
+}
+.social-proof .logos span {
+    font-size: 0.9rem;
+    margin-right: 20px;
+    opacity: 0.7;
+}
+
+/* ========================================= */
+/* 6. RESPONSIVE (POUR LE MOBILE) */
+/* ========================================= */
+
+@media (max-width: 900px) {
+    /* Les 3 colonnes passent en ligne sur les petits écrans */
+    .value-points, .process-steps {
+        flex-direction: column;
     }
+    
+    .hero-section h1 {
+        font-size: 3rem; /* Rendre le titre moins écrasant sur mobile */
+    }
+
+    /* Masquer la navigation classique pour le menu Hamburger (géré par JS) */
     .nav-links {
-        /* Gérer le menu hamburger ici avec JS */
         display: none; 
     }
 }
