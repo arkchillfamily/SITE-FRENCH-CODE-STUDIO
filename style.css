@@ -1,0 +1,85 @@
+/* -------------------------------------- */
+/* 1. RÉINITIALISATION & FONDATIONS */
+/* -------------------------------------- */
+:root {
+    /* Palettes de Couleurs (Moderne & Contraste) */
+    --color-primary: #1C1C1C; /* Noir Profond pour le texte */
+    --color-secondary: #00FFC0; /* Couleur d'accent vive (Neo Mint/Cyan) */
+    --color-background: #F8F8F8; /* Gris très clair pour l'espace blanc */
+    --color-light: #FFFFFF; /* Blanc pur */
+    
+    /* Typographie */
+    --font-heading: 'Poppins', sans-serif; /* Style fort pour les titres */
+    --font-body: 'Inter', sans-serif; /* Lisibilité pour le corps */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-primary);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+/* -------------------------------------- */
+/* 2. TYPOGRAPHIE & IMPACT */
+/* -------------------------------------- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700; /* Gras pour l'impact */
+    letter-spacing: -0.03em; /* Léger resserrement pour le style moderne */
+}
+
+h1 {
+    font-size: 3.5rem; /* Très grand sur desktop */
+    margin-bottom: 0.5em;
+}
+
+/* -------------------------------------- */
+/* 3. LAYOUT & ESPACE BLANC (MINIMALISME) */
+/* -------------------------------------- */
+section {
+    padding: 100px 5%; /* Beaucoup de padding pour l'espace blanc */
+    max-width: 1200px; /* Limiter la largeur du contenu */
+    margin: 0 auto;
+}
+
+/* -------------------------------------- */
+/* 4. BOUTONS (CTA) & INTERACTION */
+/* -------------------------------------- */
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease; /* Pour les micro-interactions */
+}
+
+.button.primary {
+    background-color: var(--color-secondary); /* Couleur vive */
+    color: var(--color-primary); /* Texte sombre pour un contraste maximal */
+}
+
+.button.primary:hover {
+    transform: translateY(-3px); /* Effet 3D subtil au survol */
+    box-shadow: 0 5px 15px rgba(0, 255, 192, 0.4);
+}
+
+/* -------------------------------------- */
+/* 5. RESPONSIVE DESIGN (Mobile First) */
+/* -------------------------------------- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; /* Adapter les titres pour le mobile */
+    }
+    .nav-links {
+        /* Gérer le menu hamburger ici avec JS */
+        display: none; 
+    }
+}
