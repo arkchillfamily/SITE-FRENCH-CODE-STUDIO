@@ -92,12 +92,11 @@ nav {
     margin: 0 auto;
 }
 
-.logo a {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: var(--color-primary);
+/* 📌 COLLEZ ICI LE NOUVEAU CODE CSS DU LOGO IMAGE */
+.agency-logo {
+    height: 40px; 
+    width: auto;
+    display: block;
 }
 
 .nav-links {
