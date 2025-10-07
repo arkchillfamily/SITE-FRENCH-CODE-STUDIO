@@ -78,9 +78,15 @@ h1, h2, h3 {
 
 /* Le titre H1 de la section Héro doit être ENORME */
 .hero-section h1 {
-    font-size: clamp(2.5rem, 6vw, 5rem); 
+    font-size: clamp(3rem, 7vw, 6rem); 
     color: var(--color-primary);
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+     /* 1. Rapprochez les lettres pour un look moderne et percutant */
+    letter-spacing: -1.5px; 
+    
+    /* 2. Augmentez la graisse (si Poppins le permet) */
+    font-weight: 900; 
+
 }
 
 .hero-section p {
@@ -88,6 +94,12 @@ h1, h2, h3 {
     color: var(--color-secondary);
     max-width: 600px; /* Limiter la largeur pour une meilleure lisibilité */
     margin-bottom: 40px;
+     /* 1. Augmentez l'interligne pour plus de confort de lecture */
+    line-height: 1.75; 
+    
+    /* 2. Rendez le texte un peu plus gris pour qu'il ne rivalise pas avec le H1 */
+    color: #444444; 
+    
 }
 
 
@@ -131,9 +143,18 @@ nav {
 
 /* 📌 COLLEZ ICI LE NOUVEAU CODE CSS DU LOGO IMAGE */
 .agency-logo {
-    height: 60px; 
+    height: 48px; 
     width: auto;
     display: block;
+
+     /* 2. Ajouter une ombre subtile pour le faire ressortir du fond clair */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Ombre très légère et discrète */
+    border-radius: 4px; /* Un léger arrondi si l'image le permet */
+}
+
+/* Optionnel : Rendre la barre de navigation plus fine en réduisant le padding */
+header {
+    padding: 15px 5%; /* Réduit le padding de 20px à 15px */
 }
 
 .nav-links {
