@@ -335,3 +335,20 @@ footer {
 .legal a {
     margin: 0 15px;
 }
+/* Style du lien pour aligner verticalement le logo et le texte */
+.logo a {
+    display: flex;
+    align-items: center; /* Centre verticalement l'image et le texte */
+    gap: 10px; /* Ajoute un petit espace entre le logo et le texte */
+    text-decoration: none; /* Enlève le soulignement du lien */
+}
+/* Nouveau style pour le nom du site à côté du logo */
+.site-name-text {
+    font-family: var(--font-heading); /* Utilise la police des titres */
+    font-weight: 800; /* Extra gras */
+    font-size: 1.1rem; /* Taille petite et lisible (ajustez si besoin) */
+    color: var(--color-primary); /* S'assure de la bonne couleur */
+    
+    /* Optionnel : Mettre en majuscule si vous le souhaitez */
+    /* text-transform: uppercase; */
+}
