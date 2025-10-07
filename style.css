@@ -97,6 +97,8 @@ h1, h2, h3 {
     /* Si cette règle existe déjà, assurez-vous qu'elle a ces deux propriétés : */
     position: relative; 
     z-index: 2; 
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 
