@@ -102,8 +102,8 @@ h1, h2, h3 {
     transform: translate(-50%, -50%); /* Centrage parfait */
     
     /* 2. Dimensionnement et Couche */
-    width: 80%; 
-    height: 100%;
+    width: 100vw; 
+    height: 100vh;
     pointer-events: none; /* Permet de cliquer à travers le logo */
     z-index: 1; /* Place le logo derrière le contenu */
     
