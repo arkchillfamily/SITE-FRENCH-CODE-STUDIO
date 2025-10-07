@@ -1,5 +1,5 @@
 /* Importation de la police Google Fonts (Poppins pour Bold/Titres et Inter pour le corps) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&family=Inter:wght@300;400;600&display=swap');
 
 /* ========================================= */
 /* 1. FONDATIONS & VARIABLES (CONTRASTES) */
@@ -71,7 +71,7 @@ body::before {
 
 h1, h2, h3 {
     font-family: var(--font-heading);
-    font-weight: 800; /* Extra gras pour un style "Bold" */
+    font-weight: 900; /* Extra gras pour un style "Bold" */
     line-height: 1.1; /* Rapproche les lignes pour l'impact */
     margin-bottom: 0.5em;
 }
