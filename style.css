@@ -344,11 +344,19 @@ footer {
 }
 /* Nouveau style pour le nom du site à côté du logo */
 .site-name-text {
-    font-family: var(--font-heading); /* Utilise la police des titres */
-    font-weight: 800; /* Extra gras */
-    font-size: 1.1rem; /* Taille petite et lisible (ajustez si besoin) */
-    color: var(--color-primary); /* S'assure de la bonne couleur */
-    
-    /* Optionnel : Mettre en majuscule si vous le souhaitez */
-    /* text-transform: uppercase; */
+    /* 1. Changer la Police (Remplacez par le nom d'une police que vous avez chargée) */
+    font-family: "Georgia", serif; /* Exemple d'une police élégante */
+    /* 2. Changer la Taille du Texte */
+    font-size: 1.8em; 
+    /* 3. Définir une Belle Couleur */
+    color: #007bff; /* Un bleu vif, à ajuster selon votre thème */
+    /* 4. Rendre le Texte Gras */
+    font-weight: 700;
+    /* 5. Ajouter une Ombre Discrète (pour un effet de relief) */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
+    /* 6. Supprimer le soulignement (au cas où un style par défaut s'appliquerait) */
+    text-decoration: none;
+    /* 7. Ajouter un petit espace entre le logo et le nom */
+    margin-left: 10px;
+
 }
