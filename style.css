@@ -96,9 +96,9 @@ h1, h2, h3 {
 
 .background-logo-watermark {
     /* 1. Positionnement et centrage */
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
+    position: fixed; 
+    top: 0%; 
+    left: 0%;
     transform: translate(-50%, -50%); /* Centrage parfait */
     
     /* 2. Dimensionnement et Couche */
@@ -122,10 +122,10 @@ h1, h2, h3 {
 
 /* 🚨 Règle CRUCIALE : À AJOUTER/MODIFIER dans votre section hero existante */
 .hero-section {
-    padding-top: 120px; /* Augmentez à 100px ou plus. La barre de navigation fait environ 80px de haut. */
+    padding-top: 100px; /* Augmentez à 100px ou plus. La barre de navigation fait environ 80px de haut. */
     /* Si cette règle existe déjà, assurez-vous qu'elle a ces deux propriétés : */
     position: relative; 
-    z-index: 2; 
+    z-index: -1; 
 }
 
 
