@@ -122,7 +122,7 @@ h1, h2, h3 {
 
 /* 🚨 Règle CRUCIALE : À AJOUTER/MODIFIER dans votre section hero existante */
 .hero-section {
-    padding-top: 80px; /* Augmentez à 100px ou plus. La barre de navigation fait environ 80px de haut. */
+    padding-top: 120px; /* Augmentez à 100px ou plus. La barre de navigation fait environ 80px de haut. */
     /* Si cette règle existe déjà, assurez-vous qu'elle a ces deux propriétés : */
     position: relative; 
     z-index: 2; 
