@@ -125,7 +125,7 @@ h1, h2, h3 {
     padding-top: 100px; /* Augmentez à 100px ou plus. La barre de navigation fait environ 80px de haut. */
     /* Si cette règle existe déjà, assurez-vous qu'elle a ces deux propriétés : */
     position: relative; 
-    z-index: -1; 
+    z-index: 2; 
 }
 
 
