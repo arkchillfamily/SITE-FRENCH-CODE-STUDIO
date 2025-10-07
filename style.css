@@ -90,35 +90,6 @@ h1, h2, h3 {
     margin-bottom: 40px;
 }
 
-/* ========================================= */
-/* STYLE DU LOGO DE FOND (FILIGRANE) */ /* 📌 COLLET ICI */
-/* ========================================= */
-
-.background-logo-watermark {
-    /* 1. Positionnement et centrage */
-    position: fixed; 
-    top: 0%; 
-    left: 0%;
-    transform: translate(-50%, -50%); /* Centrage parfait */
-    
-    /* 2. Dimensionnement et Couche */
-    width: 100vw; 
-    height: 100vh;
-    pointer-events: none; /* Permet de cliquer à travers le logo */
-    z-index: 1; /* Place le logo derrière le contenu */
-    
-    /* 3. L'effet stylé : Transparence */
-    opacity: 0.05; 
-}
-
-.logo-watermark-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    
-    /* L'effet Noir & Blanc (Stylé) */
-    filter: grayscale(100%); 
-}
 
 /* 🚨 Règle CRUCIALE : À AJOUTER/MODIFIER dans votre section hero existante */
 .hero-section {
