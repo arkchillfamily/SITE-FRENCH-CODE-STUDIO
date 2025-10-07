@@ -110,6 +110,8 @@ header {
     position: sticky; /* Reste en haut au défilement */
     top: 0;
     z-index: 1000;
+    background: var(--color-background);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav {
