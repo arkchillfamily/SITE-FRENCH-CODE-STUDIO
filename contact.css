@@ -52,11 +52,25 @@
     text-decoration: underline !important;
 }
 
-/* EXCEPTION N°2 : Assurer que le texte saisi dans les inputs est sombre */
+/* EXCEPTION N°2 CORRIGÉE : Assurer que le texte saisi dans les inputs est visible sur un fond sombre */
 .contact-dark-theme .main-form input,
 .contact-dark-theme .main-form select,
 .contact-dark-theme .main-form textarea {
-    color: #121212 !important; /* Le texte doit être noir sur le fond blanc des champs */
+    /* Le texte doit être clair sur un fond sombre */
+    color: #F8F8F8 !important; 
+    /* Le fond du champ doit devenir sombre */
+    background-color: #282828 !important; 
+    /* Ajuster l'ombre pour le style sombre */
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Style de focus ajusté pour le thème sombre */
+.contact-dark-theme .main-form input:focus,
+.contact-dark-theme .main-form select:focus,
+.contact-dark-theme .main-form textarea:focus {
+    border: 2px solid var(--color-accent) !important; 
+    outline: none !important;
+    box-shadow: 0 0 10px rgba(0, 255, 192, 0.5) !important;
 }
 
 
@@ -209,6 +223,17 @@
         rgba(0, 255, 192, 0.05)
     );
 }
+
+/* Style spécifique pour le conteneur d'informations en thème sombre */
+.contact-dark-theme .contact-info-container {
+    background: linear-gradient(
+        to bottom right, 
+        #1e1e1e, /* Un gris plus clair que le fond général */
+        #121212 50%, 
+        rgba(0, 255, 192, 0.1)
+    ) !important;
+}
+
 
 .contact-info-container h3 {
     font-size: 1.2rem;
