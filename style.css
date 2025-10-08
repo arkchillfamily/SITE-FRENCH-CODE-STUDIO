@@ -108,6 +108,7 @@ h1, h2, h3 {
     background-image: url('LOGO FCS.jpg');
     background-size: cover;
     background-position: center;
+    position: relative;
     
     /* ⬅️ MODIFICATION CRUCIALE : On utilise Flexbox pour centrer le HEADER/NAV */
     display: flex; 
@@ -124,9 +125,13 @@ header.main-header { /* Ciblez le header à l'intérieur du hero */
     background: none; 
     padding: 20px 5%;
     width: 100%; 
+    z-index: 10;
     
-    /* ⬅️ RETIRER CE DISPLAY FLEX : Sinon le menu s'étire sur toute la ligne */
-    /* display: flex; */
+ /* ⬅️ Positionnement au centre de l'image (Gardez ceci) */
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
     
     /* On utilise plutôt text-align pour centrer les liens si on ne veut pas les séparer */
     text-align: center;
