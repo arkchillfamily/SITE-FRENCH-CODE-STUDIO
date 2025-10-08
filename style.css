@@ -103,22 +103,45 @@ h1, h2, h3 {
     
 }
 .hero-section {
-    /* Propriétés existantes (assurez-vous qu'elles sont là) */
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    
-    /* ⬅️ AJOUTEZ : Dimensions de l'image (très important) */
     width: 100%;
-    height: 600px; /* Hauteur de votre choix pour l'image */
+    height: 600px; /* Conservez la hauteur de votre image */
+    background-image: url('LOGO FCS.jpg');
+    background-size: cover;
+    background-position: center;
     
-    /* ⬅️ AJOUTEZ : L'IMAGE DE FOND */
-    background-image: url('LOGO FCS.jpg'); /* REMPLACEZ L'URL */
-    background-size: cover; 
-    background-position: center; 
+    /* ⬅️ MODIFICATION CRUCIALE : On utilise Flexbox pour centrer le HEADER/NAV */
+    display: flex; 
+    flex-direction: column; /* Le header sera au-dessus de tout autre élément ici */
+    justify-content: center; /* ⬅️ Centre verticalement le contenu restant (le Header) */
+    align-items: center; /* Centre horizontalement */
     
-    /* Le padding-top n'est plus utile ici si le contenu est centré, mais le garder n'est pas critique */
-    /* padding-top: 100px; */ 
+    position: relative;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+header.main-header { /* Ciblez le header à l'intérieur du hero */
+    background: none; 
+    padding: 20px 5%;
+    width: 100%; 
+    
+    /* ⬅️ RETIRER CE DISPLAY FLEX : Sinon le menu s'étire sur toute la ligne */
+    /* display: flex; */
+    
+    /* On utilise plutôt text-align pour centrer les liens si on ne veut pas les séparer */
+    text-align: center;
+    
+    /* Et on assure que le menu reste lisible */
+    z-index: 10;
+}
+
+/* ⬅️ AJOUTEZ CE BLOC pour centrer la liste des liens */
+header.main-header ul.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Permet de centrer la liste des liens */
+    display: flex;
+    justify-content: center;
 }
 
 /* ⬅️ AJOUTEZ : Centrage du contenu (paragraphe + bouton) dans l'image */
@@ -134,7 +157,19 @@ h1, h2, h3 {
     
 }
 
+.intro-message-container {
+    padding: 40px 20px;
+    max-width: 800px; /* Largeur de lecture confortable */
+    margin: 0 auto; /* ⬅️ Centrage horizontal de tout le bloc */
+    text-align: center;
+}
 
+.introduction-text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Espace avant le bouton */
+    color: var(--color-primary); /* Utilise la couleur de texte principale de votre site */
+}
 
 section {
     padding: 80px 5%;
