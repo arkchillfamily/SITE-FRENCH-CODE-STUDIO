@@ -44,33 +44,19 @@
     color: #F8F8F8 !important; /* Couleur claire forcée pour TOUT le contenu textuel */
 }
 
-
-/* FIX CRUCIAL ET DÉFINITIF POUR LE FOND : Forcer le fond sombre sur le conteneur principal (.contact-section) */
-/* Nous utilisons un sélecteur très spécifique pour écraser toute règle de fond blanc. */
-body.contact-dark-theme .contact-section {
-    background-color: #1A1A1A !important; /* Un fond gris très foncé */
-    /* Mise à jour de l'ombre pour le style sombre */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(50, 50, 50, 0.2) !important; 
-}
-
-
-/* CONTRE-MESURE DE SÉCURITÉ : Si le fond reste BLANC, ces éléments DOIVENT être LISIBLES en NOIR */
-/* Le sélecteur .contact-dark-theme * force le texte en blanc, ce qui est l'origine du problème si le fond est blanc. */
-/* Nous allons les forcer en NOIR pour être lisibles sur le fond BLANC de secours. */
-
-/* Forcer les labels en NOIR (lisible sur fond blanc) */
+/* FIX N°1 : Rendre les LABELS lisibles sur le fond blanc/clair de la section (.contact-section) */
+/* On les force en noir (lisible sur fond clair), car la règle .contact-dark-theme * les met en blanc (illisible). */
 .contact-dark-theme .form-group label {
     color: #121212 !important; 
 }
 
-/* Forcer le texte d'introduction en NOIR (lisible sur fond blanc) */
+/* FIX N°2 : Rendre le texte d'introduction (.contact-header) lisible sur fond blanc/clair */
 .contact-dark-theme .contact-header h1,
 .contact-dark-theme .contact-header p {
-    color: #121212 !important; 
+    color: #121212 !important; /* Forcer en noir pour être lisible sur le fond blanc/clair */
 }
 
-
-/* EXCEPTIONS N°1 : Assurer que les titres d'accentuation restent en Cyan */
+/* EXCEPTIONS N°3 : Assurer que les titres d'accentuation restent en Cyan */
 .contact-dark-theme .contact-form-container h2,
 .contact-dark-theme .contact-info-container h3,
 .contact-dark-theme .contact-info-container a {
@@ -78,13 +64,21 @@ body.contact-dark-theme .contact-section {
     text-decoration: underline !important;
 }
 
-/* EXCEPTION N°2 : Fixe les champs de formulaire (inputs/textarea/select) pour qu'ils soient sombres avec texte clair */
+/* EXCEPTION N°4 (Rétablie/Corrigée) : Fixe les champs de formulaire pour qu'ils aient un fond sombre */
 .contact-dark-theme .main-form input,
 .contact-dark-theme .main-form select,
 .contact-dark-theme .main-form textarea {
-    color: #F8F8F8 !important; /* Texte clair pour être visible sur le nouveau fond sombre */
-    background-color: #282828 !important; /* Le fond du champ doit devenir sombre */
-    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1) !important; 
+    /* Le texte doit être clair pour être visible sur le nouveau fond sombre */
+    color: #F8F8F8 !important; 
+    /* Le fond du champ doit devenir sombre */
+    background-color: #282828 !important; 
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* FIX N°5 : Assombrir le conteneur principal du formulaire (très spécifique pour plus de poids) */
+body.contact-dark-theme .contact-section {
+    background-color: #1A1A1A !important; /* Un fond gris très foncé */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(50, 50, 50, 0.2) !important; 
 }
 
 /* Style de focus ajusté pour le thème sombre */
@@ -94,6 +88,17 @@ body.contact-dark-theme .contact-section {
     border: 2px solid var(--color-accent) !important; 
     outline: none !important;
     box-shadow: 0 0 10px rgba(0, 255, 192, 0.5) !important;
+}
+
+
+/* Style spécifique pour le conteneur d'informations en thème sombre (Rappel) */
+.contact-dark-theme .contact-info-container {
+    background: linear-gradient(
+        to bottom right, 
+        #1e1e1e, 
+        #121212 50%, 
+        rgba(0, 255, 192, 0.1)
+    ) !important;
 }
 
 
@@ -129,7 +134,7 @@ body.contact-dark-theme .contact-section {
 }
 
 /* ========================================= */
-/* 7. PAGE CONTACT (Formulaire Design) */
+/* 7. PAGE CONTACT (Formulaire Design) - RÈGLES DE BASE */
 /* ========================================= */
 
 .contact-section {
@@ -246,17 +251,6 @@ body.contact-dark-theme .contact-section {
         rgba(0, 255, 192, 0.05)
     );
 }
-
-/* Style spécifique pour le conteneur d'informations en thème sombre */
-.contact-dark-theme .contact-info-container {
-    background: linear-gradient(
-        to bottom right, 
-        #1e1e1e, /* Un gris plus clair que le fond général */
-        #121212 50%, 
-        rgba(0, 255, 192, 0.1)
-    ) !important;
-}
-
 
 .contact-info-container h3 {
     font-size: 1.2rem;
