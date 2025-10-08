@@ -155,7 +155,7 @@ header.main-header ul.nav-links li a {
     
     /* Assurez-vous que les couleurs sont bien en blanc pour le contraste */
     color: var(--color-primary); /* Utilise votre couleur de texte principale */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+    text-shadow: none; 
     text-decoration: none;
     
     /* ⬅️ NOUVEAU : Ajout de la transition pour l'effet de mouvement */
