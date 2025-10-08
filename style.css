@@ -144,6 +144,8 @@ header.main-header ul.nav-links {
     display: flex;
     justify-content: center;
 
+}
+
     /* ⬅️ AJOUTEZ CE NOUVEAU BLOC */
 header.main-header ul.nav-links li a {
     /* Augmente la taille de la police */
