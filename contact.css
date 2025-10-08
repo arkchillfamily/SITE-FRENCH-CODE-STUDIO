@@ -1,15 +1,75 @@
 /* ========================================= */
+/* THÈME SOMBRE SPÉCIFIQUE À LA PAGE CONTACT */
+/* Appliqué uniquement grâce à la classe .contact-dark-theme sur le <body> */
+/* ========================================= */
+
+.contact-dark-theme {
+    /* Fond sombre général */
+    background-color: #121212; 
+    color: #E0E0E0; 
+}
+
+/* Forme de fond sombre sur les bords */
+.contact-dark-theme::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Dégradé radial pour un effet de projecteur central */
+    background: radial-gradient(
+        circle at center, 
+        rgba(0, 0, 0, 0.1) 0%, 
+        rgba(0, 0, 0, 0.5) 100% 
+    );
+    
+    z-index: -2; 
+    pointer-events: none;
+}
+
+/* ========================================= */
+/* NAVIGATION DANS LE THÈME SOMBRE (Écrase les styles globaux) */
+/* ========================================= */
+
+/* Style des liens de navigation (onglets) */
+.contact-dark-theme header.main-header ul.nav-links li a {
+    font-size: 1.3em;
+    font-weight: bold; 
+    padding: 10px 25px; 
+    color: white; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Le look "bouton" */
+    background-color: rgba(255, 255, 255, 0.15); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+/* Effet de glissement/décalage */
+.contact-dark-theme header.main-header ul.nav-links li a:hover {
+    color: var(--color-accent); 
+    
+    /* Le décalage horizontal que vous vouliez */
+    transform: translateX(3px); 
+    
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================= */
 /* 7. PAGE CONTACT (Formulaire Design) */
 /* ========================================= */
 
 .contact-section {
-    /* NOUVEAU : Fond blanc et ombre pour détacher la section du fond du site */
     background-color: white; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
     z-index: 1;
     position: relative;
     
-    padding: 100px 5%; /* Donne plus d'espace en haut et en bas que les sections normales */
+    padding: 100px 5%; 
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -36,44 +96,42 @@
     grid-template-columns: 2fr 1fr; /* 2/3 pour le formulaire, 1/3 pour les infos */
     gap: 60px;
     align-items: start;
-    position: relative; /* Rendre le conteneur prêt pour le positionnement absolu du séparateur */
+    position: relative; 
 }
 
 /* SÉPARATEUR VISUEL VERTICAL (entre le formulaire et les infos) */
 .contact-grid::after {
     content: '';
     position: absolute;
-    /* Positionner la ligne entre la colonne 1 (formulaire) et la colonne 2 (infos) */
     left: calc(2fr / 3fr * 100% - 30px); 
     top: 50px;
     bottom: 50px;
     width: 3px; 
-    background-color: rgba(0, 255, 192, 0.4); /* Cyan semi-transparent */
+    background-color: rgba(0, 255, 192, 0.4); 
     border-radius: 2px;
 }
 
 /* Formulaire */
 .contact-form-container h2 {
-    color: var(--color-accent); /* Titre du formulaire en Cyan Vif */
+    color: var(--color-accent); 
     margin-bottom: 30px;
     font-size: 2rem;
 }
 
 .main-form {
     display: flex;
-    flex-wrap: wrap; /* Permet aux champs de se placer sur deux colonnes */
+    flex-wrap: wrap; 
     gap: 20px;
 }
 
 .form-group {
-    /* Deux colonnes : 50% de la largeur - la moitié du gap (10px) */
     flex: 1 1 calc(50% - 10px); 
     display: flex;
     flex-direction: column;
 }
 
 .form-group.full-width {
-    flex: 1 1 100%; /* Prend toute la largeur pour la textarea */
+    flex: 1 1 100%; 
 }
 
 .form-group label {
@@ -87,24 +145,21 @@
 .main-form select,
 .main-form textarea {
     padding: 12px;
-    border: none; /* Retirer la bordure simple */
-    border-radius: 8px; /* Arrondi plus doux */
+    border: none; 
+    border-radius: 8px; 
     font-size: 1rem;
     font-family: var(--font-body);
     width: 100%;
     background-color: white; 
     transition: all 0.3s; 
-    /* Ombre interne pour l'effet de profondeur */
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); 
 }
 
 .main-form input:focus,
 .main-form select:focus,
 .main-form textarea:focus {
-    /* Bordure Cyan vif au focus */
     border: 2px solid var(--color-accent); 
     outline: none;
-    /* Retirer l'ombre interne au focus */
     box-shadow: none; 
 }
 
@@ -112,13 +167,9 @@
 .contact-info-container {
     padding: 30px;
     border-radius: 8px;
-    
-    /* Bordure gauche colorée */
     border-left: 5px solid var(--color-accent); 
-    /* Ombre pour faire ressortir le bloc */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 
-    /* Dégradé léger pour le fond */
     background: linear-gradient(
         to bottom right, 
         #FFFFFF, 
@@ -129,7 +180,7 @@
 
 .contact-info-container h3 {
     font-size: 1.2rem;
-    color: var(--color-accent); /* Titres en Cyan Vif */
+    color: var(--color-accent); 
     margin-bottom: 5px;
 }
 
@@ -142,10 +193,10 @@
 /* Responsive pour mobile */
 @media (max-width: 768px) {
     .contact-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        grid-template-columns: 1fr; 
     }
     
     .contact-grid::after {
-        content: none; /* Cache le séparateur vertical sur mobile */
+        content: none; 
     }
 }
