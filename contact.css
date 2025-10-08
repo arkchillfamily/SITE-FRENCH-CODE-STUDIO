@@ -1,140 +1,45 @@
 /* ========================================= */
-/* THÈME SOMBRE SPÉCIFIQUE À LA PAGE CONTACT */
-/* Appliqué uniquement grâce à la classe .contact-dark-theme sur le <body> */
+/* THÈME CLAIR (Par défaut) */
 /* ========================================= */
 
-.contact-dark-theme {
-    /* Fond sombre général */
-    background-color: #121212; 
-    color: #E0E0E0; 
-}
-
-/* Forme de fond sombre sur les bords */
-.contact-dark-theme::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* Dégradé radial pour un effet de projecteur central */
-    background: radial-gradient(
-        circle at center, 
-        rgba(0, 0, 0, 0.1) 0%, 
-        rgba(0, 0, 0, 0.5) 100% 
-    );
-    
-    z-index: -2; 
-    pointer-events: none;
+body {
+    background-color: #FFFFFF; /* Fond blanc clair */
+    color: #333333; /* Texte noir par défaut pour une lisibilité parfaite */
 }
 
 /* ========================================= */
-/* LISIBILITÉ DU TEXTE SUR LE THÈME SOMBRE (FIX ULTIME) */
+/* NAVIGATION (Adaptée au thème clair) */
 /* ========================================= */
 
-/* Cibler l'intégralité du texte pour forcer la couleur claire avec la plus haute priorité */
-.contact-dark-theme,
-.contact-dark-theme *,
-.contact-dark-theme p,
-.contact-dark-theme label,
-.contact-dark-theme h1,
-.contact-dark-theme h2,
-.contact-dark-theme h3 {
-    color: #F8F8F8 !important; /* Couleur claire forcée pour TOUT le contenu textuel */
-}
-
-/* FIX N°1 : Rendre les LABELS lisibles sur le fond blanc/clair de la section (.contact-section) */
-/* On les force en noir (lisible sur fond clair), car la règle .contact-dark-theme * les met en blanc (illisible). */
-.contact-dark-theme .form-group label {
-    color: #121212 !important; 
-}
-
-/* FIX N°2 : Rendre le texte d'introduction (.contact-header) lisible sur fond blanc/clair */
-.contact-dark-theme .contact-header h1,
-.contact-dark-theme .contact-header p {
-    color: #121212 !important; /* Forcer en noir pour être lisible sur le fond blanc/clair */
-}
-
-/* EXCEPTIONS N°3 : Assurer que les titres d'accentuation restent en Cyan */
-.contact-dark-theme .contact-form-container h2,
-.contact-dark-theme .contact-info-container h3,
-.contact-dark-theme .contact-info-container a {
-    color: var(--color-accent) !important; /* Force la couleur Cyan Vif */
-    text-decoration: underline !important;
-}
-
-/* EXCEPTION N°4 (Rétablie/Corrigée) : Fixe les champs de formulaire pour qu'ils aient un fond sombre */
-.contact-dark-theme .main-form input,
-.contact-dark-theme .main-form select,
-.contact-dark-theme .main-form textarea {
-    /* Le texte doit être clair pour être visible sur le nouveau fond sombre */
-    color: #F8F8F8 !important; 
-    /* Le fond du champ doit devenir sombre */
-    background-color: #282828 !important; 
-    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1) !important;
-}
-
-/* FIX N°5 : Assombrir le conteneur principal du formulaire (très spécifique pour plus de poids) */
-body.contact-dark-theme .contact-section {
-    background-color: #1A1A1A !important; /* Un fond gris très foncé */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(50, 50, 50, 0.2) !important; 
-}
-
-/* Style de focus ajusté pour le thème sombre */
-.contact-dark-theme .main-form input:focus,
-.contact-dark-theme .main-form select:focus,
-.contact-dark-theme .main-form textarea:focus {
-    border: 2px solid var(--color-accent) !important; 
-    outline: none !important;
-    box-shadow: 0 0 10px rgba(0, 255, 192, 0.5) !important;
-}
-
-
-/* Style spécifique pour le conteneur d'informations en thème sombre (Rappel) */
-.contact-dark-theme .contact-info-container {
-    background: linear-gradient(
-        to bottom right, 
-        #1e1e1e, 
-        #121212 50%, 
-        rgba(0, 255, 192, 0.1)
-    ) !important;
-}
-
-
-/* ========================================= */
-/* NAVIGATION DANS LE THÈME SOMBRE (Onglets stylisés) */
-/* ========================================= */
-
-.contact-dark-theme header.main-header ul.nav-links li a {
+header.main-header ul.nav-links li a {
     font-size: 1.3em;
     font-weight: bold; 
     padding: 10px 25px; 
-    color: white; 
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+    color: #333333; /* Texte sombre pour le thème clair */
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     
-    /* Le look "bouton" semi-transparent */
-    background-color: rgba(255, 255, 255, 0.25); 
+    /* Le look "bouton" subtil */
+    background-color: #F8F8F8; 
     border-radius: 8px; 
+    border: 1px solid #E0E0E0;
     
-    /* Ombre/Glow subtil */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.2); 
+    /* Ombre subtile */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
 }
 
-.contact-dark-theme header.main-header ul.nav-links li a:hover {
+header.main-header ul.nav-links li a:hover {
     color: var(--color-accent); 
     
     /* Le décalage horizontal que vous vouliez */
     transform: translateX(3px); 
     
     /* Ombre plus prononcée au survol */
-    box-shadow: 0 0 15px rgba(0, 255, 192, 0.7), inset 0 0 8px rgba(255, 255, 255, 0.4); 
+    box-shadow: 0 0 10px rgba(0, 255, 192, 0.3); 
 }
 
 /* ========================================= */
-/* 7. PAGE CONTACT (Formulaire Design) - RÈGLES DE BASE */
+/* 7. PAGE CONTACT (Formulaire Design) */
 /* ========================================= */
 
 .contact-section {
@@ -161,7 +66,7 @@ body.contact-dark-theme .contact-section {
 .contact-header h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    color: var(--color-primary);
+    color: var(--color-primary); /* Reste sombre sur fond clair */
 }
 
 /* GRILLE PRINCIPALE (Formulaire + Infos) */
@@ -211,52 +116,62 @@ body.contact-dark-theme .contact-section {
 .form-group label {
     font-weight: 700;
     margin-bottom: 8px;
-    color: var(--color-primary);
+    color: var(--color-primary); /* Reste sombre sur fond clair (lisible) */
 }
 
-/* 2. CHAMPS DE FORMULAIRE VIVANTS (NEUMORPHISME LÉGER) */
+/* 2. CHAMPS DE FORMULAIRE VIVANTS (STYLE PRO ET STYLÉ) */
 .main-form input,
 .main-form select,
 .main-form textarea {
     padding: 12px;
-    border: none; 
+    /* Rendre le fond légèrement gris pour un style pro sur fond blanc */
+    background-color: #F5F5F5; 
+    border: 1px solid #DEDEDE; /* Bordure douce */
     border-radius: 8px; 
     font-size: 1rem;
     font-family: var(--font-body);
     width: 100%;
-    background-color: white; 
     transition: all 0.3s; 
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); 
+    color: #333333; /* Texte sombre lisible */
+    /* Enlever l'ombre intérieure pour un look plus propre */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
 }
 
 .main-form input:focus,
 .main-form select:focus,
 .main-form textarea:focus {
-    border: 2px solid var(--color-accent); 
-    outline: none;
-    box-shadow: none; 
+    /* Focus: Bordure Accent + Ombre claire */
+    border: 1px solid var(--color-accent) !important; 
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 255, 192, 0.3) !important; /* Effet de glow subtil */
 }
 
-/* 3. MISE EN ÉVIDENCE DES INFORMATIONS RAPIDES (DÉGRADÉ + BORDURE) */
+/* 3. MISE EN ÉVIDENCE DES INFORMATIONS RAPIDES (ENCASTRÉ EN NOIR STYLÉ) */
 .contact-info-container {
     padding: 30px;
     border-radius: 8px;
     border-left: 5px solid var(--color-accent); 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Ombre plus marquée pour le style noir */
 
-    background: linear-gradient(
-        to bottom right, 
-        #FFFFFF, 
-        var(--color-background) 50%, 
-        rgba(0, 255, 192, 0.05)
-    );
+    /* NOUVEAU STYLE : Fond Noir/Texte Clair */
+    background: #121212; 
+    color: #F8F8F8; /* Rendre le texte principal clair dans cette boîte */
 }
 
 .contact-info-container h3 {
     font-size: 1.2rem;
-    color: var(--color-accent); 
+    color: var(--color-accent); /* Conserver la couleur Cyan */
     margin-bottom: 5px;
 }
+
+.contact-info-container p {
+    color: #E0E0E0; /* Assurer que les paragraphes sont clairs */
+}
+
+.contact-info-container a {
+    color: var(--color-accent); /* Assurer que les liens sont Cyan */
+}
+
 
 /* Correction du clic sur le bouton */
 .button.primary {
