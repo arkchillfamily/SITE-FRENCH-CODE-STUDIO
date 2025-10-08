@@ -44,22 +44,28 @@
     color: #F8F8F8 !important; /* Couleur claire forcée pour TOUT le contenu textuel */
 }
 
-/* FIX NOUVEAU : Rendre le titre d'introduction plus visible sur le fond sombre du header (le rendant plus transparent) */
-.contact-dark-theme .contact-header h1 {
-    /* Utiliser une couleur claire, mais avec une transparence pour le rendre plus subtil */
-    color: rgba(248, 248, 248, 0.7) !important; 
-}
-/* FIX NOUVEAU : Rendre le paragraphe d'introduction plus visible */
-.contact-dark-theme .contact-header p {
-    color: #B0B0B0 !important; /* Gris moyen sur fond sombre */
+
+/* FIX CRUCIAL ET DÉFINITIF POUR LE FOND : Forcer le fond sombre sur le conteneur principal (.contact-section) */
+/* Nous utilisons un sélecteur très spécifique pour écraser toute règle de fond blanc. */
+body.contact-dark-theme .contact-section {
+    background-color: #1A1A1A !important; /* Un fond gris très foncé */
+    /* Mise à jour de l'ombre pour le style sombre */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(50, 50, 50, 0.2) !important; 
 }
 
 
-/* FIX CRUCIAL : Forcer les LABELS en noir (ou très foncé) sur le fond clair du formulaire (SI le fix précédent échoue) */
+/* CONTRE-MESURE DE SÉCURITÉ : Si le fond reste BLANC, ces éléments DOIVENT être LISIBLES en NOIR */
+/* Le sélecteur .contact-dark-theme * force le texte en blanc, ce qui est l'origine du problème si le fond est blanc. */
+/* Nous allons les forcer en NOIR pour être lisibles sur le fond BLANC de secours. */
+
+/* Forcer les labels en NOIR (lisible sur fond blanc) */
 .contact-dark-theme .form-group label {
-    /* Si le fond de la section est resté clair (erreur de CSS), forcer le label en noir */
-    /* Si le fond de la section est sombre (correct), cette règle sera écrasée par la règle générale .contact-dark-theme * */
-    /* MAIS, si elle n'est pas écrasée, elle garantit la lisibilité sur fond clair */
+    color: #121212 !important; 
+}
+
+/* Forcer le texte d'introduction en NOIR (lisible sur fond blanc) */
+.contact-dark-theme .contact-header h1,
+.contact-dark-theme .contact-header p {
     color: #121212 !important; 
 }
 
@@ -88,15 +94,6 @@
     border: 2px solid var(--color-accent) !important; 
     outline: none !important;
     box-shadow: 0 0 10px rgba(0, 255, 192, 0.5) !important;
-}
-
-/* ========================================= */
-/* FIX N°3 : Assombrir le conteneur principal du formulaire (.contact-section) */
-/* ========================================= */
-.contact-dark-theme .contact-section {
-    background-color: #1A1A1A !important; /* Un fond gris très foncé */
-    /* Mise à jour de l'ombre pour le style sombre */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(50, 50, 50, 0.2) !important; 
 }
 
 
