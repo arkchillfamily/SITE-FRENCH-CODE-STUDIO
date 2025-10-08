@@ -113,7 +113,7 @@ h1, h2, h3 {
     height: 600px; /* Hauteur de votre choix pour l'image */
     
     /* ⬅️ AJOUTEZ : L'IMAGE DE FOND */
-    background-image: url('URL_DE_VOTRE_IMAGE_SYMPA_DU_HAUT.png'); /* REMPLACEZ L'URL */
+    background-image: url('LOGO FCS.jpg'); /* REMPLACEZ L'URL */
     background-size: cover; 
     background-position: center; 
     
