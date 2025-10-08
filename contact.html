@@ -1,36 +1,99 @@
-<section class="contact-form-section">
-    <h2>Démarrer un Projet</h2>
-    <p class="introduction-text">Parlez-nous de votre projet (site web, optimisation SEO, refonte UX/UI). Nous vous répondrons sous 24h.</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez French Code Studio - Démarrer votre projet</title>
+    <link rel="stylesheet" href="style (2).css"> 
+</head>
+<body>
+
+    <header class="main-header">
+        </header>
+
+
+    <main>
+        <section class="contact-section">
+            <div class="contact-header">
+                <h1>Démarrer Votre Projet</h1>
+                <p>Prêt à transformer votre idée en une plateforme web moderne et optimisée ? Remplissez ce formulaire détaillé. Nous reviendrons vers vous avec une proposition sous 24h.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <h2>Nous Parler de Votre Idée</h2>
+                    <form action="[VOTRE_SCRIPT_DE_TRAITEMENT_MAIL]" method="POST" class="main-form">
+                        
+                        <div class="form-group">
+                            <label for="name">Votre Nom et Prénom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Votre Email Professionnel</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Nom de votre entreprise (Optionnel)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="project-type">Type de Service Requis</label>
+                            <select id="project-type" name="project-type" required>
+                                <option value="">Sélectionnez un type de service...</option>
+                                <option value="creation">Création d'un site sur mesure</option>
+                                <option value="refonte">Refonte UX/UI & Technique</option>
+                                <option value="seo">Audit & Optimisation SEO</option>
+                                <option value="maintenance">Maintenance & Évolution</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Votre Budget Estimé</label>
+                            <select id="budget" name="budget" required>
+                                <option value="">Sélectionnez une fourchette...</option>
+                                <option value="5k">Moins de 5 000€</option>
+                                <option value="5-10k">5 000€ - 10 000€</option>
+                                <option value="10k+">Plus de 10 000€</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Décrivez brièvement votre projet et vos objectifs (Crucial)</label>
+                            <textarea id="message" name="message" rows="8" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="button primary">Envoyer ma Demande de Devis</button>
+                        
+                    </form>
+                </div>
+
+                <div class="contact-info-container">
+                    <h2>Informations Rapides</h2>
+                    <div class="info-block">
+                        <h3>Contact Direct</h3>
+                        <p>Email: <a href="mailto:contact@frenchcodestudio.com">contact@frenchcodestudio.com</a></p>
+                        <p>Téléphone: <a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Notre Processus</h3>
+                        <p>Nous commençons toujours par une analyse approfondie de vos besoins avant de proposer une solution technique adaptée à vos objectifs business et SEO.</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Disponibilité</h3>
+                        <p>Du lundi au vendredi, de 9h00 à 18h00 (Heure de Paris).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
-    <form action="[VOTRE_SCRIPT_DE_TRAITEMENT_MAIL.php]" method="POST">
-        
-        <div class="form-group">
-            <label for="name">Votre Nom et Prénom</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Votre Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="project-type">Type de Projet</label>
-            <select id="project-type" name="project-type" required>
-                <option value="">Sélectionner...</option>
-                <option value="creation">Création de Site Web</option>
-                <option value="refonte">Refonte (UX/UI)</option>
-                <option value="seo">Optimisation SEO</option>
-                <option value="autre">Autre</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Votre Message / Détails du Projet</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-        </div>
-        
-        <button type="submit" class="button primary">Envoyer ma Demande</button>
-        
-    </form>
-</section>
+    <footer>
+        </footer>
+</body>
+</html>
