@@ -3,7 +3,7 @@
 /* ========================================= */
 
 .contact-section {
-    /* NOUVEAU : Ajouter un fond blanc et une ombre pour détacher la section */
+    /* NOUVEAU : Fond blanc et ombre pour détacher la section du fond du site */
     background-color: white; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
     z-index: 1;
