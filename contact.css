@@ -30,12 +30,18 @@
 }
 
 /* ========================================= */
-/* LISIBILITÉ DU TEXTE SUR LE THÈME SOMBRE (FIX FINAL - HAUTE PRIORITÉ) */
+/* LISIBILITÉ DU TEXTE SUR LE THÈME SOMBRE (FIX ULTIME) */
 /* ========================================= */
 
-/* Cibler TOUS les éléments dans le corps de la page pour forcer la couleur claire */
-.contact-dark-theme * {
-    color: #F8F8F8 !important; /* Couleur gris très clair forcée pour TOUT le texte */
+/* Cibler l'intégralité du texte pour forcer la couleur claire avec la plus haute priorité */
+.contact-dark-theme,
+.contact-dark-theme *,
+.contact-dark-theme p,
+.contact-dark-theme label,
+.contact-dark-theme h1,
+.contact-dark-theme h2,
+.contact-dark-theme h3 {
+    color: #F8F8F8 !important; /* Couleur claire forcée pour TOUT le contenu textuel */
 }
 
 /* EXCEPTIONS N°1 : Assurer que les titres d'accentuation restent en Cyan */
