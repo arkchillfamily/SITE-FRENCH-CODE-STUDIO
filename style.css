@@ -135,8 +135,7 @@ header.main-header { /* Ciblez le header à l'intérieur du hero */
     transform: translateX(-50%); /* ⬅️ NOUVEAU : Uniquement translation horizontale (-50% en X) */
 
     text-align: center;
-    color: white; 
-    z-index: 10; 
+    color: white;  
 }
 
 /* ⬅️ AJOUTEZ CE BLOC pour centrer la liste des liens */
