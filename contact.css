@@ -75,8 +75,12 @@ header.main-header ul.nav-links li a:hover {
     position: relative; 
 }
 
-/* --- LE CODE DU SÉPARATEUR VERTICAL A ÉTÉ RETIRÉ ICI --- */
-/* Le sélecteur .contact-grid::after n'est plus présent. */
+/* --- FIX ULTIME : CACHER LE SÉPARATEUR VERTICAL --- */
+/* Cela cible l'élément responsable du séparateur et le cache de force. */
+.contact-grid::after {
+    display: none !important; 
+}
+
 
 /* Formulaire */
 .contact-form-container h2 {
@@ -172,7 +176,4 @@ header.main-header ul.nav-links li a:hover {
     .contact-grid {
         grid-template-columns: 1fr; 
     }
-    
-    /* Le sélecteur pour le séparateur dans le responsive n'a plus d'effet */
-    /* .contact-grid::after { content: none; } */
 }
