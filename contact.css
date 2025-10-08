@@ -30,16 +30,22 @@
 }
 
 /* ========================================= */
-/* LISIBILITÉ DU TEXTE SUR LE THÈME SOMBRE */
+/* LISIBILITÉ DU TEXTE SUR LE THÈME SOMBRE (FIX FINAL) */
 /* ========================================= */
 
-/* Rendre le texte visible (en blanc/gris clair) */
+/* Rendre le texte visible (en blanc/gris clair) avec haute priorité */
 .contact-dark-theme .contact-header h1,
 .contact-dark-theme .contact-header p,
 .contact-dark-theme .form-group label,
 .contact-dark-theme .contact-info-container p,
 .contact-dark-theme .contact-info-container h3 {
-    color: #F8F8F8 !important; 
+    color: #F8F8F8 !important; /* Force la couleur claire */
+}
+
+/* Les liens dans la colonne d'infos doivent rester en Cyan et être soulignés */
+.contact-dark-theme .contact-info-container a {
+    color: var(--color-accent) !important; 
+    text-decoration: underline !important;
 }
 
 /* S'assurer que le titre du formulaire reste en Cyan pour l'accent */
@@ -51,7 +57,7 @@
 .contact-dark-theme .main-form input,
 .contact-dark-theme .main-form select,
 .contact-dark-theme .main-form textarea {
-    color: #121212; 
+    color: #121212 !important; 
 }
 
 
@@ -69,7 +75,7 @@
     transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     
     /* Le look "bouton" semi-transparent */
-    background-color: rgba(255, 255, 255, 0.25); /* Opacité augmentée */
+    background-color: rgba(255, 255, 255, 0.25); 
     border-radius: 8px; 
     
     /* Ombre/Glow subtil */
