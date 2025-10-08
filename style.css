@@ -54,7 +54,7 @@ body::before {
     background-image: url('LOGO FCS.jpg'); 
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 150%; /* Très grand, ajustez si besoin */
+    background-size: 100%; /* Très grand, ajustez si besoin */
     
     /* Effets stylés : N&B et Transparence */
     filter: grayscale(100%); 
