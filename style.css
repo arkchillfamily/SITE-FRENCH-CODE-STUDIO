@@ -51,7 +51,7 @@ body::before {
     height: 100vh;
     
     /* Configuration de l'image du logo */
-    background-image: url('LOGO FCS.png'); 
+    background-image: url('LOGO FCS.jpg'); 
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 150%; /* Très grand, ajustez si besoin */
