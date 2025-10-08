@@ -23,8 +23,8 @@ header.main-header ul.nav-links li a {
     border-radius: 8px; 
     border: 1px solid #DEDEDE; 
     
-    /* TOUCHE SOMBRE : Ombre portée pour un effet de relief */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.8); 
+    /* TOUCHE SOMBRE AGRESSIVE : Ombre portée pour un effet de relief */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), -2px -2px 5px rgba(255, 255, 255, 0.8); 
 }
 
 header.main-header ul.nav-links li a:hover {
@@ -32,7 +32,7 @@ header.main-header ul.nav-links li a:hover {
     transform: translateX(3px); 
     
     /* TOUCHE SOMBRE : Ombre plus prononcée au survol + glow */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), inset 0 0 5px rgba(0, 255, 192, 0.5); 
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(0, 255, 192, 0.5); 
 }
 
 /* ========================================= */
@@ -41,8 +41,8 @@ header.main-header ul.nav-links li a:hover {
 
 .contact-section {
     background-color: white; 
-    /* TOUCHE SOMBRE : Ombre forte pour détacher le bloc du fond de page */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    /* TOUCHE SOMBRE AGRESSIVE : Ombre très forte pour détacher le bloc du fond de page */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3); 
     z-index: 1;
     position: relative;
     
@@ -129,8 +129,8 @@ header.main-header ul.nav-links li a:hover {
     width: 100%;
     transition: all 0.3s; 
     color: #333333; 
-    /* TOUCHE SOMBRE : Ombre intérieure pour un effet encastré */
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    /* TOUCHE SOMBRE AGRESSIVE : Ombre intérieure pour un effet encastré marqué */
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2); 
 }
 
 .main-form input:focus,
@@ -139,7 +139,7 @@ header.main-header ul.nav-links li a:hover {
     border: 1px solid var(--color-accent) !important; 
     outline: none !important;
     /* Focus: Bordure Accent + Ombre intérieure maintenue */
-    box-shadow: 0 0 0 3px rgba(0, 255, 192, 0.3), inset 2px 2px 5px rgba(0, 0, 0, 0.1) !important; 
+    box-shadow: 0 0 0 3px rgba(0, 255, 192, 0.3), inset 3px 3px 6px rgba(0, 0, 0, 0.2) !important; 
 }
 
 /* 3. ENCASTRÉ EN NOIR STYLÉ (Informations Rapides) */
