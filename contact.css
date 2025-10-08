@@ -1,5 +1,5 @@
 /* ========================================= */
-/* THÈME CLAIR (Par défaut) */
+/* THÈME CLAIR AVEC TOUCHES SOMBRES */
 /* ========================================= */
 
 body {
@@ -8,34 +8,31 @@ body {
 }
 
 /* ========================================= */
-/* NAVIGATION (Adaptée au thème clair) */
+/* NAVIGATION (Touches Sombres) */
 /* ========================================= */
 
 header.main-header ul.nav-links li a {
     font-size: 1.3em;
     font-weight: bold; 
     padding: 10px 25px; 
-    color: #333333; /* Texte sombre pour le thème clair */
+    color: #333333; 
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     
-    /* Le look "bouton" subtil */
     background-color: #F8F8F8; 
     border-radius: 8px; 
-    border: 1px solid #E0E0E0;
+    border: 1px solid #DEDEDE; 
     
-    /* Ombre subtile */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+    /* TOUCHE SOMBRE : Ombre portée pour un effet de relief */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.8); 
 }
 
 header.main-header ul.nav-links li a:hover {
     color: var(--color-accent); 
-    
-    /* Le décalage horizontal que vous vouliez */
     transform: translateX(3px); 
     
-    /* Ombre plus prononcée au survol */
-    box-shadow: 0 0 10px rgba(0, 255, 192, 0.3); 
+    /* TOUCHE SOMBRE : Ombre plus prononcée au survol + glow */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), inset 0 0 5px rgba(0, 255, 192, 0.5); 
 }
 
 /* ========================================= */
@@ -44,7 +41,8 @@ header.main-header ul.nav-links li a:hover {
 
 .contact-section {
     background-color: white; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    /* TOUCHE SOMBRE : Ombre forte pour détacher le bloc du fond de page */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
     z-index: 1;
     position: relative;
     
@@ -57,7 +55,6 @@ header.main-header ul.nav-links li a:hover {
 .contact-header {
     text-align: center;
     max-width: 800px;
-    /* Modifications pour la barre d'accentuation */
     border-bottom: 5px solid var(--color-accent); 
     padding-bottom: 20px; 
     margin: 0 auto 60px auto;
@@ -66,19 +63,19 @@ header.main-header ul.nav-links li a:hover {
 .contact-header h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    color: var(--color-primary); /* Reste sombre sur fond clair */
+    color: var(--color-primary); 
 }
 
 /* GRILLE PRINCIPALE (Formulaire + Infos) */
 .contact-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* 2/3 pour le formulaire, 1/3 pour les infos */
+    grid-template-columns: 2fr 1fr; 
     gap: 60px;
     align-items: start;
     position: relative; 
 }
 
-/* SÉPARATEUR VISUEL VERTICAL (entre le formulaire et les infos) */
+/* SÉPARATEUR VISUEL VERTICAL */
 .contact-grid::after {
     content: '';
     position: absolute;
@@ -116,60 +113,60 @@ header.main-header ul.nav-links li a:hover {
 .form-group label {
     font-weight: 700;
     margin-bottom: 8px;
-    color: var(--color-primary); /* Reste sombre sur fond clair (lisible) */
+    color: var(--color-primary); 
 }
 
-/* 2. CHAMPS DE FORMULAIRE VIVANTS (STYLE PRO ET STYLÉ) */
+/* 2. CHAMPS DE FORMULAIRE VIVANTS (STYLE PRO AVEC TOUCHES SOMBRES) */
 .main-form input,
 .main-form select,
 .main-form textarea {
     padding: 12px;
-    /* Rendre le fond légèrement gris pour un style pro sur fond blanc */
     background-color: #F5F5F5; 
-    border: 1px solid #DEDEDE; /* Bordure douce */
+    border: 1px solid #DEDEDE; 
     border-radius: 8px; 
     font-size: 1rem;
     font-family: var(--font-body);
     width: 100%;
     transition: all 0.3s; 
-    color: #333333; /* Texte sombre lisible */
-    /* Enlever l'ombre intérieure pour un look plus propre */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+    color: #333333; 
+    /* TOUCHE SOMBRE : Ombre intérieure pour un effet encastré */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .main-form input:focus,
 .main-form select:focus,
 .main-form textarea:focus {
-    /* Focus: Bordure Accent + Ombre claire */
     border: 1px solid var(--color-accent) !important; 
     outline: none !important;
-    box-shadow: 0 0 0 3px rgba(0, 255, 192, 0.3) !important; /* Effet de glow subtil */
+    /* Focus: Bordure Accent + Ombre intérieure maintenue */
+    box-shadow: 0 0 0 3px rgba(0, 255, 192, 0.3), inset 2px 2px 5px rgba(0, 0, 0, 0.1) !important; 
 }
 
-/* 3. MISE EN ÉVIDENCE DES INFORMATIONS RAPIDES (ENCASTRÉ EN NOIR STYLÉ) */
+/* 3. ENCASTRÉ EN NOIR STYLÉ (Informations Rapides) */
 .contact-info-container {
     padding: 30px;
     border-radius: 8px;
     border-left: 5px solid var(--color-accent); 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Ombre plus marquée pour le style noir */
+    /* TOUCHE SOMBRE : Conserver l'ombre marquée du bloc noir */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
 
-    /* NOUVEAU STYLE : Fond Noir/Texte Clair */
+    /* Fond Noir/Texte Clair */
     background: #121212; 
-    color: #F8F8F8; /* Rendre le texte principal clair dans cette boîte */
+    color: #F8F8F8; 
 }
 
 .contact-info-container h3 {
     font-size: 1.2rem;
-    color: var(--color-accent); /* Conserver la couleur Cyan */
+    color: var(--color-accent); 
     margin-bottom: 5px;
 }
 
 .contact-info-container p {
-    color: #E0E0E0; /* Assurer que les paragraphes sont clairs */
+    color: #E0E0E0; 
 }
 
 .contact-info-container a {
-    color: var(--color-accent); /* Assurer que les liens sont Cyan */
+    color: var(--color-accent); 
 }
 
 
