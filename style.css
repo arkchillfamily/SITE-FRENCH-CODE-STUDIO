@@ -114,7 +114,7 @@ h1, h2, h3 {
     background-image: url('LOGO FCS.jpg'); 
     background-size: cover; 
     background-position: center; 
-    padding: 0; 
+    padding: 0 !important; 
     
   
 }
