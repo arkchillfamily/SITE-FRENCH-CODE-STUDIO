@@ -102,17 +102,38 @@ h1, h2, h3 {
     color: #444444; 
     
 }
-
-
-/* 🚨 Règle CRUCIALE : À AJOUTER/MODIFIER dans votre section hero existante */
 .hero-section {
-    padding-top: 100px; /* Augmentez à 100px ou plus. La barre de navigation fait environ 80px de haut. */
-    /* Si cette règle existe déjà, assurez-vous qu'elle a ces deux propriétés : */
-    position: relative; 
-    z-index: 2; 
+    /* Propriétés existantes (assurez-vous qu'elles sont là) */
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    
+    /* ⬅️ AJOUTEZ : Dimensions de l'image (très important) */
+    width: 100%;
+    height: 600px; /* Hauteur de votre choix pour l'image */
+    
+    /* ⬅️ AJOUTEZ : L'IMAGE DE FOND */
+    background-image: url('URL_DE_VOTRE_IMAGE_SYMPA_DU_HAUT.png'); /* REMPLACEZ L'URL */
+    background-size: cover; 
+    background-position: center; 
+    
+    /* Le padding-top n'est plus utile ici si le contenu est centré, mais le garder n'est pas critique */
+    /* padding-top: 100px; */ 
 }
+
+/* ⬅️ AJOUTEZ : Centrage du contenu (paragraphe + bouton) dans l'image */
+.hero-content {
+    position: absolute;
+    top: 55%; /* Légèrement plus bas que 50% pour laisser de la place au menu */
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    max-width: 800px;
+    color: white; /* Pour la lisibilité sur l'image */
+    z-index: 5;
+}
+
+
 
 section {
     padding: 80px 5%;
@@ -123,16 +144,35 @@ section {
 /* ========================================= */
 /* 3. NAVIGATION (HEADER) */
 /* ========================================= */
-
-header {
-    background: var(--color-background);
+header { /* Ou utilisez .main-header si vous avez ajouté cette classe en HTML */
+    /* ⬅️ MODIFIER : Rendre le fond transparent pour voir l'image du hero */
+    background: none; 
+    
     padding: 20px 5%;
-    position: sticky; /* Reste en haut au défilement */
+    
+    /* ⬅️ SUPPRIMER : On n'utilise plus position: sticky car il est dans le hero */
+    /* position: sticky; */ 
+    
+    /* ⬅️ AJOUTER : Positionnement pour la navigation en haut de l'image */
+    position: absolute; 
     top: 0;
-    z-index: 1000;
-    background: var(--color-background);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    width: 100%;
+    
+    /* ⬅️ AJOUTER : S'assurer que les liens sont lisibles */
+    color: white; /* Pour le texte du logo */
+    
+    /* Utiliser Flexbox pour aligner logo et menu */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
 }
+
+/* ⬅️ AJOUTER : Pour les liens spécifiques */
+header nav a {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Améliore le contraste */
+}
+
 
 nav {
     display: flex;
