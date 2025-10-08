@@ -103,7 +103,6 @@ h1, h2, h3 {
     
 }
 .hero-section {
-   padding-top: 100px; /* À ajuster si nécessaire pour votre image */
     position: relative; /* ⬅️ IMPORTANT : On garde position: relative */
     z-index: 2;
     max-width: 1200px;
