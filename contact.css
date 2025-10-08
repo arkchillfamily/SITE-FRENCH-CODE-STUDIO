@@ -30,34 +30,27 @@
 }
 
 /* ========================================= */
-/* LISIBILITÉ DU TEXTE SUR LE THÈME SOMBRE (FIX FINAL) */
+/* LISIBILITÉ DU TEXTE SUR LE THÈME SOMBRE (FIX FINAL - HAUTE PRIORITÉ) */
 /* ========================================= */
 
-/* Rendre le texte visible (en blanc/gris clair) avec haute priorité */
-.contact-dark-theme .contact-header h1,
-.contact-dark-theme .contact-header p,
-.contact-dark-theme .form-group label,
-.contact-dark-theme .contact-info-container p,
-.contact-dark-theme .contact-info-container h3 {
-    color: #F8F8F8 !important; /* Force la couleur claire */
+/* Cibler TOUS les éléments dans le corps de la page pour forcer la couleur claire */
+.contact-dark-theme * {
+    color: #F8F8F8 !important; /* Couleur gris très clair forcée pour TOUT le texte */
 }
 
-/* Les liens dans la colonne d'infos doivent rester en Cyan et être soulignés */
+/* EXCEPTIONS N°1 : Assurer que les titres d'accentuation restent en Cyan */
+.contact-dark-theme .contact-form-container h2,
+.contact-dark-theme .contact-info-container h3,
 .contact-dark-theme .contact-info-container a {
-    color: var(--color-accent) !important; 
+    color: var(--color-accent) !important; /* Force la couleur Cyan Vif */
     text-decoration: underline !important;
 }
 
-/* S'assurer que le titre du formulaire reste en Cyan pour l'accent */
-.contact-dark-theme .contact-form-container h2 {
-    color: var(--color-accent) !important; 
-}
-
-/* Le texte saisi dans les inputs doit être sombre pour contraster avec l'input blanc */
+/* EXCEPTION N°2 : Assurer que le texte saisi dans les inputs est sombre */
 .contact-dark-theme .main-form input,
 .contact-dark-theme .main-form select,
 .contact-dark-theme .main-form textarea {
-    color: #121212 !important; 
+    color: #121212 !important; /* Le texte doit être noir sur le fond blanc des champs */
 }
 
 
