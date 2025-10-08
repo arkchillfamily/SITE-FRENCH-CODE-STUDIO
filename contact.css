@@ -75,17 +75,8 @@ header.main-header ul.nav-links li a:hover {
     position: relative; 
 }
 
-/* SÉPARATEUR VISUEL VERTICAL */
-.contact-grid::after {
-    content: '';
-    position: absolute;
-    left: calc(2fr / 3fr * 100% - 30px); 
-    top: 50px;
-    bottom: 50px;
-    width: 3px; 
-    background-color: rgba(0, 255, 192, 0.4); 
-    border-radius: 2px;
-}
+/* --- LE CODE DU SÉPARATEUR VERTICAL A ÉTÉ RETIRÉ ICI --- */
+/* Le sélecteur .contact-grid::after n'est plus présent. */
 
 /* Formulaire */
 .contact-form-container h2 {
@@ -182,7 +173,6 @@ header.main-header ul.nav-links li a:hover {
         grid-template-columns: 1fr; 
     }
     
-    .contact-grid::after {
-        content: none; 
-    }
+    /* Le sélecteur pour le séparateur dans le responsive n'a plus d'effet */
+    /* .contact-grid::after { content: none; } */
 }
