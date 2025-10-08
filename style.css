@@ -103,22 +103,20 @@ h1, h2, h3 {
     
 }
 .hero-section {
-    width: 100%;
-    height: 600px; /* Conservez la hauteur de votre image */
-    background-image: url('LOGO FCS.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    
-    /* ⬅️ MODIFICATION CRUCIALE : On utilise Flexbox pour centrer le HEADER/NAV */
-    display: flex; 
-    flex-direction: column; /* Le header sera au-dessus de tout autre élément ici */
-    justify-content: center; /* ⬅️ Centre verticalement le contenu restant (le Header) */
-    align-items: center; /* Centre horizontalement */
-    
-    position: relative;
-    max-width: 1200px; 
+   padding-top: 100px; /* À ajuster si nécessaire pour votre image */
+    position: relative; /* ⬅️ IMPORTANT : On garde position: relative */
+    z-index: 2;
+    max-width: 1200px;
     margin: 0 auto;
+    
+    /* AJOUTEZ VOS PROPRIÉTÉS D'IMAGE (si elles n'y sont pas déjà) */
+    width: 100%;
+    height: 600px; 
+    background-image: url('LOGO FCS.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    
+  
 }
 
 header.main-header { /* Ciblez le header à l'intérieur du hero */
