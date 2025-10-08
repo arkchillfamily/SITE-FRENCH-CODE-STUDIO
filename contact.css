@@ -30,10 +30,35 @@
 }
 
 /* ========================================= */
-/* NAVIGATION DANS LE THÈME SOMBRE (Écrase les styles globaux) */
+/* LISIBILITÉ DU TEXTE SUR LE THÈME SOMBRE */
 /* ========================================= */
 
-/* Style des liens de navigation (onglets) */
+/* Rendre le texte visible (en blanc/gris clair) */
+.contact-dark-theme .contact-header h1,
+.contact-dark-theme .contact-header p,
+.contact-dark-theme .form-group label,
+.contact-dark-theme .contact-info-container p,
+.contact-dark-theme .contact-info-container h3 {
+    color: #F8F8F8 !important; 
+}
+
+/* S'assurer que le titre du formulaire reste en Cyan pour l'accent */
+.contact-dark-theme .contact-form-container h2 {
+    color: var(--color-accent) !important; 
+}
+
+/* Le texte saisi dans les inputs doit être sombre pour contraster avec l'input blanc */
+.contact-dark-theme .main-form input,
+.contact-dark-theme .main-form select,
+.contact-dark-theme .main-form textarea {
+    color: #121212; 
+}
+
+
+/* ========================================= */
+/* NAVIGATION DANS LE THÈME SOMBRE (Onglets stylisés) */
+/* ========================================= */
+
 .contact-dark-theme header.main-header ul.nav-links li a {
     font-size: 1.3em;
     font-weight: bold; 
@@ -43,20 +68,22 @@
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     
-    /* Le look "bouton" */
-    background-color: rgba(255, 255, 255, 0.15); 
+    /* Le look "bouton" semi-transparent */
+    background-color: rgba(255, 255, 255, 0.25); /* Opacité augmentée */
     border-radius: 8px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    
+    /* Ombre/Glow subtil */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(255, 255, 255, 0.2); 
 }
 
-/* Effet de glissement/décalage */
 .contact-dark-theme header.main-header ul.nav-links li a:hover {
     color: var(--color-accent); 
     
     /* Le décalage horizontal que vous vouliez */
     transform: translateX(3px); 
     
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    /* Ombre plus prononcée au survol */
+    box-shadow: 0 0 15px rgba(0, 255, 192, 0.7), inset 0 0 8px rgba(255, 255, 255, 0.4); 
 }
 
 /* ========================================= */
