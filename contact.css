@@ -90,6 +90,11 @@
     color: var(--color-accent); /* Titres en Cyan Vif */
     margin-bottom: 5px;
 }
+/* Assurez-vous que le bouton est sur la couche la plus élevée */
+.button.primary {
+    z-index: 100; 
+    position: relative; /* IMPORTANT : le z-index ne fonctionne qu'avec position: relative/absolute/fixed */
+}
 
 /* Responsive pour mobile */
 @media (max-width: 768px) {
