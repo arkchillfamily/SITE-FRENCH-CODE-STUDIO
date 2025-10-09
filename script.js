@@ -5,43 +5,67 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. GESTION DU MENU MOBILE (Hamburger)
     // --------------------------------------
     const navLinks = document.querySelector('.nav-links');
-    // NOTE: Vous devez ajouter un bouton hamburger dans le HTML pour que ceci fonctionne !
-    // Par exemple: <button class="hamburger-btn">☰</button>
-    const hamburgerBtn = document.querySelector('.hamburger-btn'); 
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
 
-    if (hamburgerBtn) {
+    if (navLinks) {
+        // Retirer la classe 'no-js' si présente (progressive enhancement)
+        navLinks.classList.remove('no-js');
+    }
+
+    if (hamburgerBtn && navLinks) {
         hamburgerBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            // Accessibilité : focus sur le premier lien du menu si ouverture
+            if (navLinks.classList.contains('active')) {
+                const firstLink = navLinks.querySelector('a');
+                if (firstLink) firstLink.focus();
+            }
+        });
+
+        // Accessibilité : fermer le menu avec la touche Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburgerBtn.focus();
+            }
         });
     }
 
     // --------------------------------------
     // 2. EFFET 'FADE-IN' DES SECTIONS (Modernité)
     // --------------------------------------
-    // Fait apparaître les sections au fur et à mesure que l'utilisateur défile
     const faders = document.querySelectorAll('.hero-section, .values-section, .process-section');
 
-    const appearOptions = {
-        threshold: 0.2, // Déclencher quand 20% de l'élément est visible
-        rootMargin: "0px 0px -50px 0px" // Déclencher un peu avant d'arriver au bas de l'écran
-    };
+    if ('IntersectionObserver' in window && faders.length > 0) {
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
 
-    const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            // Appliquer un style initial invisible si non déjà fait
+            if (!fader.style.opacity) {
+                fader.style.opacity = 0;
+                fader.style.transform = 'translateY(20px)';
+                fader.style.transition = 'opacity 1s ease-out, transform 0.6s ease-out';
             }
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-            appearOnScroll.unobserve(entry.target);
+            appearOnScroll.observe(fader);
         });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        // Appliquer un style initial invisible via CSS ou directement ici
-        fader.style.opacity = 0;
-        fader.style.transform = 'translateY(20px)';
-        fader.style.transition = 'opacity 1s ease-out, transform 0.6s ease-out';
-        appearOnScroll.observe(fader);
-    });
+    } else {
+        // Fallback si IntersectionObserver non supporté
+        faders.forEach(fader => {
+            fader.style.opacity = 1;
+            fader.style.transform = 'translateY(0)';
+        });
+    }
 });
