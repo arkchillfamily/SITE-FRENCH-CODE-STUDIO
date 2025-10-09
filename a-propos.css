@@ -32,7 +32,7 @@ body::before {
     height: 100%;
     
     /* ⚠️ REMPLACER PAR LE CHEMIN DE VOTRE LOGO */
-    background-image: url('images/votre-logo.png'); 
+    background-image: url('LOGO FCS.jpg'); 
     
     background-repeat: no-repeat;
     background-position: center 10%; /* Place le logo légèrement plus haut */
