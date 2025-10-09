@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Frenc Code Studio] | Création de Sites Web Modernes & Performants</title>
+    <title>French Code Studio | Création de Sites Web Modernes & Performants</title>
+    <meta name="description" content="Agence web experte en création de sites modernes, performants et optimisés SEO. UX/UI, développement sur mesure, accompagnement complet.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-    </head>
+</head>
 <body>
-    
-</main>
-<section id="hero" class="hero-section">
-    
-    <header class="main-header"> 
-        <nav>
+    <header class="main-header" role="banner">
+        <nav aria-label="Navigation principale">
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Réalisations</a></li>
@@ -25,17 +22,19 @@
         </nav>
     </header>
 
-    </section>
-<div class="intro-message-container"> 
-    <p class="introduction-text">Fatigué des sites datés qui ne convertissent pas ? Nous concevons des plateformes web modernes, <strong>optimisées SEO</strong> et centrées sur l’utilisateur (UX/UI), pour propulser votre croissance.</p>
-    <a href="contact.html" class="button primary">Lancer mon Projet</a>
-</div>
+    <main id="main-content" role="main">
+        <section id="hero" class="hero-section" aria-label="Présentation">
+            <div class="intro-message-container"> 
+                <p class="introduction-text">
+                    Fatigué des sites datés qui ne convertissent pas ? Nous concevons des plateformes web modernes, 
+                    <strong>optimisées SEO</strong> et centrées sur l’utilisateur (UX/UI), pour propulser votre croissance.
+                </p>
+                <a href="contact.html" class="button primary">Lancer mon Projet</a>
+            </div>
+        </section>
 
-<main>
-    </main>
-   
-        <section id="fondations" class="values-section">
-            <h2>Le Minimalisme qui Convertit.</h2>
+        <section id="fondations" class="values-section" aria-labelledby="fondations-title">
+            <h2 id="fondations-title">Le Minimalisme qui Convertit.</h2>
             <div class="value-points">
                 <article>
                     <h3>Design Épuré</h3>
@@ -53,8 +52,8 @@
             <a href="#portfolio" class="button secondary">Voir nos Réalisations</a>
         </section>
 
-        <section id="services" class="process-section">
-            <h2>Votre Succès, Notre Process.</h2>
+        <section id="services" class="process-section" aria-labelledby="services-title">
+            <h2 id="services-title">Votre Succès, Notre Process.</h2>
             <div class="process-steps">
                 <article>
                     <h3>1. Stratégie</h3>
@@ -62,11 +61,11 @@
                 </article>
                 <article>
                     <h3>2. Design & UX</h3>
-                    <p>On maquette l'expérience parfaite, du wireframe au design final **responsive**.</p>
+                    <p>On maquette l'expérience parfaite, du wireframe au design final <strong>responsive</strong>.</p>
                 </article>
                 <article>
                     <h3>3. Développement</h3>
-                    <p>On construit la plateforme avec un code propre, moderne et **optimisé SEO**.</p>
+                    <p>On construit la plateforme avec un code propre, moderne et <strong>optimisé SEO</strong>.</p>
                 </article>
                 <article>
                     <h3>4. Lancement & Suivi</h3>
@@ -75,24 +74,20 @@
             </div>
         </section>
         
-        <section class="final-cta">
-            <h2>Prêt à dépasser vos concurrents ?</h2>
+        <section class="final-cta" aria-label="Appel à l'action final">
+            <h2>Prêt à dépasser vos concurrents&nbsp;?</h2>
             <p>Un site web est votre meilleur commercial. Investissez dans une présence qui fait la différence.</p>
-            <a href="#contact" class="button primary large">Demander un Devis Gratuit</a>
+            <a href="contact.html" class="button primary large">Demander un Devis Gratuit</a>
         </section>
+    </main>
 
-        </main>
-
-    <footer>
-       
-            <div class="legal">
-                <p>&copy; 2024 [Nom de votre Agence]. Tous droits réservés.</p>
-                <a href="#">Mentions Légales</a>
-                <a href="#">Politique de Confidentialité</a>
-            </div>
+    <footer role="contentinfo">
+        <div class="legal">
+            <p>&copy; 2024 French Code Studio. Tous droits réservés.</p>
+            <a href="#">Mentions Légales</a>
+            <a href="#">Politique de Confidentialité</a>
         </div>
-        </footer>
-    
-        <script src="script.js" defer></script>
-    </body>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
 </html>
