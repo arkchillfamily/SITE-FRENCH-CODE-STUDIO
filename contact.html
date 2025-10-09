@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactez French Code Studio - Démarrer votre projet</title>
+    <meta name="description" content="Contactez French Code Studio pour démarrer votre projet web sur mesure, refonte, SEO ou maintenance. Réponse sous 24h.">
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="contact.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
@@ -11,10 +12,11 @@
 <body>
 
     <header class="main-header">
-        </header>
+        <!-- Navigation ou logo ici -->
+    </header>
 
 
-    <main>
+    <main role="main">
         <section class="contact-section">
             <div class="contact-header">
                 <h1>Démarrer Votre Projet</h1>
@@ -26,23 +28,22 @@
                     <h2>Nous Parler de Votre Idée</h2>
                     <form name="contact-form-fcs" method="POST" data-netlify="true" class="main-form">
                         <input type="hidden" name="form-name" value="contact-form-fcs" />
-                        </form>
-                        
+
                         <div class="form-group">
                             <label for="name">Votre Nom et Prénom</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required autocomplete="name">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Votre Email (Professionnel optionnel)</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required autocomplete="email">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="company">Nom de votre entreprise (Optionnel)</label>
-                            <input type="text" id="company" name="company">
+                            <input type="text" id="company" name="company" autocomplete="organization">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="project-type">Type de Service Requis</label>
                             <select id="project-type" name="project-type" required>
@@ -54,7 +55,7 @@
                                 <option value="autre">Autre</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="budget">Votre Budget Estimé</label>
                             <select id="budget" name="budget" required>
@@ -64,14 +65,13 @@
                                 <option value="10k+">Plus de 5000€</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group full-width">
                             <label for="message">Décrivez brièvement votre projet et vos objectifs (Crucial)</label>
                             <textarea id="message" name="message" rows="8" required></textarea>
                         </div>
-                        
+
                         <button type="submit" class="button primary">Envoyer ma Demande de Devis</button>
-                        
                     </form>
                 </div>
 
@@ -98,6 +98,7 @@
     </main>
     
     <footer>
-        </footer>
+        <!-- Pied de page ici -->
+    </footer>
 </body>
 </html>
