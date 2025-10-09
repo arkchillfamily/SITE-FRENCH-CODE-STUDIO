@@ -1,179 +1,480 @@
 /* ========================================= */
-/* THÈME CLAIR AVEC TOUCHES SOMBRES */
+/* CONTACT - ÉLÉGANCE FRANÇAISE & TECH */
 /* ========================================= */
 
+:root {
+    --color-primary: #1e3a5f;
+    --color-accent: #e63946;
+    --color-secondary: #457b9d;
+    --color-gold: #d4af37;
+    --color-background: #fdfbf7;
+    --color-card: #ffffff;
+    --color-text: #2b3e50;
+    --color-text-light: #5a6c7d;
+    --color-border: #e8e4dc;
+    --font-display: 'Playfair Display', 'Georgia', serif;
+    --font-body: 'Lato', 'Segoe UI', sans-serif;
+}
+
 body {
-    background-color: #F8F8F8; /* Fond blanc clair */
-    color: #333333; /* Texte noir par défaut pour une lisibilité parfaite */
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
 }
 
 /* ========================================= */
-/* NAVIGATION (Touches Sombres) */
+/* NAVIGATION RAFFINÉE */
 /* ========================================= */
 
 header.main-header ul.nav-links li a {
-    font-size: 1.3em;
-    font-weight: bold; 
-    padding: 10px 25px; 
-    color: #333333; 
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: var(--font-body);
+    padding: 12px 28px;
+    color: var(--color-primary);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     
-    background-color: #F8F8F8; 
-    border-radius: 8px; 
-    border: 1px solid #DEDEDE; 
+    background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+    border-radius: 3px;
+    border: 1px solid var(--color-border);
     
-    /* TOUCHE SOMBRE AGRESSIVE : Ombre portée pour un effet de relief */
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), -2px -2px 5px rgba(255, 255, 255, 0.8); 
+    /* Ombre élégante et douce */
+    box-shadow: 
+        2px 2px 8px rgba(30, 58, 95, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de brillance au survol */
+header.main-header ul.nav-links li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+header.main-header ul.nav-links li a:hover::before {
+    left: 100%;
 }
 
 header.main-header ul.nav-links li a:hover {
-    color: var(--color-accent); 
-    transform: translateX(3px); 
-    
-    /* TOUCHE SOMBRE : Ombre plus prononcée au survol + glow */
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(0, 255, 192, 0.5); 
+    color: var(--color-accent);
+    transform: translateY(-2px);
+    border-color: var(--color-gold);
+    box-shadow: 
+        0 6px 20px rgba(230, 57, 70, 0.2),
+        0 0 0 1px var(--color-gold),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 /* ========================================= */
-/* 7. PAGE CONTACT (Formulaire Design) */
+/* SECTION CONTACT - CONTENEUR PRINCIPAL */
 /* ========================================= */
 
 .contact-section {
-    background-color: white; 
-    /* TOUCHE SOMBRE AGRESSIVE : Ombre très forte pour détacher le bloc du fond de page */
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3); 
-    z-index: 1;
+    background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+    box-shadow: 
+        0 20px 60px rgba(30, 58, 95, 0.08),
+        0 0 0 1px var(--color-border);
+    border-radius: 4px;
     position: relative;
-    
-    padding: 100px 5%; 
+    padding: 80px 5%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 60px auto;
+    overflow: hidden;
 }
 
-/* 1. ACCENTUATION GRAPHIQUE SOUS LE TITRE */
+/* Bordure dorée élégante */
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--color-secondary) 0%,
+        var(--color-gold) 50%,
+        var(--color-accent) 100%
+    );
+}
+
+/* Motif décoratif subtil */
+.contact-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ========================================= */
+/* EN-TÊTE ÉLÉGANT */
+/* ========================================= */
+
 .contact-header {
     text-align: center;
     max-width: 800px;
-    border-bottom: 5px solid var(--color-accent); 
-    padding-bottom: 20px; 
     margin: 0 auto 60px auto;
+    padding-bottom: 30px;
+    position: relative;
 }
 
 .contact-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    color: var(--color-primary); 
+    font-family: var(--font-display);
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    letter-spacing: 0.02em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* GRILLE PRINCIPALE (Formulaire + Infos) */
+/* Ligne décorative sous le titre */
+.contact-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--color-gold),
+        var(--color-accent),
+        var(--color-gold),
+        transparent
+    );
+}
+
+/* Diamant central */
+.contact-header::before {
+    content: '◆';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-accent);
+    font-size: 0.8em;
+    background: var(--color-background);
+    padding: 0 10px;
+    z-index: 1;
+}
+
+.contact-header p {
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ========================================= */
+/* GRILLE PRINCIPALE */
+/* ========================================= */
+
 .contact-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; 
-    gap: 60px;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 50px;
     align-items: start;
-    position: relative; 
+    position: relative;
 }
 
-/* --- FIX ULTIME : CACHER LE SÉPARATEUR VERTICAL --- */
-/* Cela cible l'élément responsable du séparateur et le cache de force. */
-.contact-grid::after {
-    display: none !important; 
-}
+/* ========================================= */
+/* FORMULAIRE ÉLÉGANT */
+/* ========================================= */
 
-
-/* Formulaire */
 .contact-form-container h2 {
-    color: var(--color-accent); 
-    margin-bottom: 30px;
+    font-family: var(--font-display);
+    color: var(--color-accent);
     font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 35px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.contact-form-container h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-secondary) 100%);
 }
 
 .main-form {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 25px;
 }
 
 .form-group {
-    flex: 1 1 calc(50% - 10px); 
+    flex: 1 1 calc(50% - 12.5px);
     display: flex;
     flex-direction: column;
 }
 
 .form-group.full-width {
-    flex: 1 1 100%; 
+    flex: 1 1 100%;
 }
 
 .form-group label {
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--color-primary); 
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: 0.95em;
+    letter-spacing: 0.3px;
 }
 
-/* 2. CHAMPS DE FORMULAIRE VIVANTS (STYLE PRO AVEC TOUCHES SOMBRES) */
+/* Champs de formulaire tech & élégants */
 .main-form input,
 .main-form select,
 .main-form textarea {
-    padding: 12px;
-    background-color: #F5F5F5; 
-    border: 1px solid #DEDEDE; 
-    border-radius: 8px; 
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+    border: 2px solid var(--color-border);
+    border-radius: 3px;
     font-size: 1rem;
     font-family: var(--font-body);
     width: 100%;
-    transition: all 0.3s; 
-    color: #333333; 
-    /* TOUCHE SOMBRE AGRESSIVE : Ombre intérieure pour un effet encastré marqué */
-    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--color-text);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.03),
+        0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+.main-form input::placeholder,
+.main-form textarea::placeholder {
+    color: var(--color-text-light);
+    opacity: 0.6;
+}
+
+/* Focus avec animation élégante */
 .main-form input:focus,
 .main-form select:focus,
 .main-form textarea:focus {
-    border: 1px solid var(--color-accent) !important; 
-    outline: none !important;
-    /* Focus: Bordure Accent + Ombre intérieure maintenue */
-    box-shadow: 0 0 0 3px rgba(0, 255, 192, 0.3), inset 3px 3px 6px rgba(0, 0, 0, 0.2) !important; 
+    border-color: var(--color-gold);
+    outline: none;
+    background: #ffffff;
+    box-shadow: 
+        0 0 0 3px rgba(212, 175, 55, 0.15),
+        0 4px 12px rgba(230, 57, 70, 0.1),
+        inset 0 2px 4px rgba(0, 0, 0, 0.03);
+    transform: translateY(-1px);
 }
 
-/* 3. ENCASTRÉ EN NOIR STYLÉ (Informations Rapides) */
-.contact-info-container {
-    padding: 30px;
-    border-radius: 8px;
-    border-left: 5px solid var(--color-accent); 
-    /* TOUCHE SOMBRE : Conserver l'ombre marquée du bloc noir */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+.main-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
 
-    /* Fond Noir/Texte Clair */
-    background: #121212; 
-    color: #F8F8F8; 
+/* ========================================= */
+/* BOUTON ÉLÉGANT */
+/* ========================================= */
+
+.button.primary {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #c1121f 100%);
+    color: white;
+    padding: 16px 45px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    font-size: 1.05em;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 6px 20px rgba(230, 57, 70, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+}
+
+/* Effet de brillance */
+.button.primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.button.primary:hover::before {
+    left: 100%;
+}
+
+.button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 30px rgba(230, 57, 70, 0.4),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button.primary:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 15px rgba(230, 57, 70, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================= */
+/* CARTE D'INFORMATIONS RAFFINÉE */
+/* ========================================= */
+
+.contact-info-container {
+    padding: 40px 35px;
+    border-radius: 4px;
+    position: relative;
+    background: linear-gradient(135deg, #1e3a5f 0%, #152840 100%);
+    color: #ffffff;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Accent doré sur le côté */
+.contact-info-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--color-gold) 0%, var(--color-accent) 100%);
+}
+
+/* Motif décoratif */
+.contact-info-container::after {
+    content: '⚜';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3em;
+    color: rgba(212, 175, 55, 0.1);
+    pointer-events: none;
 }
 
 .contact-info-container h3 {
-    font-size: 1.2rem;
-    color: var(--color-accent); 
-    margin-bottom: 5px;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.contact-info-container h3:first-of-type {
+    margin-top: 0;
 }
 
 .contact-info-container p {
-    color: #E0E0E0; 
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    margin-bottom: 8px;
+    font-size: 1.05em;
 }
 
 .contact-info-container a {
-    color: var(--color-accent); 
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-
-/* Correction du clic sur le bouton */
-.button.primary {
-    z-index: 100; 
-    position: relative; 
+.contact-info-container a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold);
+    transition: width 0.3s ease;
 }
 
-/* Responsive pour mobile */
-@media (max-width: 768px) {
+.contact-info-container a:hover::after {
+    width: 100%;
+}
+
+.contact-info-container a:hover {
+    color: #ffffff;
+}
+
+/* Icônes optionnelles */
+.contact-info-container p strong {
+    color: var(--color-gold);
+    font-weight: 600;
+}
+
+/* ========================================= */
+/* RESPONSIVE ÉLÉGANT */
+/* ========================================= */
+
+@media (max-width: 968px) {
     .contact-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-section {
+        padding: 60px 4%;
+        margin: 40px 20px;
+    }
+    
+    .contact-header h1 {
+        font-size: 2.4rem;
+    }
+    
+    .form-group {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-header h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-form-container h2 {
+        font-size: 1.6rem;
+    }
+    
+    .contact-section {
+        padding: 40px 5%;
+    }
+    
+    .contact-info-container {
+        padding: 30px 25px;
+    }
+    
+    .button.primary {
+        width: 100%;
+        padding: 16px 30px;
     }
 }
