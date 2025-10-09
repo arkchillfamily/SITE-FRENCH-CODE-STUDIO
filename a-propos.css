@@ -19,13 +19,18 @@ body {
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    background: var(--color-background);
+    background-color: var(--color-background);
+    background-image: url('LOGO FCS.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--color-text-light);
     position: relative;
     overflow-x: hidden;
 }
 
-/* Image de fond French Code Studio */
+/* Voile sombre pour atténuer l'image */
 body::before {
     content: '';
     position: fixed;
@@ -33,11 +38,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(LOGO FCS.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.15;
+    background: var(--color-background);
+    opacity: 0.85;
     z-index: 0;
     pointer-events: none;
 }
