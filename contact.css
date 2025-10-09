@@ -1,4 +1,4 @@
-/* ========================================= */
+ /* ========================================= */
 /* CONTACT - ÉLÉGANCE FRANÇAISE & TECH */
 /* ========================================= */
 
@@ -422,6 +422,12 @@ header.main-header ul.nav-links li a:hover {
     width: 100%;
 }
 
+.contact-info-container a:hover,
+.contact-info-container a:focus {
+    color: var(--color-gold);
+    text-decoration: underline;
+}
+
 .contact-info-container a:hover {
     color: #ffffff;
 }
@@ -477,4 +483,9 @@ header.main-header ul.nav-links li a:hover {
         width: 100%;
         padding: 16px 30px;
     }
+}
+
+header.main-header ul.nav-links li a,
+.button.primary {
+    will-change: transform, box-shadow;
 }
