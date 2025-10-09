@@ -39,7 +39,7 @@ body::before {
     background-size: 500px; /* Taille appropriée pour un logo en filigrane (ajustez si besoin) */
     
     /* LE FILTRE : Rendre le logo estompé et monochrome */
-    opacity: 0.03; /* Très faible opacité pour qu'il soit subtil */
+    opacity: 0.1; /* Très faible opacité pour qu'il soit subtil */
     filter: grayscale(100%) brightness(150%); /* Le rend gris et très pâle */
     
     z-index: -1; /* Assure que le logo est derrière tout le contenu */
@@ -50,7 +50,7 @@ body::before {
     max-width: 1000px;
     margin: 60px auto;
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.95); /* Un blanc presque opaque pour laisser entrevoir le fond */
+    background-color: rgba(255, 255, 255, 0.85); /* Un blanc presque opaque pour laisser entrevoir le fond */
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
