@@ -107,8 +107,9 @@ hr {
 .image-col { flex: 0 0 40%; max-width: 40%; }
 .text-col { flex: 1; }
 .section-image {
-    width: 100%;
+    max-width: 100%;
     height: auto;
+    object-fit: cover;
     display: block;
     border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -199,6 +200,25 @@ ul li::before {
     transform: translateY(-2px);
 }
 
+/* ÉTAT FOCUS POUR ACCESSIBILITÉ */
+a:focus, button:focus, .cta a:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.15);
+}
+
+/* ANIMATIONS DES SECTIONS, BOÎTES ET CTA */
+.section, .highlight-box, .cta {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    will-change: opacity, transform;
+}
+.section.visible, .highlight-box.visible, .cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* MEDIA QUERIES (Pour les mobiles et tablettes) */
 @media (max-width: 768px) {
     .content-row { flex-direction: column; }
@@ -208,4 +228,38 @@ ul li::before {
     h1 { font-size: 2em; }
     h2 { font-size: 1.5em; }
     body::before { background-size: 80%; } /* Réduire la taille du logo en fond sur mobile */
+}
+@media (max-width: 480px) {
+    .container { padding: 10px; }
+    .section { padding: 12px; }
+    .cta { padding: 20px; }
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    .highlight-box { padding: 12px; }
+}
+
+/* THÈME SOMBRE (HIVER) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #181a1b;
+        --color-light-bg: #23272b;
+        --color-primary: #f1f1f1;
+        --color-separator: #2c2f34;
+    }
+    body, .container, .section, .highlight-box, .cta {
+        background-color: var(--color-background);
+        color: var(--color-primary);
+    }
+    .container, .section, .highlight-box, .cta {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .section { background-color: var(--color-light-bg); }
+    .highlight-box { background-color: #2c2f34; }
+}
+a, .cta a {
+    transition: color 0.2s, background 0.2s;
+}
+a:hover, .cta a:hover {
+    color: var(--color-french-accent);
+    text-decoration: underline;
 }
