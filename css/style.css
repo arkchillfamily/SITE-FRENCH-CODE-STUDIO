@@ -1,1 +1,494 @@
+/* Importation de la police Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&family=Inter:wght@300;400;600&display=swap');
+/* IMPORTANT : Font Awesome doit être inclus dans le HTML */
+
+/* ========================================= */
+/* 1. VARIABLES ET RESET */
+/* ========================================= */
+
+:root {
+    --color-primary: #1A1A1A;
+    --color-background: #F8F8F8;
+    --color-accent: #00FFC0; 
+    --color-secondary: #555555;
+    --font-heading: 'Poppins', sans-serif; 
+    --font-body: 'Inter', sans-serif; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-primary);
+    line-height: 1.7; 
+    /* Empêche le décalage horizontal (maintient le site calé à l'écran) */
+    overflow-x: hidden; 
+    background: linear-gradient(to bottom, 
+        rgba(0, 255, 192, 0.05),
+        rgba(255, 255, 255, 0) 50%
+    ), var(--color-background);
+}
+
+/* Logo de fond fixe */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('LOGO FCS.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%; 
+    filter: grayscale(80%) blur(0.5px) sepia(20%); 
+    opacity: 0.04;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ========================================= */
+/* 2. TYPOGRAPHIE */
+/* ========================================= */
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* ========================================= */
+/* 3. HEADER - NAVIGATION */
+/* ========================================= */
+
+header.main-header {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 8px 5%; 
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.main-header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 6px 16px;
+    border-radius: 4px;
+    background: var(--color-accent); 
+}
+
+.nav-links a.cta-nav {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* Liens réseaux sociaux */
+.social-nav {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin-right: 20px; 
+}
+
+.social-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.1rem; 
+    transition: all 0.3s ease;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    box-shadow: 0 2px 10px rgba(0, 255, 192, 0.2);
+}
+
+/* ========================================= */
+/* 4. SECTION HERO */
+/* ========================================= */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px; 
+    background-image: url('LOGO FCS.jpg'); 
+    background-size: 60%; 
+    background-position: center 100px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding: 80px 20px 60px 20px; 
+}
+
+/* BLOC CTA DÉPLACÉ (Harmonisation Mint) */
+.intro-message-container-deplace {
+    max-width: 900px;
+    text-align: center;
+    padding: 60px 5%;
+    background: linear-gradient(to right, var(--color-accent) 0%, #00e6ad 100%); 
+    color: var(--color-primary); 
+    margin: 40px auto; 
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 255, 192, 0.4);
+}
+
+.introduction-text-deplace {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* ========================================= */
+/* 5. BOUTONS */
+/* ========================================= */
+
+.button {
+    display: inline-block;
+    padding: 18px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.button.primary {
+    /* Style Noir + Texte Menthe */
+    background-color: var(--color-primary); 
+    color: var(--color-accent); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    background-color: #333333;
+}
+
+.button.primary.large {
+    padding: 22px 50px;
+    font-size: 1.2rem;
+}
+
+/* ========================================= */
+/* 6. SECTIONS GÉNÉRALES */
+/* ========================================= */
+
+section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NOUVEAUX STYLES POUR VOTRE SECTION D'IMAGE */
+.image-separator-section {
+    text-align: center;
+    padding: 60px 5%; 
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Style pour le texte d'explication */
+.image-separator-section .subtitle-text {
+    margin-bottom: 40px;
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+}
+
+/* Conteneur qui remplace le placeholder gris */
+.image-placeholder {
+    width: 100%;
+    height: auto; 
+    min-height: 250px; 
+    /* Nous réutilisons les styles du placeholder mais l'image le remplacera */
+    background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%); 
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* STYLE POUR L'IMAGE RÉELLE À L'INTÉRIEUR DU PLACEHOLDER */
+.image-placeholder .project-image {
+    display: block;
+    width: 100%;
+    height: auto; 
+    border-radius: 6px;
+}
+
+/* ========================================= */
+/* 7. SECTION VALUES (Fondations) */
+/* ========================================= */
+
+.values-section {
+    background: white;
+    border-radius: 12px;
+    margin: 60px auto;
+    padding: 80px 5%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.values-section h2 { /* STYLE DU TITRE H2 DANS CETTE SECTION */
+    margin-bottom: 60px;
+    color: var(--color-primary); 
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+.value-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.value-points article {
+    padding: 30px;
+    border-left: 4px solid var(--color-accent);
+    background: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ========================================= */
+/* 8. SECTION PROCESS (Services) */
+/* ========================================= */
+
+.process-section {
+    padding: 80px 5%;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.process-steps article:nth-child(4) {
+    grid-column: 2;
+}
+
+.process-steps article {
+    padding: 35px;
+    background: white;
+    border-radius: 8px;
+    border-top: 4px solid var(--color-accent); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* ========================================= */
+/* 9. SECTION FINAL CTA */
+/* ========================================= */
+
+.final-cta {
+    text-align: center;
+    padding: 100px 5%;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2d2d2d 100%);
+    color: white;
+    margin: 80px auto;
+    border-radius: 12px;
+    max-width: 1200px;
+}
+
+/* ========================================= */
+/* 10. FOOTER (Réduit) */
+/* ========================================= */
+
+footer {
+    background: var(--color-primary);
+    color: var(--color-background);
+    padding: 20px 5%; 
+    margin-top: 0;
+}
+
+.legal {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.legal p {
+    margin-bottom: 10px;
+    font-size: 0.85rem; 
+}
+
+.legal a {
+    color: var(--color-background);
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.8rem; 
+}
+
+/* ========================================= */
+/* 11. RESPONSIVE (Styles pour mobile) */
+/* ========================================= */
+
+@media (max-width: 1024px) {
+    /* HEADER : Empilage pour tablette */
+    header.main-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    header.main-header nav {
+        flex-grow: initial;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .social-nav {
+        margin-right: 0;
+        order: 3; 
+    }
+    
+    .hero-section {
+        min-height: 400px; 
+    }
+}
+
+@media (max-width: 768px) {
+    
+    /* HEADER (Ajustement Esthétique Mobile) */
+    header.main-header {
+        padding: 10px 5%; /* PADDING HORIZONTAL RAISONNABLE */
+        gap: 10px; 
+    }
+
+    /* NAVIGATION (Rendu plus lisible et cliquable) */
+    .nav-links {
+        gap: 10px; /* Espace minimal entre les boutons */
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem; /* Taille de police plus lisible */
+        padding: 6px 14px;
+    }
+    
+    .social-nav {
+        margin-top: 5px;
+    }
+
+    .social-nav a {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-section {
+        min-height: 300px; /* Réduction de la hauteur pour les petits écrans */
+        padding: 40px 20px;
+    }
+
+    /* CTA MESSAGE */
+    .intro-message-container-deplace {
+        padding: 30px 5%;
+        margin: 30px 0;
+    }
+
+    .introduction-text-deplace {
+        font-size: 1.2rem; /* Taille de police plus grande et lisible */
+    }
+    
+    section {
+        padding: 40px 5%; /* Padding vertical réduit pour les sections */
+    }
+    
+    .value-points {
+        /* Les fondations s'empilent */
+        grid-template-columns: 1fr;
+    }
+    
+    .process-steps {
+        /* Correction de l'alignement: les étapes s'empilent */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    
+    .process-steps article:nth-child(4) {
+        /* Le 4e élément revient sur la première colonne */
+        grid-column: 1; 
+    }
+    
+    .final-cta {
+        padding: 60px 5%;
+    }
+    
+    .button.primary.large {
+        padding: 18px 35px;
+        font-size: 1.1rem;
+    }
+    
+    .image-placeholder {
+        height: 200px;
+    }
+
+    /* FOOTER : Empilement des liens légaux */
+    .legal a {
+        display: block; 
+        margin: 5px 0;
+    }
+}
 
