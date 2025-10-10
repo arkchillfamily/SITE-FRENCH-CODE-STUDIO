@@ -272,7 +272,7 @@ main {
 }
 
 /* =============================== */
-/* IMAGE SECTION - Entre processus et pricing */
+/* IMAGE SECTION - Taille réduite */
 /* =============================== */
 
 .section-image-divider {
@@ -282,12 +282,20 @@ main {
 }
 
 .section-image-divider img {
-    max-width: 100%;
+    max-width: 600px;
+    width: 100%;
     height: auto;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
     display: block;
     margin: 0 auto;
+}
+
+/* Sur tablette, réduire encore */
+@media (max-width: 1024px) {
+    .section-image-divider img {
+        max-width: 500px;
+    }
 }
 
 /* Sur mobile, réduire l'image */
@@ -297,6 +305,7 @@ main {
     }
     
     .section-image-divider img {
+        max-width: 100%;
         border-radius: var(--radius-lg);
     }
 }
