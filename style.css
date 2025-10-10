@@ -41,7 +41,6 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* Rétablissement des styles du logo de fond */
     background-image: url('LOGO FCS.jpg'); 
     background-repeat: no-repeat;
     background-position: center center;
@@ -157,7 +156,6 @@ header.main-header nav {
     position: relative;
     width: 100%;
     min-height: 600px; 
-    /* Rétablissement du logo dans la section HERO */
     background-image: url('LOGO FCS.jpg'); 
     background-size: 60%; 
     background-position: center 100px;
@@ -252,11 +250,27 @@ section {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+.values-section h2 { /* STYLE DU TITRE H2 DANS CETTE SECTION */
+    margin-bottom: 60px;
+    color: var(--color-primary); 
+    font-family: var(--font-heading);
+    font-weight: 900;
+    /* Hérite de la taille et du centrage du h2 global */
+}
+
 .value-points {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     margin-bottom: 50px;
+}
+
+.value-points article {
+    padding: 30px;
+    border-left: 4px solid var(--color-accent);
+    background: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* ========================================= */
