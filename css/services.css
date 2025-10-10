@@ -1,13 +1,13 @@
 /* =============================== */
-/* NOUVEAU CSS - STYLE PRO, ZEN & STYLÉ (COMPLET ET AUTONOME) */
-/* Ce fichier gère l'intégralité du style de la page Services. */
+/* CSS FINAL ET AUTONOME POUR services.html */
+/* Style : Pro, Zen, Stylé */
 /* =============================== */
 
 /* Définition des variables */
 :root {
-    --color-primary: #007bff; /* Bleu professionnel pour les accents */
+    --color-primary: #007bff; /* Bleu professionnel */
     --color-secondary: #6c757d; /* Gris pour textes secondaires */
-    --color-background: #f0f7ff; /* Fond très léger pour l'effet Zen */
+    --color-background: #f0f7ff; /* Fond très léger, base du dégradé */
     --color-dark: #212529; /* Texte principal */
     --color-light-shadow: rgba(0, 0, 0, 0.08); 
     --color-header-bg: #fff; /* Fond du header */
@@ -28,9 +28,13 @@ body {
     font-family: var(--font-body);
     color: var(--color-dark);
     line-height: 1.6;
-    background-color: var(--color-background);
-    background-image: radial-gradient(#d3e3f0 0.5px, transparent 0.5px); /* Couleur très pâle */
-    background-size: 20px 20px; /* Taille des carrés du motif */
+    
+    /* MODIF : FOND AVEC DÉGRADÉ GÉOMÉTRIQUE DOUX (ZEN) */
+    background: radial-gradient(circle at top left, #ffffff, transparent),
+                radial-gradient(circle at bottom right, var(--color-background), transparent),
+                var(--color-header-bg);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
 }
 
 h1, h2, h3 {
@@ -40,8 +44,6 @@ h1, h2, h3 {
     margin-bottom: 0.5em;
 }
 
-/* Style de titres affiné */
-h1 { font-size: 2.8rem; } 
 h2 { font-size: 2.2rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 15px; }
 
 a {
@@ -73,7 +75,7 @@ a:hover {
 }
 
 /* =============================== */
-/* 2. SECTION BANNIÈRE (HERO) - Style Joli et Zen */
+/* 2. SECTION BANNIÈRE (HERO) - Style Joli et Stylé */
 /* =============================== */
 
 main {
@@ -83,7 +85,6 @@ main {
 .hero-services {
     text-align: center;
     padding: 100px 5% 150px; 
-    /* Gradient de fond subtil pour l'effet "Zen" */
     background: linear-gradient(180deg, #ffffff 0%, var(--color-background) 100%); 
     margin-bottom: 40px;
     position: relative;
@@ -115,7 +116,6 @@ main {
 }
 
 .hero-services p {
-    /* Style de la phrase d'accroche */
     font-size: 1.3rem;
     color: var(--color-secondary);
     margin-top: 15px;
@@ -129,7 +129,7 @@ main {
 /* 3. PROCESSUS DE FONCTIONNEMENT */
 /* =============================== */
 
-.section-how-it-works, .section-pricing {
+.section-how-it-works, .section-pricing, .section-testimonials, .section-final-cta {
     padding: 40px 5%;
     max-width: 1200px;
     margin: 0 auto;
@@ -187,7 +187,6 @@ main {
     max-width: 350px;
     text-align: center;
     border: 1px solid transparent; 
-    /* Transition pour l'effet de mouvement */
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease-out; 
 }
 
@@ -198,18 +197,12 @@ main {
     border-color: var(--color-primary);
 }
 
-/* Pack Full Performance - Style Zen sans contour bleu vif */
+/* MODIF : Pack Full Performance - Style Zen sans contour bleu vif */
 .pack.full.featured {
     background: #fff; 
-    border: 1px solid #e9ecef; /* Bordure très claire */
+    border: 1px solid #e9ecef; 
     /* Lueur subtile à la place du contour épais */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(0, 123, 255, 0.1); 
-}
-
-.pack h3 {
-    font-size: 1.8rem;
-    color: var(--color-dark);
-    margin-bottom: 5px;
 }
 
 .pack .price {
@@ -231,7 +224,6 @@ main {
     border-bottom: 1px dashed #e9ecef;
 }
 
-/* Boutons d'appel à l'action (CTA) */
 .cta-button {
     display: block;
     padding: 12px 25px;
@@ -256,10 +248,10 @@ main {
     padding: 60px 5%;
     max-width: none; 
     margin: 40px 0; 
-    background: var(--color-primary); /* Fond en couleur principale */
+    background: var(--color-primary); 
     color: white; 
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Ombre pour le détacher comme un onglet */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); 
 }
 
 .section-client-management h2 {
@@ -281,7 +273,6 @@ main {
     min-width: 300px;
     max-width: 450px;
     padding: 30px;
-    /* Styles pour rester visible sur fond bleu */
     background: rgba(255, 255, 255, 0.1); 
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--border-radius-base);
@@ -305,12 +296,6 @@ main {
     text-align: center;
 }
 
-.price-note {
-    font-weight: bold;
-    margin-top: 15px;
-    color: white;
-}
-
 /* =============================== */
 /* 6. PIED DE PAGE (FOOTER) */
 /* =============================== */
@@ -329,7 +314,7 @@ main {
 /* =============================== */
 @media (max-width: 900px) {
     .main-header {
-        justify-content: center; /* Centrer le logo sur les petits écrans */
+        justify-content: center; 
     }
 }
 
