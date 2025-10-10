@@ -148,7 +148,8 @@ header.main-header nav {
     color: white;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 1.2rem;
+    /* MODIF : Assurez-vous que l'icône est de la bonne taille */
+    font-size: 1.2rem; 
     transition: all 0.3s ease;
 }
 
@@ -172,36 +173,41 @@ header.main-header nav {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    /* MODIF : Aligne les éléments en haut */
+    justify-content: flex-start; 
     align-items: center;
-    padding: 80px 20px 60px 20px;
+    /* MODIF : Pousse le contenu vers le bas (sous le logo) */
+    padding: 350px 20px 60px 20px; 
 }
 
-/* Overlay sombre pour améliorer la lisibilité - seulement sur la partie basse */
+/* Overlay sombre pour améliorer la lisibilité */
 .hero-section::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 0; 
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* Ajustement du dégradé pour être moins couvrant */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
     z-index: 1;
 }
 
-/* Conteneur pour pousser le texte en bas */
+/* Conteneur de contenu */
 .hero-section > * {
     position: relative;
     z-index: 2;
+    margin-top: 50px; /* Ajout d'une marge pour ajustement visuel */
 }
 
 .intro-message-container {
     max-width: 900px;
     text-align: center;
     padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.3);
+    /* MODIF : Arrière-plan plus opaque pour la lisibilité */
+    background: rgba(0, 0, 0, 0.7); 
     border-radius: 12px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
 }
 
 .introduction-text {
@@ -500,14 +506,20 @@ footer {
     
     .nav-links {
         flex-wrap: wrap;
-        /* MODIFICATION : Place les liens de navigation en bas (ordre 3) */
+        /* MODIF 1 : Place les liens de navigation en bas */
         order: 3; 
     }
 
-    /* Ajouté pour s'assurer que les liens sociaux sont après le logo mais avant les nav-links */
     .social-nav {
+        /* MODIF 1 : Place les liens sociaux après le logo/titre et avant les nav-links */
         order: 2;
-        margin-top: 10px; /* Conserve la marge de l'ancienne règle pour les mobiles */
+        margin-top: 10px; 
+    }
+    
+    /* Ajustement de la section hero pour les tablettes */
+    .hero-section {
+        /* On réduit le padding pour ne pas pousser le texte trop loin */
+        padding-top: 250px; 
     }
 }
 
@@ -523,7 +535,6 @@ footer {
         padding: 6px 14px;
     }
     
-    /* La marge a été déplacée dans le 1024px, mais on la laisse ici aussi au cas où l'ordre des media queries change */
     .social-nav {
         margin-top: 10px;
     }
@@ -531,6 +542,8 @@ footer {
     .hero-section {
         min-height: 500px;
         padding: 60px 20px;
+        /* Ajustement du padding pour petit écran afin de garder le texte visible */
+        padding-top: 200px; 
     }
     
     .introduction-text {
