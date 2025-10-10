@@ -29,12 +29,12 @@ body {
     color: var(--color-dark);
     line-height: 1.6;
     
-    /* MODIF : FOND AVEC DÉGRADÉ GÉOMÉTRIQUE DOUX (ZEN) */
+    /* MODIF : FOND AVEC DÉGRADÉ GÉOMÉTRIQUE DOUX (Pour éviter l'effet "trop blanc") */
     background: radial-gradient(circle at top left, #ffffff, transparent),
                 radial-gradient(circle at bottom right, var(--color-background), transparent),
                 var(--color-header-bg);
     background-blend-mode: multiply;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Reste fixe en scrollant */
 }
 
 h1, h2, h3 {
@@ -57,12 +57,12 @@ a:hover {
 }
 
 /* =============================== */
-/* 1. EN-TÊTE (Header) - Design épuré sans navigation */
+/* 1. EN-TÊTE (Header) - Style pour un header sans navigation */
 /* =============================== */
 
 .main-header {
     display: flex;
-    justify-content: flex-start; /* Logo aligné à gauche */
+    justify-content: flex-start; 
     align-items: center;
     padding: 15px 5%;
     background-color: var(--color-header-bg);
@@ -75,7 +75,7 @@ a:hover {
 }
 
 /* =============================== */
-/* 2. SECTION BANNIÈRE (HERO) - Style Joli et Stylé */
+/* 2. SECTION BANNIÈRE (HERO) - Style Joli et Stylé (Phrase d'accroche) */
 /* =============================== */
 
 main {
@@ -161,7 +161,7 @@ main {
 }
 
 /* =============================== */
-/* 4. TABLEAU DES PRIX (PACKS) AVEC MOUVEMENT */
+/* 4. TABLEAU DES PRIX (PACKS) AVEC EFFET DE MOUVEMENT */
 /* =============================== */
 
 .section-pricing {
@@ -187,6 +187,7 @@ main {
     max-width: 350px;
     text-align: center;
     border: 1px solid transparent; 
+    /* Transition pour l'effet de mouvement */
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease-out; 
 }
 
@@ -241,14 +242,14 @@ main {
 
 
 /* =============================== */
-/* 5. GESTION ET SUIVI CLIENTS - L'ONGLET STYLÉ */
+/* 5. GESTION ET SUIVI CLIENTS - L'ONGLET STYLÉ PLEINE LARGEUR */
 /* =============================== */
 
 .section-client-management {
     padding: 60px 5%;
     max-width: none; 
     margin: 40px 0; 
-    background: var(--color-primary); 
+    background: var(--color-primary); /* Fond en couleur principale */
     color: white; 
     text-align: center;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); 
