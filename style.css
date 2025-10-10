@@ -160,13 +160,14 @@ header.main-header nav {
 }
 
 /* ========================================= */
-/* 4. SECTION HERO (CORRECTION : Le bloc est forcé sous le logo) */
+/* 4. SECTION HERO (Nettoyage après déplacement du contenu) */
 /* ========================================= */
 
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 800px;
+    /* Réduction de la hauteur car le contenu a été déplacé */
+    min-height: 600px; 
     background-image: url('LOGO FCS.jpg'); 
     background-size: 60%; 
     background-position: center 100px;
@@ -174,58 +175,53 @@ header.main-header nav {
     display: flex;
     flex-direction: column;
     
-    justify-content: flex-start; 
+    justify-content: center; 
     align-items: center;
-    /* CORRECTION FINALE : Augmentation à 450px pour dégager complètement le logo */
-    padding: 450px 20px 60px 20px; 
+    /* Retour à un padding normal */
+    padding: 80px 20px 60px 20px; 
 }
 
-/* Overlay sombre pour améliorer la lisibilité */
+/* Suppression de l'overlay car le texte n'est plus là */
 .hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* Dégradé léger */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
-    z-index: 1;
+    content: none;
 }
 
-/* Conteneur de contenu */
+/* Suppression des styles de positionnement inutiles */
 .hero-section > * {
-    position: relative;
-    z-index: 2;
-    /* Suppression de tout margin-top pour un positionnement exact */
-    margin-top: 0; 
-}
-
-.intro-message-container {
-    max-width: 900px;
-    text-align: center;
-    padding: 40px 20px;
-    /* Fond semi-transparent pour la lisibilité */
-    background: rgba(0, 0, 0, 0.7); 
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-}
-
-.introduction-text {
-    font-size: 1.3rem;
-    line-height: 1.75;
-    color: white;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-.introduction-text strong {
-    color: var(--color-accent);
-    font-weight: 700;
+    content: none;
 }
 
 /* ========================================= */
-/* 5. BOUTONS */
+/* NOUVEAU : STYLES POUR LE BLOC CTA DÉPLACÉ */
+/* ========================================= */
+
+.intro-message-container-deplace {
+    max-width: 900px;
+    text-align: center;
+    padding: 60px 5%;
+    /* Style pour un CTA classique entre deux sections */
+    background: linear-gradient(to right, var(--color-accent) 0%, #00e6ad 100%); 
+    color: var(--color-primary);
+    margin: 40px auto; 
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 255, 192, 0.4);
+}
+
+.introduction-text-deplace {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.introduction-text-deplace strong {
+    color: var(--color-primary);
+    font-weight: 900;
+}
+
+/* ========================================= */
+/* 5. BOUTONS (Ajustement pour contraster sur le nouveau fond CTA) */
 /* ========================================= */
 
 .button {
@@ -241,15 +237,16 @@ header.main-header nav {
 }
 
 .button.primary {
-    background-color: var(--color-accent);
-    color: var(--color-primary); 
-    box-shadow: 0 4px 20px rgba(0, 255, 192, 0.4);
+    /* Changement de couleur pour contraster sur le fond ACCENT du bloc CTA déplacé */
+    background-color: var(--color-primary); 
+    color: var(--color-accent); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .button.primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(0, 255, 192, 0.6);
-    background-color: #00e6ad;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    background-color: #333333;
 }
 
 .button.primary.large {
@@ -520,8 +517,12 @@ footer {
     
     /* Ajustement de la section hero pour les tablettes */
     .hero-section {
-        /* Ajustement du padding pour petit écran */
-        padding-top: 250px; 
+        min-height: 400px; 
+    }
+    
+    .intro-message-container-deplace {
+        padding: 40px 5%;
+        margin: 20px auto; 
     }
 }
 
@@ -542,14 +543,12 @@ footer {
     }
     
     .hero-section {
-        min-height: 500px;
+        min-height: 350px;
         padding: 60px 20px;
-        /* Ajustement du padding pour petit écran afin de garder le texte visible */
-        padding-top: 200px; 
     }
     
-    .introduction-text {
-        font-size: 1.1rem;
+    .introduction-text-deplace {
+        font-size: 1.2rem;
     }
     
     section {
@@ -606,7 +605,7 @@ footer {
         font-size: 1.8rem;
     }
     
-    .introduction-text {
+    .introduction-text-deplace {
         font-size: 1rem;
     }
     
