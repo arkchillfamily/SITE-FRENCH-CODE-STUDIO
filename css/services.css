@@ -1,18 +1,19 @@
 /* =============================== */
-/* NOUVEAU CSS - STYLE PRO, ZEN & STYLÉ */
+/* NOUVEAU CSS - STYLE PRO, ZEN & STYLÉ (COMPLET ET AUTONOME) */
+/* Ce fichier gère l'intégralité du style de la page Services. */
 /* =============================== */
 
 /* Définition des variables */
 :root {
-    --color-primary: #007bff; 
-    --color-secondary: #6c757d; 
-    --color-background: #f0f7ff; /* Changement : Fond très léger pour l'effet Zen */
-    --color-dark: #212529; 
+    --color-primary: #007bff; /* Bleu professionnel pour les accents */
+    --color-secondary: #6c757d; /* Gris pour textes secondaires */
+    --color-background: #f0f7ff; /* Fond très léger pour l'effet Zen */
+    --color-dark: #212529; /* Texte principal */
     --color-light-shadow: rgba(0, 0, 0, 0.08); 
-    --color-header-bg: #fff; 
+    --color-header-bg: #fff; /* Fond du header */
     --font-heading: 'Poppins', sans-serif; 
     --font-body: 'Roboto', sans-serif; 
-    --border-radius-base: 10px; /* Bordures légèrement plus arrondies */
+    --border-radius-base: 10px; 
     --logo-height: 50px; 
 }
 
@@ -37,7 +38,8 @@ h1, h2, h3 {
     margin-bottom: 0.5em;
 }
 
-h1 { font-size: 2.8rem; } /* Titre plus impactant */
+/* Style de titres affiné */
+h1 { font-size: 2.8rem; } 
 h2 { font-size: 2.2rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 15px; }
 
 a {
@@ -46,8 +48,12 @@ a {
     transition: color 0.3s;
 }
 
+a:hover {
+    color: #0056b3;
+}
+
 /* =============================== */
-/* 1. EN-TÊTE (Header) - Après suppression de la NAV */
+/* 1. EN-TÊTE (Header) - Design épuré sans navigation */
 /* =============================== */
 
 .main-header {
@@ -60,17 +66,21 @@ a {
 }
 
 .site-logo {
-    height: var(--logo-height);
+    height: var(--logo-height); 
     width: auto;
 }
 
 /* =============================== */
-/* 2. SECTION BANNIÈRE (HERO) + TRUC STYLÉ */
+/* 2. SECTION BANNIÈRE (HERO) - Style Joli et Zen */
 /* =============================== */
+
+main {
+    padding-top: 0; 
+}
 
 .hero-services {
     text-align: center;
-    padding: 100px 5% 150px; /* Plus d'espace en bas pour le design */
+    padding: 100px 5% 150px; 
     /* Gradient de fond subtil pour l'effet "Zen" */
     background: linear-gradient(180deg, #ffffff 0%, var(--color-background) 100%); 
     margin-bottom: 40px;
@@ -86,22 +96,38 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.05; /* Très transparent pour le côté Zen */
+    opacity: 0.05; 
     background-image: radial-gradient(var(--color-secondary) 1px, transparent 0);
     background-size: 30px 30px;
     z-index: 0;
 }
 
-.hero-services h1, .hero-services p {
-    position: relative; /* S'assurer que le contenu est au-dessus du pattern */
-    z-index: 1;
+.hero-services h1 {
+    /* Style du titre plus grand et impactant */
+    font-size: 3.5rem; 
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--color-dark);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05); 
+    position: relative; z-index: 1;
+}
+
+.hero-services p {
+    /* Style de la phrase d'accroche */
+    font-size: 1.3rem;
+    color: var(--color-secondary);
+    margin-top: 15px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; z-index: 1;
 }
 
 /* =============================== */
-/* 3. PROCESSUS ET FORMULES */
+/* 3. PROCESSUS DE FONCTIONNEMENT */
 /* =============================== */
 
-.section-how-it-works, .section-pricing, .section-client-management {
+.section-how-it-works, .section-pricing {
     padding: 40px 5%;
     max-width: 1200px;
     margin: 0 auto;
@@ -137,7 +163,7 @@ a {
 /* =============================== */
 
 .section-pricing {
-    background-color: #fff; /* Revenir au blanc pour la zone des packs */
+    background-color: #fff; 
     text-align: center;
 }
 
@@ -150,50 +176,170 @@ a {
 }
 
 .pack {
-    background: var(--color-background); /* Utiliser le fond clair du body pour les packs */
+    background: var(--color-background); 
     padding: 35px;
     border-radius: var(--border-radius-base);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); /* Ombre très subtile */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); 
     flex: 1;
     min-width: 280px;
     max-width: 350px;
     text-align: center;
-    border: 1px solid transparent; /* Bordure par défaut transparente */
+    border: 1px solid transparent; 
+    /* Transition pour l'effet de mouvement */
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease-out; 
 }
 
-/* EFFET DE MOUVEMENT AU SURVOL (pour tous les packs) */
+/* EFFET DE MOUVEMENT AU SURVOL */
 .pack:hover {
-    transform: translateY(-15px) scale(1.02); /* Monte et grossit légèrement */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Ombre beaucoup plus marquée */
+    transform: translateY(-15px) scale(1.02); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); 
     border-color: var(--color-primary);
 }
 
-/* Mise en évidence du Pack Full (Feuille de route Zen/Stylé) */
+/* Pack Full Performance - Style Zen sans contour bleu vif */
 .pack.full.featured {
-    background: #fff; /* Le "featured" reste blanc pour contraster */
-    border: 3px solid var(--color-primary);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    background: #fff; 
+    border: 1px solid #e9ecef; /* Bordure très claire */
+    /* Lueur subtile à la place du contour épais */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(0, 123, 255, 0.1); 
 }
 
-/* Le reste du CSS (CTA, Gestion Clients, Footer) reste inchangé pour l'efficacité. */
+.pack h3 {
+    font-size: 1.8rem;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.pack .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+}
+
+.pack ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pack ul li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e9ecef;
+}
+
+/* Boutons d'appel à l'action (CTA) */
+.cta-button {
+    display: block;
+    padding: 12px 25px;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
 
 /* =============================== */
-/* 5. MEDIA QUERIES (Adaptation mobile) */
-/* (Inchangées pour la compatibilité) */
+/* 5. GESTION ET SUIVI CLIENTS - L'ONGLET STYLÉ */
+/* =============================== */
+
+.section-client-management {
+    padding: 60px 5%;
+    max-width: none; 
+    margin: 40px 0; 
+    background: var(--color-primary); /* Fond en couleur principale */
+    color: white; 
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Ombre pour le détacher comme un onglet */
+}
+
+.section-client-management h2 {
+    color: white; 
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); 
+    margin-bottom: 30px;
+}
+
+.management-options {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.management-options article {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    padding: 30px;
+    /* Styles pour rester visible sur fond bleu */
+    background: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius-base);
+    color: white;
+}
+
+.management-options h3 {
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.management-options ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-left: 0;
+}
+
+.management-options ul li {
+    padding: 5px 0;
+    text-align: center;
+}
+
+.price-note {
+    font-weight: bold;
+    margin-top: 15px;
+    color: white;
+}
+
+/* =============================== */
+/* 6. PIED DE PAGE (FOOTER) */
+/* =============================== */
+
+.site-footer {
+    text-align: center;
+    padding: 30px 5%;
+    background-color: var(--color-dark);
+    color: #fff;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* =============================== */
+/* 7. MEDIA QUERIES (Adaptation mobile) */
 /* =============================== */
 @media (max-width: 900px) {
     .main-header {
-        flex-direction: column; 
-        text-align: center;
-        gap: 15px;
+        justify-content: center; /* Centrer le logo sur les petits écrans */
     }
 }
+
 @media (max-width: 768px) {
+    .hero-services h1 {
+        font-size: 2.5rem;
+    }
     .pricing-table, .management-options, .process-steps {
         flex-direction: column;
         align-items: center;
     }
+    
     .pack, .management-options article, .process-steps .step {
         width: 100%;
         max-width: 400px;
