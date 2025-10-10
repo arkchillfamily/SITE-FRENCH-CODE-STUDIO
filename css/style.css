@@ -154,6 +154,11 @@ header.main-header nav {
 /* BOUTON RETOUR - PLUS GROS ET PROPRE */
 /* ========================================= */
 
+/* Masqué sur la page d'accueil */
+body.home .back-button-fixed {
+    display: none;
+}
+
 .back-button-fixed {
     position: fixed; 
     top: 30px;
