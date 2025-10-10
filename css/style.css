@@ -156,7 +156,7 @@ header.main-header nav {
     position: relative;
     width: 100%;
     min-height: 600px; 
-    background-image: url('LOGO FCS.jpg'); 
+    background-image: url('../image/LOGO FCS.jpg'); 
     background-size: 60%; 
     background-position: center 100px;
     background-repeat: no-repeat;
