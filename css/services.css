@@ -1,56 +1,32 @@
 /* =============================== */
-/* 1. STYLES GÉNÉRAUX & TYPOGRAPHIE */
-/* (Adaptez les polices et couleurs à votre thème global) */
+/* STYLES SPÉCIFIQUES À LA PAGE SERVICES */
+/* Ces styles écrasent ou complètent ceux de style.css */
 /* =============================== */
 
+/* Définition des variables si elles ne sont pas dans style.css */
 :root {
-    /* Couleurs principales (à adapter à votre logo) */
     --color-primary: #007bff; /* Bleu vif pour CTA et accents */
     --color-secondary: #6c757d; /* Gris pour textes secondaires */
     --color-background: #f8f9fa; /* Fond très clair */
     --color-dark: #212529; /* Texte principal */
     --color-light-shadow: rgba(0, 0, 0, 0.08); 
-
-    /* Polices modernes */
-    --font-heading: 'Poppins', sans-serif; /* Police moderne sans sérif pour les titres */
-    --font-body: 'Roboto', sans-serif; /* Police lisible pour le corps */
-
     --border-radius-base: 8px;
 }
 
-body {
-    font-family: var(--font-body);
-    color: var(--color-dark);
-    line-height: 1.6;
-    background-color: var(--color-background);
-}
-
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 0.5em;
-}
-
-h1 {
-    font-size: 2.5rem; /* Grande taille pour la section hero */
-    color: var(--color-dark);
-}
-
 /* =============================== */
-/* 2. MISE EN PAGE : SECTION HERO */
+/* 1. SECTION HERO */
 /* =============================== */
 
 .hero-services {
     text-align: center;
     padding: 80px 5%;
-    background-color: #fff; /* Fond blanc pour faire ressortir */
-    border-bottom: 1px solid #dee2e6; /* Ligne de séparation subtile */
+    background-color: #fff; 
+    border-bottom: 1px solid #dee2e6;
     margin-bottom: 40px;
 }
 
 /* =============================== */
-/* 3. PROCESSUS DE FONCTIONNEMENT */
+/* 2. PROCESSUS DE FONCTIONNEMENT */
 /* =============================== */
 
 .section-how-it-works {
@@ -68,12 +44,12 @@ h1 {
     background: #fff;
     padding: 30px;
     border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 12px var(--color-light-shadow); /* Ombre légère pour la profondeur */
+    box-shadow: 0 4px 12px var(--color-light-shadow);
     transition: transform 0.3s ease;
 }
 
 .process-steps .step:hover {
-    transform: translateY(-5px); /* Léger soulèvement au survol pour l'interactivité */
+    transform: translateY(-5px);
 }
 
 .process-steps h3 {
@@ -91,19 +67,19 @@ h1 {
 }
 
 /* =============================== */
-/* 4. TABLEAU DES PRIX (PRICING) */
+/* 3. TABLEAU DES PRIX (PRICING) */
 /* =============================== */
 
 .section-pricing {
     padding: 60px 5%;
-    background-color: #e9ecef; /* Fond légèrement grisé pour contraster */
+    background-color: #e9ecef;
 }
 
 .pricing-table {
     display: flex;
-    justify-content: center; /* Centrer les cartes de prix */
+    justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; /* Assurer que les cartes passent à la ligne sur mobile */
+    flex-wrap: wrap;
     margin-top: 40px;
 }
 
@@ -113,14 +89,14 @@ h1 {
     border-radius: var(--border-radius-base);
     box-shadow: 0 6px 15px var(--color-light-shadow);
     flex: 1;
-    min-width: 280px; /* Taille minimale pour l'affichage */
+    min-width: 280px;
     max-width: 350px;
     text-align: center;
     border: 1px solid #ccc;
 }
 
 /* Mise en évidence du Pack Full */
-.pack.featured {
+.pack.full.featured {
     border: 3px solid var(--color-primary);
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -151,7 +127,7 @@ h1 {
     border-bottom: 1px dashed #e9ecef;
 }
 
-/* Boutons d'appel à l'action (CTA) */
+/* Boutons d'appel à l'action (CTA) - Ils peuvent aussi être dans style.css si vous les utilisez partout */
 .cta-button {
     display: block;
     padding: 12px 25px;
@@ -169,7 +145,7 @@ h1 {
 
 
 /* =============================== */
-/* 5. GESTION ET SUIVI CLIENTS */
+/* 4. GESTION ET SUIVI CLIENTS */
 /* =============================== */
 
 .section-client-management {
@@ -209,7 +185,7 @@ h1 {
 }
 
 /* =============================== */
-/* 6. MEDIA QUERIES (Adaptation mobile) */
+/* 5. MEDIA QUERIES (Adaptation mobile) */
 /* =============================== */
 @media (max-width: 768px) {
     .pricing-table, .management-options {
@@ -219,10 +195,10 @@ h1 {
     
     .pack, .management-options article {
         width: 100%;
-        max-width: 400px; /* Limiter la largeur sur petit écran */
+        max-width: 400px;
     }
 
-    h1 {
+    .hero-services h1 {
         font-size: 2rem;
     }
 }
