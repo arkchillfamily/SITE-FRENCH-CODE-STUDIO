@@ -223,6 +223,36 @@ main {
 }
 
 /* =============================== */
+/* IMAGE SECTION - Entre processus et pricing */
+/* =============================== */
+
+.section-image-divider {
+    padding: var(--spacing-2xl) 5%;
+    text-align: center;
+    background: var(--color-bg-alt);
+}
+
+.section-image-divider img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Sur mobile, réduire l'image */
+@media (max-width: 768px) {
+    .section-image-divider {
+        padding: var(--spacing-xl) 5%;
+    }
+    
+    .section-image-divider img {
+        border-radius: var(--radius-lg);
+    }
+}
+
+/* =============================== */
 /* PRICING - Cards élégantes */
 /* =============================== */
 
@@ -345,7 +375,7 @@ main {
 .section-client-management h2 {
     color: white;
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
 }
 
 .section-client-management h2::after {
@@ -356,6 +386,15 @@ main {
     background: var(--color-accent);
     margin: var(--spacing-md) auto 0;
     border-radius: 2px;
+}
+
+.section-client-management > p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
 }
 
 .management-options {
