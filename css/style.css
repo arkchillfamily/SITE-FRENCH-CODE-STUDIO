@@ -44,7 +44,7 @@ body::before {
     background-position: center center;
     background-size: 100%; 
     filter: grayscale(80%) blur(0.5px) sepia(20%); 
-    opacity: 0.04;
+    opacity: 0.05;
     z-index: -1;
     pointer-events: none;
 }
@@ -86,7 +86,7 @@ header.main-header {
 
 header.main-header nav {
     position: absolute;
-    top: 750px;
+    top: 900px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 200;
@@ -190,7 +190,7 @@ header.main-header nav {
     width: 100%;
     min-height: 700px; 
     background-image: url('../image/LOGO FCS.jpg'); 
-    background-size: 75%; 
+    background-size: 90%; 
     background-position: center 80px;
     background-repeat: no-repeat;
     display: flex;
