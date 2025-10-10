@@ -86,7 +86,7 @@ header.main-header {
 
 header.main-header nav {
     position: absolute;
-    top: 650px;
+    top: 750px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 200;
@@ -95,7 +95,7 @@ header.main-header nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 50px;
     align-items: center;
     padding: 0;
 }
@@ -471,13 +471,13 @@ footer {
 
 @media (max-width: 1024px) {
     header.main-header nav {
-        top: 600px;
+        top: 650px;
     }
     
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 25px;
+        gap: 30px;
     }
     
     .hero-section {
