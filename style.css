@@ -500,6 +500,14 @@ footer {
     
     .nav-links {
         flex-wrap: wrap;
+        /* MODIFICATION : Place les liens de navigation en bas (ordre 3) */
+        order: 3; 
+    }
+
+    /* Ajouté pour s'assurer que les liens sociaux sont après le logo mais avant les nav-links */
+    .social-nav {
+        order: 2;
+        margin-top: 10px; /* Conserve la marge de l'ancienne règle pour les mobiles */
     }
 }
 
@@ -515,6 +523,7 @@ footer {
         padding: 6px 14px;
     }
     
+    /* La marge a été déplacée dans le 1024px, mais on la laisse ici aussi au cas où l'ordre des media queries change */
     .social-nav {
         margin-top: 10px;
     }
