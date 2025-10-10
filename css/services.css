@@ -1,0 +1,228 @@
+/* =============================== */
+/* 1. STYLES GÉNÉRAUX & TYPOGRAPHIE */
+/* (Adaptez les polices et couleurs à votre thème global) */
+/* =============================== */
+
+:root {
+    /* Couleurs principales (à adapter à votre logo) */
+    --color-primary: #007bff; /* Bleu vif pour CTA et accents */
+    --color-secondary: #6c757d; /* Gris pour textes secondaires */
+    --color-background: #f8f9fa; /* Fond très clair */
+    --color-dark: #212529; /* Texte principal */
+    --color-light-shadow: rgba(0, 0, 0, 0.08); 
+
+    /* Polices modernes */
+    --font-heading: 'Poppins', sans-serif; /* Police moderne sans sérif pour les titres */
+    --font-body: 'Roboto', sans-serif; /* Police lisible pour le corps */
+
+    --border-radius-base: 8px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    line-height: 1.6;
+    background-color: var(--color-background);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5rem; /* Grande taille pour la section hero */
+    color: var(--color-dark);
+}
+
+/* =============================== */
+/* 2. MISE EN PAGE : SECTION HERO */
+/* =============================== */
+
+.hero-services {
+    text-align: center;
+    padding: 80px 5%;
+    background-color: #fff; /* Fond blanc pour faire ressortir */
+    border-bottom: 1px solid #dee2e6; /* Ligne de séparation subtile */
+    margin-bottom: 40px;
+}
+
+/* =============================== */
+/* 3. PROCESSUS DE FONCTIONNEMENT */
+/* =============================== */
+
+.section-how-it-works {
+    padding: 40px 5%;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.process-steps .step {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 4px 12px var(--color-light-shadow); /* Ombre légère pour la profondeur */
+    transition: transform 0.3s ease;
+}
+
+.process-steps .step:hover {
+    transform: translateY(-5px); /* Léger soulèvement au survol pour l'interactivité */
+}
+
+.process-steps h3 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.complexity-level {
+    font-style: italic;
+    color: var(--color-secondary);
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* =============================== */
+/* 4. TABLEAU DES PRIX (PRICING) */
+/* =============================== */
+
+.section-pricing {
+    padding: 60px 5%;
+    background-color: #e9ecef; /* Fond légèrement grisé pour contraster */
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: center; /* Centrer les cartes de prix */
+    gap: 30px;
+    flex-wrap: wrap; /* Assurer que les cartes passent à la ligne sur mobile */
+    margin-top: 40px;
+}
+
+.pack {
+    background: #fff;
+    padding: 35px;
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 6px 15px var(--color-light-shadow);
+    flex: 1;
+    min-width: 280px; /* Taille minimale pour l'affichage */
+    max-width: 350px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Mise en évidence du Pack Full */
+.pack.featured {
+    border: 3px solid var(--color-primary);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pack h3 {
+    font-size: 1.8rem;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.pack .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+}
+
+.pack ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pack ul li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e9ecef;
+}
+
+/* Boutons d'appel à l'action (CTA) */
+.cta-button {
+    display: block;
+    padding: 12px 25px;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* =============================== */
+/* 5. GESTION ET SUIVI CLIENTS */
+/* =============================== */
+
+.section-client-management {
+    padding: 40px 5%;
+}
+
+.management-options {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.management-options article {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-base);
+    background: #fff;
+}
+
+.management-options h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.management-options ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.price-note {
+    font-weight: bold;
+    margin-top: 15px;
+    color: var(--color-dark);
+}
+
+/* =============================== */
+/* 6. MEDIA QUERIES (Adaptation mobile) */
+/* =============================== */
+@media (max-width: 768px) {
+    .pricing-table, .management-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pack, .management-options article {
+        width: 100%;
+        max-width: 400px; /* Limiter la largeur sur petit écran */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
