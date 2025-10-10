@@ -160,7 +160,7 @@ header.main-header nav {
 }
 
 /* ========================================= */
-/* 4. SECTION HERO (Modification du padding-top pour ajuster la position) */
+/* 4. SECTION HERO (CORRIGÉ : Contenu juste sous le logo) */
 /* ========================================= */
 
 .hero-section {
@@ -174,9 +174,10 @@ header.main-header nav {
     display: flex;
     flex-direction: column;
     
+    /* CORRECTION 1: Aligne les éléments au début (en haut) */
     justify-content: flex-start; 
     align-items: center;
-    /* CORRECTION : Pousse le contenu vers le bas (Ajusté à 400px) */
+    /* CORRECTION 2: Pousse le contenu vers le bas, juste sous l'image de fond */
     padding: 400px 20px 60px 20px; 
 }
 
@@ -188,7 +189,7 @@ header.main-header nav {
     left: 0;
     right: 0;
     bottom: 0;
-    /* Ajustement du dégradé pour être moins couvrant */
+    /* Dégradé léger */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
     z-index: 1;
 }
@@ -197,14 +198,15 @@ header.main-header nav {
 .hero-section > * {
     position: relative;
     z-index: 2;
-    margin-top: 50px; 
+    /* Espace entre le bas du logo et le bloc de texte/bouton */
+    margin-top: 20px; 
 }
 
 .intro-message-container {
     max-width: 900px;
     text-align: center;
     padding: 40px 20px;
-    /* Arrière-plan plus opaque pour la lisibilité sur l'image de fond */
+    /* Fond semi-transparent pour la lisibilité */
     background: rgba(0, 0, 0, 0.7); 
     border-radius: 12px;
     backdrop-filter: blur(5px);
@@ -506,19 +508,20 @@ footer {
     
     .nav-links {
         flex-wrap: wrap;
-        /* MODIF : Place les liens de navigation en bas du header sur mobile */
-        order: 3; 
+        /* Correction : navigation en bas de l'entête */
+        order: 3;
+        justify-content: center;
     }
 
     .social-nav {
-        /* MODIF : Place les liens sociaux après le logo/titre */
+        /* Correction : liens sociaux après le logo/titre */
         order: 2;
         margin-top: 10px; 
     }
     
     /* Ajustement de la section hero pour les tablettes */
     .hero-section {
-        /* On réduit le padding en version tablette */
+        /* Ajustement du padding pour petit écran */
         padding-top: 250px; 
     }
 }
@@ -576,8 +579,7 @@ footer {
     }
     
     .image-placeholder {
-        height: 250px;
-        font-size: 1rem;
+        height: 300px;
     }
 }
 
