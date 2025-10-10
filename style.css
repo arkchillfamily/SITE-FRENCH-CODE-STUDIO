@@ -148,7 +148,7 @@ header.main-header nav {
     color: white;
     border-radius: 50%;
     text-decoration: none;
-    /* MODIF : Assurez-vous que l'icône est de la bonne taille */
+    /* Assurez-vous que l'icône Font Awesome est de la bonne taille */
     font-size: 1.2rem; 
     transition: all 0.3s ease;
 }
@@ -160,7 +160,7 @@ header.main-header nav {
 }
 
 /* ========================================= */
-/* 4. SECTION HERO */
+/* 4. SECTION HERO (Modifiée pour placer le contenu SOUS le logo) */
 /* ========================================= */
 
 .hero-section {
@@ -495,7 +495,7 @@ footer {
 }
 
 /* ========================================= */
-/* 11. RESPONSIVE */
+/* 11. RESPONSIVE (Modifiée pour l'ordre du menu) */
 /* ========================================= */
 
 @media (max-width: 1024px) {
@@ -506,12 +506,12 @@ footer {
     
     .nav-links {
         flex-wrap: wrap;
-        /* MODIF 1 : Place les liens de navigation en bas */
+        /* MODIF : Place les liens de navigation en bas */
         order: 3; 
     }
 
     .social-nav {
-        /* MODIF 1 : Place les liens sociaux après le logo/titre et avant les nav-links */
+        /* MODIF : Place les liens sociaux après le logo/titre et avant les nav-links */
         order: 2;
         margin-top: 10px; 
     }
