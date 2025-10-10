@@ -1,6 +1,5 @@
 /* Importation de la police Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&family=Inter:wght@300;400;600&display=swap');
-/* IMPORTANT : Font Awesome doit être inclus dans le HTML */
 
 /* ========================================= */
 /* 1. VARIABLES ET RESET */
@@ -25,7 +24,6 @@ body {
     font-family: var(--font-body);
     color: var(--color-primary);
     line-height: 1.7; 
-    /* Empêche le décalage horizontal (maintient le site calé à l'écran) */
     overflow-x: hidden; 
     background: linear-gradient(to bottom, 
         rgba(0, 255, 192, 0.05),
@@ -72,39 +70,33 @@ h3 {
 }
 
 /* ========================================= */
-/* 3. HEADER - NAVIGATION */
+/* 3. HEADER - NAVIGATION MODIFIÉE */
 /* ========================================= */
 
 header.main-header {
-    background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 8px 5%; 
-    position: sticky;
-    top: 0;
+    background: transparent;
+    padding: 20px 5%;
+    position: relative;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
 header.main-header nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1; 
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
-    flex: 1;
-    justify-content: center;
     padding: 0;
 }
 
@@ -114,9 +106,15 @@ header.main-header nav {
     font-weight: 700;
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    padding: 6px 16px;
-    border-radius: 4px;
-    background: var(--color-accent); 
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: var(--color-accent);
+    box-shadow: 0 4px 15px rgba(0, 255, 192, 0.3);
+}
+
+.nav-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.5);
 }
 
 .nav-links a.cta-nav {
@@ -125,27 +123,62 @@ header.main-header nav {
     font-weight: 700;
 }
 
-/* Liens réseaux sociaux */
+/* Liens réseaux sociaux - EN HAUT À DROITE */
 .social-nav {
     display: flex;
     gap: 15px;
     list-style: none;
-    margin-right: 20px; 
 }
 
 .social-nav a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 1.1rem; 
+    font-size: 1.3rem; 
     transition: all 0.3s ease;
     background: var(--color-accent);
     color: var(--color-primary);
-    box-shadow: 0 2px 10px rgba(0, 255, 192, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 255, 192, 0.3);
+}
+
+.social-nav a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.5);
+}
+
+/* ========================================= */
+/* BOUTON RETOUR - PLUS GROS ET PROPRE */
+/* ========================================= */
+
+.back-button-fixed {
+    position: fixed; 
+    top: 30px;
+    left: 30px;
+    z-index: 1000;
+}
+
+.back-button-fixed .back-link {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    background: var(--color-accent);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.back-button-fixed .back-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 192, 0.6);
 }
 
 /* ========================================= */
@@ -204,7 +237,6 @@ header.main-header nav {
 }
 
 .button.primary {
-    /* Style Noir + Texte Menthe */
     background-color: var(--color-primary); 
     color: var(--color-accent); 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -231,7 +263,6 @@ section {
     margin: 0 auto;
 }
 
-/* NOUVEAUX STYLES POUR VOTRE SECTION D'IMAGE */
 .image-separator-section {
     text-align: center;
     padding: 60px 5%; 
@@ -239,19 +270,16 @@ section {
     margin: 40px auto;
 }
 
-/* Style pour le texte d'explication */
 .image-separator-section .subtitle-text {
     margin-bottom: 40px;
     color: var(--color-secondary);
     font-size: 1.1rem;
 }
 
-/* Conteneur qui remplace le placeholder gris */
 .image-placeholder {
     width: 100%;
     height: auto; 
     min-height: 250px; 
-    /* Nous réutilisons les styles du placeholder mais l'image le remplacera */
     background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%); 
     border: 2px dashed #ccc;
     border-radius: 8px;
@@ -259,7 +287,6 @@ section {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* STYLE POUR L'IMAGE RÉELLE À L'INTÉRIEUR DU PLACEHOLDER */
 .image-placeholder .project-image {
     display: block;
     width: 100%;
@@ -279,7 +306,7 @@ section {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.values-section h2 { /* STYLE DU TITRE H2 DANS CETTE SECTION */
+.values-section h2 {
     margin-bottom: 60px;
     color: var(--color-primary); 
     font-family: var(--font-heading);
@@ -382,93 +409,85 @@ footer {
 /* ========================================= */
 
 @media (max-width: 1024px) {
-    /* HEADER : Empilage pour tablette */
-    header.main-header {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+    header.main-header nav {
+        top: 450px;
     }
     
-    header.main-header nav {
-        flex-grow: initial;
-    }
-
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
     
-    .social-nav {
-        margin-right: 0;
-        order: 3; 
-    }
-    
     .hero-section {
-        min-height: 400px; 
+        min-height: 500px;
     }
 }
 
 @media (max-width: 768px) {
-    
-    /* HEADER (Ajustement Esthétique Mobile) */
     header.main-header {
-        padding: 10px 5%; /* PADDING HORIZONTAL RAISONNABLE */
-        gap: 10px; 
+        padding: 15px 5%;
     }
 
-    /* NAVIGATION (Rendu plus lisible et cliquable) */
+    header.main-header nav {
+        top: 350px;
+    }
+
     .nav-links {
-        gap: 10px; /* Espace minimal entre les boutons */
+        gap: 10px;
+        flex-direction: column;
     }
     
     .nav-links a {
-        font-size: 0.85rem; /* Taille de police plus lisible */
-        padding: 6px 14px;
+        font-size: 0.85rem;
+        padding: 10px 20px;
     }
     
-    .social-nav {
-        margin-top: 5px;
+    .social-nav a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
     }
 
-    .social-nav a {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9rem;
+    .back-button-fixed {
+        top: 20px;
+        left: 20px;
+    }
+
+    .back-button-fixed .back-link {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
     }
     
     .hero-section {
-        min-height: 300px; /* Réduction de la hauteur pour les petits écrans */
+        min-height: 400px;
         padding: 40px 20px;
     }
 
-    /* CTA MESSAGE */
     .intro-message-container-deplace {
         padding: 30px 5%;
         margin: 30px 0;
     }
 
     .introduction-text-deplace {
-        font-size: 1.2rem; /* Taille de police plus grande et lisible */
+        font-size: 1.2rem;
     }
     
     section {
-        padding: 40px 5%; /* Padding vertical réduit pour les sections */
+        padding: 40px 5%;
     }
     
     .value-points {
-        /* Les fondations s'empilent */
         grid-template-columns: 1fr;
     }
     
     .process-steps {
-        /* Correction de l'alignement: les étapes s'empilent */
         grid-template-columns: 1fr; 
         gap: 20px;
     }
     
     .process-steps article:nth-child(4) {
-        /* Le 4e élément revient sur la première colonne */
         grid-column: 1; 
     }
     
@@ -485,43 +504,8 @@ footer {
         height: 200px;
     }
 
-    /* FOOTER : Empilement des liens légaux */
     .legal a {
         display: block; 
         margin: 5px 0;
     }
-
-/* =============================== */
-/* STYLE POUR BOUTON RETOUR FIXE */
-/* =============================== */
-
-/* Conteneur fixe, non dépendant d'un header */
-.back-button-fixed {
-    /* Positionne le bouton dans le coin de la fenêtre */
-    position: fixed; 
-    top: 25px;       /* Marge depuis le haut */
-    left: 25px;      /* Marge depuis la gauche */
-    z-index: 1000;   /* Assure qu'il est au-dessus de tout le contenu */
-}
-
-.back-button-fixed .back-link {
-    /* Style visuel de la flèche */
-    font-size: 1.6rem; 
-    color: var(--color-dark); 
-    padding: 10px 12px;
-    background-color: var(--color-header-bg); /* Fond blanc */
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre pour le relief */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-
-.back-button-fixed .back-link:hover {
-    color: var(--color-primary); 
-    background-color: var(--color-background); 
-    transform: translateY(-2px); /* Petit effet de soulèvement au survol */
-}
-
 }
