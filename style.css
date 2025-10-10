@@ -76,7 +76,7 @@ h3 {
 header.main-header {
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
-    padding: 12px 5%;
+    padding: 8px 5%;
     position: sticky;
     top: 0;
     width: 100%;
@@ -95,7 +95,7 @@ header.main-header nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 30px;
     align-items: center;
     flex: 1;
     justify-content: center;
@@ -105,9 +105,9 @@ header.main-header nav {
     text-decoration: none;
     color: var(--color-primary);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
-    padding: 8px 18px;
+    padding: 6px 16px;
     border-radius: 4px;
     background: var(--color-accent);
 }
@@ -341,9 +341,16 @@ section {
 
 .process-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.process-steps article:nth-child(4) {
+    grid-column: 2;
 }
 
 .process-steps article {
@@ -504,8 +511,8 @@ footer {
     }
     
     .nav-links a {
-        font-size: 0.95rem;
-        padding: 8px 15px;
+        font-size: 0.85rem;
+        padding: 6px 14px;
     }
     
     .social-nav {
@@ -525,8 +532,16 @@ footer {
         padding: 60px 5%;
     }
     
-    .value-points, .process-steps {
+    .value-points {
         grid-template-columns: 1fr;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-steps article:nth-child(4) {
+        grid-column: 1;
     }
     
     .final-cta {
@@ -545,7 +560,7 @@ footer {
 
 @media (max-width: 480px) {
     header.main-header {
-        padding: 15px 3%;
+        padding: 8px 3%;
     }
     
     .nav-links {
@@ -553,8 +568,8 @@ footer {
     }
     
     .nav-links a {
-        font-size: 0.85rem;
-        padding: 6px 12px;
+        font-size: 0.8rem;
+        padding: 5px 12px;
     }
     
     .social-nav a {
