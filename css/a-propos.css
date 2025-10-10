@@ -514,3 +514,36 @@ a:hover {
 .text-col a:hover::after {
     width: 100%;
 }
+
+/* =============================== */
+/* STYLE POUR BOUTON RETOUR FIXE */
+/* =============================== */
+
+/* Conteneur fixe, non dépendant d'un header */
+.back-button-fixed {
+    /* Positionne le bouton dans le coin de la fenêtre */
+    position: fixed; 
+    top: 25px;       /* Marge depuis le haut */
+    left: 25px;      /* Marge depuis la gauche */
+    z-index: 1000;   /* Assure qu'il est au-dessus de tout le contenu */
+}
+
+.back-button-fixed .back-link {
+    /* Style visuel de la flèche */
+    font-size: 1.6rem; 
+    color: var(--color-dark); 
+    padding: 10px 12px;
+    background-color: var(--color-header-bg); /* Fond blanc */
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre pour le relief */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.back-button-fixed .back-link:hover {
+    color: var(--color-primary); 
+    background-color: var(--color-background); 
+    transform: translateY(-2px); /* Petit effet de soulèvement au survol */
+}
