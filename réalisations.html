@@ -4,23 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réalisations</title>
-    <link rel="stylesheet" href="css/réalisations.css">
+    <link rel="stylesheet" href="realisations.css">
 </head>
 <body>
     <div class="container">
         <header class="header">
             <h1 class="title">Mes Réalisations</h1>
-            <p class="subtitle">Découvrez une sélection de mes projets récents</p>
+            <p class="subtitle">Portfolio de mes projets web et design</p>
         </header>
 
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all">Tous</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="design">Design</button>
-        </div>
-
         <div class="projects-grid">
-            <div class="project-card" data-category="web">
+            <!-- Projet 1 -->
+            <div class="project-card">
                 <div class="project-image">
                     <div class="placeholder-img">
                         <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -32,17 +27,57 @@
                 </div>
                 <div class="project-content">
                     <span class="project-tag">Web Design</span>
-                    <h3 class="project-title">Plateforme E-commerce</h3>
-                    <p class="project-description">Interface moderne pour une boutique en ligne avec système de paiement intégré et gestion des stocks en temps réel.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">MongoDB</span>
+                    <h3 class="project-title">Site E-commerce</h3>
+                    <p class="project-description">Boutique en ligne moderne avec système de paiement sécurisé et gestion des stocks.</p>
+                    <div class="project-info">
+                        <div class="info-item">
+                            <strong>Technologies :</strong> HTML, CSS, JavaScript, PHP
+                        </div>
+                        <div class="info-item">
+                            <strong>Hébergement :</strong> OVH
+                        </div>
+                        <div class="info-item">
+                            <strong>Base de données :</strong> MySQL
+                        </div>
+                        <div class="info-item">
+                            <strong>CMS/Framework :</strong> WordPress + WooCommerce
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card" data-category="design">
+            <!-- Projet 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="placeholder-img">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">Web App</span>
+                    <h3 class="project-title">Portfolio Interactif</h3>
+                    <p class="project-description">Site portfolio moderne avec animations et effets visuels immersifs.</p>
+                    <div class="project-info">
+                        <div class="info-item">
+                            <strong>Technologies :</strong> React.js, Tailwind CSS
+                        </div>
+                        <div class="info-item">
+                            <strong>Hébergement :</strong> Vercel
+                        </div>
+                        <div class="info-item">
+                            <strong>Base de données :</strong> N/A
+                        </div>
+                        <div class="info-item">
+                            <strong>Framework :</strong> React + Vite
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="project-card">
                 <div class="project-image">
                     <div class="placeholder-img">
                         <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -53,17 +88,56 @@
                 </div>
                 <div class="project-content">
                     <span class="project-tag">UI/UX</span>
-                    <h3 class="project-title">Système de Design</h3>
-                    <p class="project-description">Création d'un design system complet avec composants réutilisables et guidelines pour une cohérence visuelle.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Figma</span>
-                        <span class="tech-badge">Storybook</span>
-                        <span class="tech-badge">Tailwind</span>
+                    <h3 class="project-title">Site Vitrine Corporate</h3>
+                    <p class="project-description">Site professionnel pour entreprise avec présentation de services et formulaire de contact.</p>
+                    <div class="project-info">
+                        <div class="info-item">
+                            <strong>Technologies :</strong> HTML5, CSS3, JavaScript
+                        </div>
+                        <div class="info-item">
+                            <strong>Hébergement :</strong> Hostinger
+                        </div>
+                        <div class="info-item">
+                            <strong>Base de données :</strong> N/A
+                        </div>
+                        <div class="info-item">
+                            <strong>Outils :</strong> Bootstrap, EmailJS
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card" data-category="web">
+            <!-- Projet 4 - À venir -->
+            <div class="project-card coming-soon">
+                <div class="project-image">
+                    <div class="placeholder-img">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">À venir</span>
+                    <h3 class="project-title">Projet en cours</h3>
+                    <p class="project-description">Nouveau projet en développement. Plus d'informations prochainement...</p>
+                    <div class="project-info">
+                        <div class="info-item">
+                            <strong>Technologies :</strong> À définir
+                        </div>
+                        <div class="info-item">
+                            <strong>Hébergement :</strong> À définir
+                        </div>
+                        <div class="info-item">
+                            <strong>Statut :</strong> En planification
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 5 - À venir -->
+            <div class="project-card coming-soon">
                 <div class="project-image">
                     <div class="placeholder-img">
                         <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -74,47 +148,52 @@
                     </div>
                 </div>
                 <div class="project-content">
-                    <span class="project-tag">SaaS</span>
-                    <h3 class="project-title">Plateforme Cloud</h3>
-                    <p class="project-description">Solution de stockage et partage de fichiers sécurisée avec gestion des permissions et versioning.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Next.js</span>
-                        <span class="tech-badge">AWS</span>
-                        <span class="tech-badge">Docker</span>
+                    <span class="project-tag">À venir</span>
+                    <h3 class="project-title">Futur projet</h3>
+                    <p class="project-description">Espace réservé pour un prochain projet ambitieux.</p>
+                    <div class="project-info">
+                        <div class="info-item">
+                            <strong>Technologies :</strong> À définir
+                        </div>
+                        <div class="info-item">
+                            <strong>Hébergement :</strong> À définir
+                        </div>
+                        <div class="info-item">
+                            <strong>Statut :</strong> En planification
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 6 - À venir -->
+            <div class="project-card coming-soon">
+                <div class="project-image">
+                    <div class="placeholder-img">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18"/>
+                            <path d="M9 21V9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">À venir</span>
+                    <h3 class="project-title">Projet futur</h3>
+                    <p class="project-description">Espace disponible pour de nouvelles réalisations à venir.</p>
+                    <div class="project-info">
+                        <div class="info-item">
+                            <strong>Technologies :</strong> À définir
+                        </div>
+                        <div class="info-item">
+                            <strong>Hébergement :</strong> À définir
+                        </div>
+                        <div class="info-item">
+                            <strong>Statut :</strong> En planification
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const filter = btn.dataset.filter;
-                
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
