@@ -160,7 +160,7 @@ header.main-header nav {
 }
 
 /* ========================================= */
-/* 4. SECTION HERO (CORRECTION FINALE : Contenu juste sous le logo) */
+/* 4. SECTION HERO (CORRECTION : Le bloc est forcé sous le logo) */
 /* ========================================= */
 
 .hero-section {
@@ -176,8 +176,8 @@ header.main-header nav {
     
     justify-content: flex-start; 
     align-items: center;
-    /* CORRECTION : Pousse le contenu vers le bas. Valeur ajustée. */
-    padding: 350px 20px 60px 20px; 
+    /* CORRECTION FINALE : Augmentation à 450px pour dégager complètement le logo */
+    padding: 450px 20px 60px 20px; 
 }
 
 /* Overlay sombre pour améliorer la lisibilité */
@@ -197,7 +197,7 @@ header.main-header nav {
 .hero-section > * {
     position: relative;
     z-index: 2;
-    /* IMPORTANT : Supprime le margin-top qui repoussait le bloc trop loin du logo */
+    /* Suppression de tout margin-top pour un positionnement exact */
     margin-top: 0; 
 }
 
