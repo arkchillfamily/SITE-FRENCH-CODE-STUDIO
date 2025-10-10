@@ -160,7 +160,7 @@ header.main-header nav {
 }
 
 /* ========================================= */
-/* 4. SECTION HERO (Correction pour placer le contenu juste SOUS le logo) */
+/* 4. SECTION HERO (Modification du padding-top pour ajuster la position) */
 /* ========================================= */
 
 .hero-section {
@@ -174,11 +174,10 @@ header.main-header nav {
     display: flex;
     flex-direction: column;
     
-    /* CORRECTION : Aligne les éléments au début (en haut) */
     justify-content: flex-start; 
     align-items: center;
-    /* CORRECTION : Pousse le contenu vers le bas (Augmenté à 450px) */
-    padding: 450px 20px 60px 20px; 
+    /* CORRECTION : Pousse le contenu vers le bas (Ajusté à 400px) */
+    padding: 400px 20px 60px 20px; 
 }
 
 /* Overlay sombre pour améliorer la lisibilité */
@@ -577,7 +576,8 @@ footer {
     }
     
     .image-placeholder {
-        height: 300px;
+        height: 250px;
+        font-size: 1rem;
     }
 }
 
