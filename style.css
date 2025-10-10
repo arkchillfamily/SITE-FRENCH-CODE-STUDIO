@@ -103,20 +103,22 @@ header.main-header nav {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
-    font-weight: 600;
+    color: var(--color-primary);
+    font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s ease;
     padding: 10px 20px;
     border-radius: 4px;
+    background: var(--color-accent);
 }
 
 .nav-links a:hover {
-    color: var(--color-accent);
-    background: rgba(0, 255, 192, 0.1);
+    background: #00e6ad;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 192, 0.4);
 }
 
-/* Tous les liens avec la classe cta-nav auront le style bouton */
+/* Tous les liens de navigation auront le style bouton */
 .nav-links a.cta-nav {
     background: var(--color-accent);
     color: var(--color-primary);
@@ -165,13 +167,14 @@ header.main-header nav {
     width: 100%;
     min-height: 650px;
     background-image: url('LOGO FCS.jpg'); 
-    background-size: cover; 
-    background-position: center;
+    background-size: contain; 
+    background-position: center top;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    padding: 80px 20px;
+    padding: 80px 20px 40px 20px;
 }
 
 /* Overlay sombre pour améliorer la lisibilité */
@@ -193,8 +196,6 @@ header.main-header nav {
 }
 
 .intro-message-container {
-    margin-top: auto;
-    margin-bottom: 40px;
     max-width: 900px;
     text-align: center;
     padding: 40px 20px;
