@@ -1,54 +1,49 @@
 /* ========================================= */
-/* CONTACT - ÉLÉGANCE FRANÇAISE & TECH */
+/* CONTACT - MODERNE & TECH PRO */
 /* ========================================= */
 
 :root {
-    --color-primary: #1e3a5f;
-    --color-accent: #e63946;
-    --color-secondary: #457b9d;
-    --color-gold: #d4af37;
-    --color-background: #fdfbf7;
+    --color-primary: #0f172a;
+    --color-accent: #3b82f6;
+    --color-secondary: #64748b;
+    --color-success: #10b981;
+    --color-background: #f8fafc;
     --color-card: #ffffff;
-    --color-text: #2b3e50;
-    --color-text-light: #5a6c7d;
-    --color-border: #e8e4dc;
-    --font-display: 'Playfair Display', 'Georgia', serif;
-    --font-body: 'Lato', 'Segoe UI', sans-serif;
+    --color-text: #1e293b;
+    --color-text-light: #64748b;
+    --color-border: #e2e8f0;
+    --color-hover: #2563eb;
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-    background-color: var(--color-background);
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
     color: var(--color-text);
     font-family: var(--font-body);
+    line-height: 1.6;
 }
 
 /* ========================================= */
-/* NAVIGATION RAFFINÉE */
+/* NAVIGATION MODERNE */
 /* ========================================= */
 
 header.main-header ul.nav-links li a {
-    font-size: 1.1em;
+    font-size: 0.95rem;
     font-weight: 600;
     font-family: var(--font-body);
-    padding: 12px 28px;
-    color: var(--color-primary);
+    padding: 12px 24px;
+    color: var(--color-text);
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
-    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--color-card);
+    border-radius: 12px;
     border: 1px solid var(--color-border);
-    
-    /* Ombre élégante et douce */
-    box-shadow: 
-        2px 2px 8px rgba(30, 58, 95, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
 }
 
-/* Effet de brillance au survol */
 header.main-header ul.nav-links li a::before {
     content: '';
     position: absolute;
@@ -56,7 +51,7 @@ header.main-header ul.nav-links li a::before {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
     transition: left 0.5s;
 }
 
@@ -67,11 +62,8 @@ header.main-header ul.nav-links li a:hover::before {
 header.main-header ul.nav-links li a:hover {
     color: var(--color-accent);
     transform: translateY(-2px);
-    border-color: var(--color-gold);
-    box-shadow: 
-        0 6px 20px rgba(230, 57, 70, 0.2),
-        0 0 0 1px var(--color-gold),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 /* ========================================= */
@@ -79,11 +71,11 @@ header.main-header ul.nav-links li a:hover {
 /* ========================================= */
 
 .contact-section {
-    background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+    background: var(--color-card);
     box-shadow: 
-        0 20px 60px rgba(30, 58, 95, 0.08),
+        0 20px 60px rgba(0, 0, 0, 0.08),
         0 0 0 1px var(--color-border);
-    border-radius: 4px;
+    border-radius: 24px;
     position: relative;
     padding: 80px 5%;
     max-width: 1200px;
@@ -91,7 +83,7 @@ header.main-header ul.nav-links li a:hover {
     overflow: hidden;
 }
 
-/* Bordure dorée élégante */
+/* Bordure accent moderne */
 .contact-section::before {
     content: '';
     position: absolute;
@@ -101,26 +93,27 @@ header.main-header ul.nav-links li a:hover {
     height: 4px;
     background: linear-gradient(
         90deg,
-        var(--color-secondary) 0%,
-        var(--color-gold) 50%,
-        var(--color-accent) 100%
+        var(--color-accent) 0%,
+        var(--color-hover) 50%,
+        var(--color-success) 100%
     );
 }
 
-/* Motif décoratif subtil */
+/* Effet de gradient décoratif */
 .contact-section::after {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(230, 57, 70, 0.03) 0%, transparent 70%);
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
     pointer-events: none;
+    border-radius: 50%;
 }
 
 /* ========================================= */
-/* EN-TÊTE ÉLÉGANT */
+/* EN-TÊTE MODERNE */
 /* ========================================= */
 
 .contact-header {
@@ -132,54 +125,24 @@ header.main-header ul.nav-links li a:hover {
 }
 
 .contact-header h1 {
-    font-family: var(--font-display);
-    font-size: 3.2rem;
-    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
     color: var(--color-primary);
-    margin-bottom: 15px;
-    letter-spacing: 0.02em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Ligne décorative sous le titre */
-.contact-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 3px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--color-gold),
-        var(--color-accent),
-        var(--color-gold),
-        transparent
-    );
-}
-
-/* Diamant central */
-.contact-header::before {
-    content: '◆';
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--color-accent);
-    font-size: 0.8em;
-    background: var(--color-background);
-    padding: 0 10px;
-    z-index: 1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .contact-header p {
-    font-size: 1.1em;
+    font-size: 1.15rem;
     color: var(--color-text-light);
     max-width: 600px;
     margin: 0 auto;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 /* ========================================= */
@@ -195,14 +158,14 @@ header.main-header ul.nav-links li a:hover {
 }
 
 /* ========================================= */
-/* FORMULAIRE ÉLÉGANT */
+/* FORMULAIRE MODERNE */
 /* ========================================= */
 
 .contact-form-container h2 {
-    font-family: var(--font-display);
-    color: var(--color-accent);
-    font-size: 2rem;
-    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: 1.75rem;
+    font-weight: 700;
     margin-bottom: 35px;
     position: relative;
     padding-left: 20px;
@@ -212,10 +175,12 @@ header.main-header ul.nav-links li a:hover {
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+    height: 80%;
+    background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-success) 100%);
+    border-radius: 2px;
 }
 
 .main-form {
@@ -236,48 +201,45 @@ header.main-header ul.nav-links li a:hover {
 
 .form-group label {
     font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--color-primary);
+    margin-bottom: 8px;
+    color: var(--color-text);
     font-family: var(--font-body);
-    font-size: 0.95em;
-    letter-spacing: 0.3px;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
 }
 
-/* Champs de formulaire tech & élégants */
+/* Champs de formulaire tech modernes */
 .main-form input,
 .main-form select,
 .main-form textarea {
-    padding: 14px 18px;
-    background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+    padding: 14px 16px;
+    background: var(--color-background);
     border: 2px solid var(--color-border);
-    border-radius: 3px;
+    border-radius: 10px;
     font-size: 1rem;
     font-family: var(--font-body);
     width: 100%;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--color-text);
-    box-shadow: 
-        inset 0 2px 4px rgba(0, 0, 0, 0.03),
-        0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .main-form input::placeholder,
 .main-form textarea::placeholder {
     color: var(--color-text-light);
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
-/* Focus avec animation élégante */
+/* Focus avec animation moderne */
 .main-form input:focus,
 .main-form select:focus,
 .main-form textarea:focus {
-    border-color: var(--color-gold);
+    border-color: var(--color-accent);
     outline: none;
     background: #ffffff;
     box-shadow: 
-        0 0 0 3px rgba(212, 175, 55, 0.15),
-        0 4px 12px rgba(230, 57, 70, 0.1),
-        inset 0 2px 4px rgba(0, 0, 0, 0.03);
+        0 0 0 4px rgba(59, 130, 246, 0.1),
+        0 4px 12px rgba(59, 130, 246, 0.15);
     transform: translateY(-1px);
 }
 
@@ -287,28 +249,25 @@ header.main-header ul.nav-links li a:hover {
 }
 
 /* ========================================= */
-/* BOUTON ÉLÉGANT */
+/* BOUTON MODERNE */
 /* ========================================= */
 
 .button.primary {
-    background: linear-gradient(135deg, var(--color-accent) 0%, #c1121f 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-hover) 100%);
     color: white;
-    padding: 16px 45px;
+    padding: 16px 40px;
     border: none;
-    border-radius: 3px;
-    font-weight: 700;
+    border-radius: 12px;
+    font-weight: 600;
     font-family: var(--font-body);
-    font-size: 1.05em;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-        0 6px 20px rgba(230, 57, 70, 0.3),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-    border: 2px solid white;
+        0 4px 15px rgba(59, 130, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
     position: relative;
-    z-index: 100;
     overflow: hidden;
 }
 
@@ -320,7 +279,7 @@ header.main-header ul.nav-links li a:hover {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
     transition: left 0.5s;
 }
 
@@ -329,64 +288,66 @@ header.main-header ul.nav-links li a:hover {
 }
 
 .button.primary:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 
-        0 10px 30px rgba(230, 57, 70, 0.4),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+        0 8px 25px rgba(59, 130, 246, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .button.primary:active {
-    transform: translateY(-1px);
+    transform: translateY(0);
     box-shadow: 
-        0 4px 15px rgba(230, 57, 70, 0.3),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+        0 2px 10px rgba(59, 130, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* ========================================= */
-/* CARTE D'INFORMATIONS RAFFINÉE */
+/* CARTE D'INFORMATIONS MODERNE */
 /* ========================================= */
 
 .contact-info-container {
     padding: 40px 35px;
-    border-radius: 4px;
+    border-radius: 20px;
     position: relative;
-    background: linear-gradient(135deg, #1e3a5f 0%, #152840 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1e293b 100%);
     color: #ffffff;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.2);
     box-shadow: 
         0 10px 30px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* Accent doré sur le côté */
+/* Accent moderne sur le côté */
 .contact-info-container::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
+    top: 20%;
+    bottom: 20%;
     width: 4px;
-    background: linear-gradient(180deg, var(--color-gold) 0%, var(--color-accent) 100%);
+    background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-success) 100%);
+    border-radius: 0 2px 2px 0;
 }
 
-/* Motif décoratif */
+/* Motif décoratif tech */
 .contact-info-container::after {
-    content: '⚜';
+    content: '●';
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 3em;
-    color: rgba(212, 175, 55, 0.1);
+    top: 25px;
+    right: 25px;
+    font-size: 100px;
+    color: rgba(59, 130, 246, 0.08);
     pointer-events: none;
+    line-height: 1;
 }
 
 .contact-info-container h3 {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--color-gold);
-    margin-bottom: 10px;
-    margin-top: 25px;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 12px;
+    margin-top: 30px;
 }
 
 .contact-info-container h3:first-of-type {
@@ -394,17 +355,18 @@ header.main-header ul.nav-links li a:hover {
 }
 
 .contact-info-container p {
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.8;
-    margin-bottom: 8px;
-    font-size: 1.05em;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 .contact-info-container a {
-    color: var(--color-gold);
+    color: var(--color-accent);
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
+    font-weight: 500;
 }
 
 .contact-info-container a::after {
@@ -414,7 +376,7 @@ header.main-header ul.nav-links li a:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-gold);
+    background: var(--color-accent);
     transition: width 0.3s ease;
 }
 
@@ -422,24 +384,17 @@ header.main-header ul.nav-links li a:hover {
     width: 100%;
 }
 
-.contact-info-container a:hover,
-.contact-info-container a:focus {
-    color: var(--color-gold);
-    text-decoration: underline;
-}
-
 .contact-info-container a:hover {
     color: #ffffff;
 }
 
-/* Icônes optionnelles */
 .contact-info-container p strong {
-    color: var(--color-gold);
+    color: var(--color-accent);
     font-weight: 600;
 }
 
 /* ========================================= */
-/* BOUTON RETOUR - STYLE ÉLÉGANT FRANÇAIS */
+/* BOUTON RETOUR - STYLE MODERNE TECH */
 /* ========================================= */
 
 .back-button-fixed {
@@ -455,21 +410,21 @@ header.main-header ul.nav-links li a:hover {
     justify-content: center;
     width: 56px;
     height: 56px;
-    font-size: 1.8rem;
-    color: var(--color-primary);
-    background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    background: var(--color-card);
     border: 2px solid var(--color-border);
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-        0 4px 15px rgba(30, 58, 95, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 1px 3px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
 }
 
-/* Effet de brillance au survol */
+/* Effet de brillance moderne */
 .back-button-fixed .back-link::before {
     content: '';
     position: absolute;
@@ -477,7 +432,7 @@ header.main-header ul.nav-links li a:hover {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.15), transparent);
     transition: left 0.5s;
     border-radius: 50%;
 }
@@ -489,18 +444,17 @@ header.main-header ul.nav-links li a:hover {
 .back-button-fixed .back-link:hover {
     color: var(--color-accent);
     transform: translateY(-3px) scale(1.05);
-    border-color: var(--color-gold);
+    border-color: var(--color-accent);
     box-shadow: 
-        0 8px 25px rgba(230, 57, 70, 0.25),
-        0 0 0 1px var(--color-gold),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        0 8px 20px rgba(59, 130, 246, 0.25),
+        0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
 .back-button-fixed .back-link:active {
     transform: translateY(-1px) scale(1.02);
     box-shadow: 
-        0 4px 15px rgba(230, 57, 70, 0.2),
-        0 0 0 1px var(--color-gold);
+        0 4px 12px rgba(59, 130, 246, 0.2),
+        0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
 .back-button-fixed .back-link span {
@@ -525,7 +479,7 @@ header.main-header ul.nav-links li a:hover {
 }
 
 /* ========================================= */
-/* RESPONSIVE ÉLÉGANT */
+/* RESPONSIVE MODERNE */
 /* ========================================= */
 
 @media (max-width: 968px) {
@@ -537,10 +491,11 @@ header.main-header ul.nav-links li a:hover {
     .contact-section {
         padding: 60px 4%;
         margin: 40px 20px;
+        border-radius: 20px;
     }
     
     .contact-header h1 {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
     }
     
     .form-group {
@@ -554,15 +509,17 @@ header.main-header ul.nav-links li a:hover {
     }
     
     .contact-form-container h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     
     .contact-section {
         padding: 40px 5%;
+        border-radius: 16px;
     }
     
     .contact-info-container {
         padding: 30px 25px;
+        border-radius: 16px;
     }
     
     .button.primary {
@@ -578,12 +535,23 @@ header.main-header ul.nav-links li a:hover {
     .back-button-fixed .back-link {
         width: 48px;
         height: 48px;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
+/* Performance optimizations */
 header.main-header ul.nav-links li a,
 .button.primary,
 .back-button-fixed .back-link {
     will-change: transform, box-shadow;
+}
+
+/* Amélioration de l'accessibilité */
+.main-form input:focus-visible,
+.main-form select:focus-visible,
+.main-form textarea:focus-visible,
+.button.primary:focus-visible,
+.back-button-fixed .back-link:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
 }
