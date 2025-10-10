@@ -1,24 +1,43 @@
 /* =============================== */
-/* CSS FINAL ET AUTONOME POUR services.html */
-/* Style : Pro, Zen, Stylé, avec fond géométrique et effets de mouvement */
+/* CSS MODERNE ZEN TECH - services.html */
+/* Design minimaliste, épuré avec touches tech */
 /* =============================== */
 
-/* Définition des variables */
+/* Variables - Palette Zen Tech */
 :root {
-    --color-primary: #007bff; /* Bleu professionnel */
-    --color-secondary: #6c757d; /* Gris pour textes secondaires */
-    --color-background: #f0f7ff; /* Fond très léger, base du dégradé */
-    --color-dark: #212529; /* Texte principal */
-    --color-light-shadow: rgba(0, 0, 0, 0.08); 
-    --color-header-bg: #fff; /* Fond du header */
-    --font-heading: 'Poppins', sans-serif; 
-    --font-body: 'Roboto', sans-serif; 
-    --border-radius-base: 10px; 
-    --logo-height: 50px; 
+    --color-primary: #2563eb;
+    --color-primary-light: #3b82f6;
+    --color-accent: #06b6d4;
+    --color-dark: #0f172a;
+    --color-text: #334155;
+    --color-text-light: #64748b;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f8fafc;
+    --color-border: #e2e8f0;
+    
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.05);
 }
 
-/* Reset de base */
-* {
+/* Reset moderne */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,310 +45,469 @@
 
 body {
     font-family: var(--font-body);
-    color: var(--color-dark);
-    line-height: 1.6;
-    
-    /* FOND AVEC DÉGRADÉ GÉOMÉTRIQUE DOUX (Pour éviter l'effet "trop blanc") */
-    background: radial-gradient(circle at top left, #ffffff, transparent),
-                radial-gradient(circle at bottom right, var(--color-background), transparent),
-                var(--color-header-bg);
-    background-blend-mode: multiply;
-    background-attachment: fixed; 
+    font-size: clamp(0.95rem, 1vw, 1.05rem);
+    color: var(--color-text);
+    line-height: 1.7;
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
+/* Typographie zen */
+h1, h2, h3, h4 {
     font-family: var(--font-heading);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 0.5em;
+    color: var(--color-dark);
+    letter-spacing: -0.025em;
 }
 
-h2 { font-size: 2.2rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 15px; }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
 
 a {
-    text-decoration: none;
     color: var(--color-primary);
-    transition: color 0.3s;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a:hover {
-    color: #0056b3;
+    color: var(--color-primary-light);
 }
 
 /* =============================== */
-/* 1. EN-TÊTE (Header) */
+/* HEADER - Minimaliste et élégant */
 /* =============================== */
 
 .main-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
-    justify-content: flex-start; 
     align-items: center;
-    padding: 15px 5%;
-    background-color: var(--color-header-bg);
-    box-shadow: 0 2px 10px var(--color-light-shadow); 
+    padding: var(--spacing-md) 5%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .site-logo {
-    height: var(--logo-height); 
+    height: clamp(40px, 5vw, 50px);
     width: auto;
 }
 
 /* =============================== */
-/* 2. SECTION BANNIÈRE (HERO) - Style Joli et Stylé (Phrase d'accroche) */
+/* HERO - Design épuré et spacieux */
 /* =============================== */
 
 main {
-    padding-top: 0; 
+    min-height: 100vh;
 }
 
 .hero-services {
-    text-align: center;
-    padding: 100px 5% 150px; 
-    background: linear-gradient(180deg, #ffffff 0%, var(--color-background) 100%); 
-    margin-bottom: 40px;
     position: relative;
-    overflow: hidden; 
+    padding: clamp(4rem, 12vh, 8rem) 5% clamp(5rem, 15vh, 10rem);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    overflow: hidden;
 }
 
-/* Détail subtil en fond de bannière */
+/* Motif géométrique subtil */
 .hero-services::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.05; 
-    background-image: radial-gradient(var(--color-secondary) 1px, transparent 0);
-    background-size: 30px 30px;
+    right: 0;
+    bottom: 0;
+    opacity: 0.03;
+    background-image: 
+        linear-gradient(30deg, var(--color-primary) 12%, transparent 12.5%, transparent 87%, var(--color-primary) 87.5%, var(--color-primary)),
+        linear-gradient(150deg, var(--color-primary) 12%, transparent 12.5%, transparent 87%, var(--color-primary) 87.5%, var(--color-primary));
+    background-size: 80px 140px;
     z-index: 0;
 }
 
 .hero-services h1 {
-    /* Style du titre plus grand et impactant */
-    font-size: 3.5rem; 
-    font-weight: 800;
-    letter-spacing: -1px;
-    color: var(--color-dark);
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05); 
-    position: relative; z-index: 1;
+    position: relative;
+    z-index: 1;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-services p {
-    font-size: 1.3rem;
-    color: var(--color-secondary);
-    margin-top: 15px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative; z-index: 1;
+    position: relative;
+    z-index: 1;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-light);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* =============================== */
-/* 3. PROCESSUS DE FONCTIONNEMENT */
+/* SECTIONS - Espacement zen */
 /* =============================== */
 
-.section-how-it-works, .section-pricing, .section-testimonials, .section-final-cta {
-    padding: 40px 5%;
-    max-width: 1200px;
+.section-how-it-works,
+.section-pricing,
+.section-testimonials,
+.section-final-cta {
+    padding: var(--spacing-2xl) 5%;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
+.section-how-it-works h2,
+.section-pricing h2,
+.section-testimonials h2,
+.section-final-cta h2 {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+    padding-bottom: var(--spacing-md);
+}
+
+.section-how-it-works h2::after,
+.section-pricing h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 2px;
+}
+
+/* =============================== */
+/* PROCESSUS - Cards modernes */
+/* =============================== */
+
 .process-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
 }
 
 .process-steps .step {
-    background: #fff;
-    padding: 30px;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 12px var(--color-light-shadow);
-    transition: transform 0.3s ease;
+    background: var(--color-bg);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .process-steps .step:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
 }
 
 .process-steps h3 {
     color: var(--color-primary);
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.process-steps p {
+    color: var(--color-text);
+    line-height: 1.6;
 }
 
 /* =============================== */
-/* 4. TABLEAU DES PRIX (PACKS) AVEC EFFET DE MOUVEMENT */
+/* PRICING - Cards élégantes */
 /* =============================== */
 
 .section-pricing {
-    background-color: #fff; 
-    text-align: center;
+    background: var(--color-bg-alt);
 }
 
 .pricing-table {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pack {
-    background: var(--color-background); 
-    padding: 35px;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); 
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
-    text-align: center;
-    border: 1px solid transparent; 
-    /* Transition pour l'effet de mouvement */
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease-out; 
+    background: var(--color-bg);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* EFFET DE MOUVEMENT AU SURVOL */
 .pack:hover {
-    transform: translateY(-15px) scale(1.02); 
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
     border-color: var(--color-primary);
 }
 
-/* Pack Full Performance - Style Zen sans contour bleu vif (modifié) */
 .pack.full.featured {
-    background: #fff; 
-    border: 1px solid #e9ecef; 
-    /* Lueur subtile à la place du contour épais */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(0, 123, 255, 0.1); 
+    background: linear-gradient(135deg, var(--color-bg) 0%, #f0f9ff 100%);
+    border: 2px solid var(--color-primary);
+    position: relative;
+}
+
+.pack.full.featured::before {
+    content: 'Populaire';
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: var(--color-primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pack h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
 }
 
 .pack .price {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
     color: var(--color-primary);
-    margin-bottom: 25px;
+    margin: var(--spacing-md) 0;
 }
 
 .pack ul {
     list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-    text-align: left;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-lg);
 }
 
 .pack ul li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #e9ecef;
+    padding: var(--spacing-sm) 0;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.pack ul li::before {
+    content: '✓';
+    color: var(--color-primary);
+    font-weight: bold;
+    flex-shrink: 0;
 }
 
 .cta-button {
-    display: block;
-    padding: 12px 25px;
-    background-color: var(--color-primary);
+    display: inline-block;
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-primary);
     color: white;
-    text-decoration: none;
-    border-radius: 50px;
+    border-radius: var(--radius-md);
     font-weight: 600;
-    transition: background-color 0.3s;
+    text-align: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
-
 /* =============================== */
-/* 5. GESTION ET SUIVI CLIENTS - L'ONGLET STYLÉ PLEINE LARGEUR (Modifié) */
+/* CLIENT MANAGEMENT - Section accent */
 /* =============================== */
 
 .section-client-management {
-    padding: 60px 5%;
-    max-width: none; 
-    margin: 40px 0; 
-    background: var(--color-primary); /* Fond en couleur principale */
-    color: white; 
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); 
+    padding: var(--spacing-2xl) 5%;
+    background: linear-gradient(135deg, var(--color-dark) 0%, #1e293b 100%);
+    color: white;
+    margin: var(--spacing-2xl) 0;
 }
 
 .section-client-management h2 {
-    color: white; 
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5); 
-    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-client-management h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-accent);
+    margin: var(--spacing-md) auto 0;
+    border-radius: 2px;
 }
 
 .management-options {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .management-options article {
-    flex: 1;
-    min-width: 300px;
-    max-width: 450px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.1); 
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: var(--border-radius-base);
-    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.management-options article:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
 }
 
 .management-options h3 {
-    color: white; 
-    margin-bottom: 10px;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
 }
 
 .management-options ul {
     list-style: none;
-    padding: 0;
-    text-align: left;
-    margin-left: 0;
 }
 
 .management-options ul li {
-    padding: 5px 0;
-    text-align: center;
+    padding: var(--spacing-xs) 0;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.management-options ul li::before {
+    content: '→';
+    color: var(--color-accent);
+    flex-shrink: 0;
 }
 
 /* =============================== */
-/* 6. PIED DE PAGE (FOOTER) */
+/* FOOTER - Minimaliste */
 /* =============================== */
 
 .site-footer {
     text-align: center;
-    padding: 30px 5%;
-    background-color: var(--color-dark);
-    color: #fff;
-    margin-top: 40px;
+    padding: var(--spacing-xl) 5%;
+    background: var(--color-dark);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* =============================== */
-/* 7. MEDIA QUERIES (Adaptation mobile) */
+/* RESPONSIVE - Mobile First */
 /* =============================== */
-@media (max-width: 900px) {
-    .main-header {
-        justify-content: center; 
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    :root {
+        --spacing-xl: 2.5rem;
+        --spacing-2xl: 3rem;
     }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-    .hero-services h1 {
-        font-size: 2.5rem;
-    }
-    .pricing-table, .management-options, .process-steps {
-        flex-direction: column;
-        align-items: center;
+    :root {
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-2xl: 2.5rem;
     }
     
-    .pack, .management-options article, .process-steps .step {
-        width: 100%;
-        max-width: 400px;
+    .main-header {
+        padding: var(--spacing-sm) 5%;
+    }
+    
+    .hero-services {
+        padding: clamp(3rem, 10vh, 5rem) 5%;
+    }
+    
+    .section-how-it-works,
+    .section-pricing,
+    .section-testimonials,
+    .section-final-cta,
+    .section-client-management {
+        padding: var(--spacing-xl) 5%;
+    }
+    
+    .process-steps,
+    .pricing-table,
+    .management-options {
+        gap: var(--spacing-md);
+    }
+    
+    .pack,
+    .management-options article,
+    .process-steps .step {
+        padding: var(--spacing-lg);
     }
 }
+
+/* Petits mobiles */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+    
+    .hero-services h1 {
+        font-size: 2rem;
+    }
+    
+    .pack .price {
+        font-size: 2rem;
+    }
+    
+    .cta-button {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+/* Animations de chargement subtiles */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-services,
+.process-steps .step,
+.pack,
+.management-options article {
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.process-steps .step:nth-child(1) { animation-delay: 0.1s; }
+.process-steps .step:nth-child(2) { animation-delay: 0.2s; }
+.process-steps .step:nth-child(3) { animation-delay: 0.3s; }
+
+.pack:nth-child(1) { animation-delay: 0.1s; }
+.pack:nth-child(2) { animation-delay: 0.2s; }
+.pack:nth-child(3) { animation-delay: 0.3s; }
