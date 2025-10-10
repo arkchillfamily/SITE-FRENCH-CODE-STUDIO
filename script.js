@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --------------------------------------
     // 2. EFFET 'FADE-IN' DES SECTIONS (Modernité)
+    // Pour index.html
     // --------------------------------------
     const faders = document.querySelectorAll('.hero-section, .values-section, .process-section');
 
@@ -66,6 +67,37 @@ document.addEventListener('DOMContentLoaded', () => {
         faders.forEach(fader => {
             fader.style.opacity = 1;
             fader.style.transform = 'translateY(0)';
+        });
+    }
+
+    // --------------------------------------
+    // 3. EFFET 'FADE-IN' POUR A-PROPOS.HTML
+    // Ajout des animations pour .section, .highlight-box, .cta
+    // --------------------------------------
+    const aproposFaders = document.querySelectorAll('.section, .highlight-box, .cta');
+
+    if ('IntersectionObserver' in window && aproposFaders.length > 0) {
+        const aproposAppearOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const aproposAppearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, aproposAppearOptions);
+
+        aproposFaders.forEach(fader => {
+            aproposAppearOnScroll.observe(fader);
+        });
+    } else {
+        // Fallback : rendre tout visible immédiatement
+        aproposFaders.forEach(fader => {
+            fader.classList.add('visible');
         });
     }
 });
