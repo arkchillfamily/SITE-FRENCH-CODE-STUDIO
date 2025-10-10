@@ -1,21 +1,113 @@
 /* =============================== */
-/* STYLES SPÉCIFIQUES À LA PAGE SERVICES */
-/* Ces styles écrasent ou complètent ceux de style.css */
+/* 0. RESET ET STYLES GÉNÉRAUX (Styles de base autonomes) */
 /* =============================== */
 
-/* Définition des variables si elles ne sont pas dans style.css */
+/* Définition des variables */
 :root {
-    --color-primary: #007bff; /* Bleu vif pour CTA et accents */
+    --color-primary: #007bff; /* Bleu professionnel pour les accents */
     --color-secondary: #6c757d; /* Gris pour textes secondaires */
     --color-background: #f8f9fa; /* Fond très clair */
     --color-dark: #212529; /* Texte principal */
     --color-light-shadow: rgba(0, 0, 0, 0.08); 
+    --color-header-bg: #fff; /* Fond du header */
+    --font-heading: 'Poppins', sans-serif; 
+    --font-body: 'Roboto', sans-serif; 
     --border-radius-base: 8px;
+    --logo-height: 50px; /* Taille de base du logo */
+}
+
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    line-height: 1.6;
+    background-color: var(--color-background);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; border-bottom: 2px solid var(--color-primary); padding-bottom: 15px; }
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
 }
 
 /* =============================== */
-/* 1. SECTION HERO */
+/* 1. EN-TÊTE ET NAVIGATION (Style moderne et propre) */
 /* =============================== */
+
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Logo à gauche, Nav à droite */
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--color-header-bg);
+    box-shadow: 0 2px 10px var(--color-light-shadow); /* Ombre légère pour le détacher */
+}
+
+.site-logo {
+    height: var(--logo-height); /* Hauteur fixe pour le logo */
+    width: auto;
+}
+
+/* Navigation principale */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--color-dark);
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: var(--border-radius-base);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Navigation sociale (pour les icônes) */
+.social-nav {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.social-nav a {
+    font-size: 1.2rem; /* Taille des icônes */
+}
+
+
+/* =============================== */
+/* 2. SECTION HERO ET CONTENU PRINCIPAL */
+/* =============================== */
+
+main {
+    padding-top: 20px; /* Espace après le header */
+}
 
 .hero-services {
     text-align: center;
@@ -26,11 +118,13 @@
 }
 
 /* =============================== */
-/* 2. PROCESSUS DE FONCTIONNEMENT */
+/* 3. PROCESSUS DE FONCTIONNEMENT */
 /* =============================== */
 
-.section-how-it-works {
+.section-how-it-works, .section-pricing, .section-client-management {
     padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .process-steps {
@@ -54,8 +148,7 @@
 
 .process-steps h3 {
     color: var(--color-primary);
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     margin-bottom: 15px;
 }
 
@@ -67,12 +160,12 @@
 }
 
 /* =============================== */
-/* 3. TABLEAU DES PRIX (PRICING) */
+/* 4. TABLEAU DES PRIX (PRICING) */
 /* =============================== */
 
 .section-pricing {
-    padding: 60px 5%;
     background-color: #e9ecef;
+    text-align: center;
 }
 
 .pricing-table {
@@ -127,7 +220,7 @@
     border-bottom: 1px dashed #e9ecef;
 }
 
-/* Boutons d'appel à l'action (CTA) - Ils peuvent aussi être dans style.css si vous les utilisez partout */
+/* Boutons d'appel à l'action (CTA) */
 .cta-button {
     display: block;
     padding: 12px 25px;
@@ -145,12 +238,8 @@
 
 
 /* =============================== */
-/* 4. GESTION ET SUIVI CLIENTS */
+/* 5. GESTION ET SUIVI CLIENTS */
 /* =============================== */
-
-.section-client-management {
-    padding: 40px 5%;
-}
 
 .management-options {
     display: flex;
@@ -185,20 +274,40 @@
 }
 
 /* =============================== */
-/* 5. MEDIA QUERIES (Adaptation mobile) */
+/* 6. PIED DE PAGE (FOOTER) */
 /* =============================== */
+
+.site-footer {
+    text-align: center;
+    padding: 30px 5%;
+    background-color: var(--color-dark);
+    color: #fff;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* =============================== */
+/* 7. MEDIA QUERIES (Adaptation mobile) */
+/* =============================== */
+@media (max-width: 900px) {
+    .main-header {
+        flex-direction: column; /* Empile le logo et la nav sur mobile */
+        text-align: center;
+        gap: 15px;
+    }
+    .nav-links {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 768px) {
-    .pricing-table, .management-options {
+    .pricing-table, .management-options, .process-steps {
         flex-direction: column;
         align-items: center;
     }
     
-    .pack, .management-options article {
+    .pack, .management-options article, .process-steps .step {
         width: 100%;
         max-width: 400px;
-    }
-
-    .hero-services h1 {
-        font-size: 2rem;
     }
 }
