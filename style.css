@@ -76,7 +76,7 @@ h3 {
 header.main-header {
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
-    padding: 20px 5%;
+    padding: 12px 5%;
     position: sticky;
     top: 0;
     width: 100%;
@@ -95,7 +95,7 @@ header.main-header nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     align-items: center;
     flex: 1;
     justify-content: center;
@@ -105,9 +105,9 @@ header.main-header nav {
     text-decoration: none;
     color: var(--color-primary);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    padding: 10px 20px;
+    padding: 8px 18px;
     border-radius: 4px;
     background: var(--color-accent);
 }
@@ -167,8 +167,8 @@ header.main-header nav {
     width: 100%;
     min-height: 800px;
     background-image: url('LOGO FCS.jpg'); 
-    background-size: 50%; 
-    background-position: center 80px;
+    background-size: 60%; 
+    background-position: center 100px;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
