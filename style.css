@@ -79,13 +79,13 @@ h3 {
 header.main-header {
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
-    padding: 8px 5%;
+    /* RETOUR AU PADDING ORIGINAL POUR LE DESKTOP */
+    padding: 8px 5%; 
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-    /* Disposition Flex pour aligner Nav et Social sur Desktop */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,7 +185,6 @@ header.main-header nav {
 /* BLOC CTA DÉPLACÉ */
 .intro-message-container-deplace {
     max-width: 900px;
-    text-align: center;
     padding: 60px 5%;
     background: linear-gradient(to right, var(--color-accent) 0%, #00e6ad 100%); 
     color: var(--color-primary); 
@@ -314,7 +313,6 @@ section {
     margin-right: auto;
 }
 
-/* Positionnement spécifique du 4e élément sur desktop */
 .process-steps article:nth-child(4) {
     grid-column: 2;
 }
@@ -351,7 +349,6 @@ section {
 footer {
     background: var(--color-primary);
     color: var(--color-background);
-    /* Taille réduite */
     padding: 20px 5%; 
     margin-top: 0;
 }
@@ -365,7 +362,6 @@ footer {
 
 .legal p {
     margin-bottom: 10px;
-    /* Police réduite */
     font-size: 0.85rem; 
 }
 
@@ -374,7 +370,6 @@ footer {
     margin: 0 10px;
     text-decoration: none;
     transition: color 0.3s;
-    /* Police réduite */
     font-size: 0.8rem; 
 }
 
@@ -383,6 +378,7 @@ footer {
 /* ========================================= */
 
 @media (max-width: 1024px) {
+    
     /* HEADER : Empilage de la navigation et des icônes sociales */
     header.main-header {
         flex-direction: column;
@@ -412,20 +408,32 @@ footer {
 
 @media (max-width: 768px) {
     
+    /* HEADER (AMÉLIORATION ESTHÉTIQUE) */
+    header.main-header {
+        /* On réduit la hauteur verticale pour éviter le grand espace blanc en haut */
+        padding-top: 10px; 
+        padding-bottom: 10px;
+        gap: 8px; /* Réduction de l'espace entre les éléments empilés */
+    }
+
     /* NAVIGATION */
     .nav-links {
         gap: 8px;
     }
     
     .nav-links a {
-        font-size: 0.8rem;
-        padding: 5px 12px;
+        font-size: 0.75rem; /* Taille de police légèrement plus petite */
+        padding: 5px 10px;
     }
     
+    .social-nav {
+        margin-top: 5px;
+    }
+
     .social-nav a {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9rem;
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
     }
     
     .hero-section {
@@ -433,13 +441,19 @@ footer {
         padding: 60px 20px;
     }
     
+    /* CTA MESSAGE (AMÉLIORATION ESTHÉTIQUE) */
+    .intro-message-container-deplace {
+        /* Réduction du padding interne pour mieux contenir le bloc */
+        padding: 30px 4%; 
+        margin: 30px 0;
+    }
+
     .introduction-text-deplace {
-        font-size: 1.2rem;
+        font-size: 1.1rem; /* Réduction de la taille du texte */
     }
     
     section {
-        /* Maintient un padding raisonnable sur les côtés */
-        padding: 60px 5%; 
+        padding: 40px 5%; /* Réduction du padding vertical des sections */
     }
     
     .value-points {
