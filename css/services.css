@@ -1,6 +1,6 @@
 /* =============================== */
 /* CSS FINAL ET AUTONOME POUR services.html */
-/* Style : Pro, Zen, Stylé */
+/* Style : Pro, Zen, Stylé, avec fond géométrique et effets de mouvement */
 /* =============================== */
 
 /* Définition des variables */
@@ -29,12 +29,12 @@ body {
     color: var(--color-dark);
     line-height: 1.6;
     
-    /* MODIF : FOND AVEC DÉGRADÉ GÉOMÉTRIQUE DOUX (Pour éviter l'effet "trop blanc") */
+    /* FOND AVEC DÉGRADÉ GÉOMÉTRIQUE DOUX (Pour éviter l'effet "trop blanc") */
     background: radial-gradient(circle at top left, #ffffff, transparent),
                 radial-gradient(circle at bottom right, var(--color-background), transparent),
                 var(--color-header-bg);
     background-blend-mode: multiply;
-    background-attachment: fixed; /* Reste fixe en scrollant */
+    background-attachment: fixed; 
 }
 
 h1, h2, h3 {
@@ -57,7 +57,7 @@ a:hover {
 }
 
 /* =============================== */
-/* 1. EN-TÊTE (Header) - Style pour un header sans navigation */
+/* 1. EN-TÊTE (Header) */
 /* =============================== */
 
 .main-header {
@@ -91,7 +91,7 @@ main {
     overflow: hidden; 
 }
 
-/* Le "Truc Stylé" : Un pattern de fond géométrique subtil */
+/* Détail subtil en fond de bannière */
 .hero-services::before {
     content: '';
     position: absolute;
@@ -198,7 +198,7 @@ main {
     border-color: var(--color-primary);
 }
 
-/* MODIF : Pack Full Performance - Style Zen sans contour bleu vif */
+/* Pack Full Performance - Style Zen sans contour bleu vif (modifié) */
 .pack.full.featured {
     background: #fff; 
     border: 1px solid #e9ecef; 
@@ -242,7 +242,7 @@ main {
 
 
 /* =============================== */
-/* 5. GESTION ET SUIVI CLIENTS - L'ONGLET STYLÉ PLEINE LARGEUR */
+/* 5. GESTION ET SUIVI CLIENTS - L'ONGLET STYLÉ PLEINE LARGEUR (Modifié) */
 /* =============================== */
 
 .section-client-management {
