@@ -148,7 +148,7 @@ header.main-header nav {
     color: white;
     border-radius: 50%;
     text-decoration: none;
-    /* Assurez-vous que l'icône Font Awesome est de la bonne taille */
+    /* Styles pour icônes Font Awesome */
     font-size: 1.2rem; 
     transition: all 0.3s ease;
 }
@@ -160,7 +160,7 @@ header.main-header nav {
 }
 
 /* ========================================= */
-/* 4. SECTION HERO (Modifiée pour placer le contenu SOUS le logo) */
+/* 4. SECTION HERO (Correction pour placer le contenu juste SOUS le logo) */
 /* ========================================= */
 
 .hero-section {
@@ -173,11 +173,12 @@ header.main-header nav {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    /* MODIF : Aligne les éléments en haut */
+    
+    /* CORRECTION : Aligne les éléments au début (en haut) */
     justify-content: flex-start; 
     align-items: center;
-    /* MODIF : Pousse le contenu vers le bas (sous le logo) */
-    padding: 350px 20px 60px 20px; 
+    /* CORRECTION : Pousse le contenu vers le bas (Augmenté à 450px) */
+    padding: 450px 20px 60px 20px; 
 }
 
 /* Overlay sombre pour améliorer la lisibilité */
@@ -197,14 +198,14 @@ header.main-header nav {
 .hero-section > * {
     position: relative;
     z-index: 2;
-    margin-top: 50px; /* Ajout d'une marge pour ajustement visuel */
+    margin-top: 50px; 
 }
 
 .intro-message-container {
     max-width: 900px;
     text-align: center;
     padding: 40px 20px;
-    /* MODIF : Arrière-plan plus opaque pour la lisibilité */
+    /* Arrière-plan plus opaque pour la lisibilité sur l'image de fond */
     background: rgba(0, 0, 0, 0.7); 
     border-radius: 12px;
     backdrop-filter: blur(5px);
@@ -495,7 +496,7 @@ footer {
 }
 
 /* ========================================= */
-/* 11. RESPONSIVE (Modifiée pour l'ordre du menu) */
+/* 11. RESPONSIVE */
 /* ========================================= */
 
 @media (max-width: 1024px) {
@@ -506,19 +507,19 @@ footer {
     
     .nav-links {
         flex-wrap: wrap;
-        /* MODIF : Place les liens de navigation en bas */
+        /* MODIF : Place les liens de navigation en bas du header sur mobile */
         order: 3; 
     }
 
     .social-nav {
-        /* MODIF : Place les liens sociaux après le logo/titre et avant les nav-links */
+        /* MODIF : Place les liens sociaux après le logo/titre */
         order: 2;
         margin-top: 10px; 
     }
     
     /* Ajustement de la section hero pour les tablettes */
     .hero-section {
-        /* On réduit le padding pour ne pas pousser le texte trop loin */
+        /* On réduit le padding en version tablette */
         padding-top: 250px; 
     }
 }
