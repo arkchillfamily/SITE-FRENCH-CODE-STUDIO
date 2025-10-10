@@ -8,10 +8,10 @@
 
 :root {
     /* Palette de Couleurs */
-    --color-primary: #1A1A1A;     /* Noir Profond pour le texte principal */
-    --color-background: #F8F8F8;  /* Gris très clair pour l'arrière-plan (l'espace blanc) */
-    --color-accent: #00FFC0;      /* Cyan Vif pour le CTA (l'énergie, la modernité) */
-    --color-secondary: #555555;   /* Gris foncé pour le texte secondaire */
+    --color-primary: #1A1A1A;
+    --color-background: #F8F8F8;
+    --color-accent: #00FFC0;
+    --color-secondary: #555555;
     
     /* Typographie */
     --font-heading: 'Poppins', sans-serif; 
@@ -27,43 +27,33 @@
 
 /* Dégradé léger appliqué au corps entier */
 body {
-    /* Maintient le reste des styles body (police, couleur de texte) */
     font-family: var(--font-body);
     color: var(--color-primary);
     line-height: 1.7; 
-    
-    /* Le style de fond stylé : */
     background: 
         linear-gradient(to bottom, 
-            rgba(0, 255, 192, 0.05), /* Une touche très légère de la couleur accent */
+            rgba(0, 255, 192, 0.05),
             rgba(255, 255, 255, 0) 50%
         ),
-        var(--color-background); /* Revenir à la couleur de fond de base */
+        var(--color-background);
 }
 
-/* 🖼️ LOGO DE FOND FIXE SUR TOUTE LA PAGE */
+/* LOGO DE FOND FIXE SUR TOUTE LA PAGE */
 body::before {
     content: "";
-    position: fixed; /* Reste fixe au défilement */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    
-    /* Configuration de l'image du logo */
     background-image: url('LOGO FCS.jpg'); 
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100%; /* Très grand, ajustez si besoin */
-    
-    /* Effets stylés : N&B et Transparence */
+    background-size: 100%;
     filter: grayscale(100%); 
-    opacity: 0.03; /* Très subtil, ajustez si besoin */
-    
-    /* Couche et Interactivité */
-    z-index: -1; /* Place derrière tout le contenu */
-    pointer-events: none; /* Permet les clics sur le contenu devant */
-
+    opacity: 0.03;
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* ========================================= */
@@ -72,130 +62,105 @@ body::before {
 
 h1, h2, h3 {
     font-family: var(--font-heading);
-    font-weight: 900; /* Extra gras pour un style "Bold" */
-    line-height: 1.1; /* Rapproche les lignes pour l'impact */
+    font-weight: 900;
+    line-height: 1.1;
     margin-bottom: 0.5em;
 }
 
-/* Le titre H1 de la section Héro doit être ENORME */
 .hero-section h1 {
     font-size: clamp(3rem, 7vw, 6rem); 
     color: var(--color-primary);
     margin-bottom: 25px;
-     /* 1. Rapprochez les lettres pour un look moderne et percutant */
     letter-spacing: -1.5px; 
-    
-    /* 2. Augmentez la graisse (si Poppins le permet) */
     font-weight: 900; 
-
 }
 
 .hero-section p {
     font-size: 1.15rem;
-    color: var(--color-secondary);
-    max-width: 600px; /* Limiter la largeur pour une meilleure lisibilité */
+    color: #444444;
+    max-width: 600px;
     margin-bottom: 40px;
-     /* 1. Augmentez l'interligne pour plus de confort de lecture */
     line-height: 1.75; 
-    
-    /* 2. Rendez le texte un peu plus gris pour qu'il ne rivalise pas avec le H1 */
-    color: #444444; 
-    
 }
+
 .hero-section {
-    position: relative; /* ⬅️ IMPORTANT : On garde position: relative */
+    position: relative;
     z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-    
-    /* AJOUTEZ VOS PROPRIÉTÉS D'IMAGE (si elles n'y sont pas déjà) */
     width: 100%;
     height: 600px; 
     background-image: url('LOGO FCS.jpg'); 
     background-size: cover; 
     background-position: center; 
-    padding: 0 !important;  
+    padding: 0 !important; 
 }
 
-header.main-header { /* Ciblez le header à l'intérieur du hero */
+/* ========================================= */
+/* 3. NAVIGATION (HEADER) */
+/* ========================================= */
+
+header.main-header {
     background: none; 
     padding: 20px 5%;
     width: 100%; 
     z-index: 10;
-    
- /* MODIFICATION DU POSITIONNEMENT */
     position: absolute;
-    top: auto; /* Supprime l'ancienne position 'top' */
-    bottom: 20px; /* ⬅️ NOUVEAU : Positionne la navigation à 20px du bas de l'image */
+    bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); /* ⬅️ NOUVEAU : Uniquement translation horizontale (-50% en X) */
-
+    transform: translateX(-50%);
     text-align: center;
     color: white;  
 }
 
-/* ⬅️ AJOUTEZ CE BLOC pour centrer la liste des liens */
 header.main-header ul.nav-links {
     list-style: none;
     padding: 0;
-    margin: 0 auto; /* Permet de centrer la liste des liens */
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-
+    gap: 30px;
 }
 
-    /* ⬅️ AJOUTEZ CE NOUVEAU BLOC */
 header.main-header ul.nav-links li a {
-    /* Augmente la taille de la police */
-    font-size: 1.3em; /* ⬅️ Agrandir la police */
+    font-size: 1.3em;
     font-weight: bold; 
-    
-    /* Pour un meilleur look */
-    padding: 10px 25px; /* Augmente la zone cliquable */
-    
-    /* Assurez-vous que les couleurs sont bien en blanc pour le contraste */
-    color: var(--color-primary); /* Utilise votre couleur de texte principale */
-    text-shadow: none; 
+    padding: 10px 25px;
+    color: white; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
     text-decoration: none;
-    
-    /* ⬅️ NOUVEAU : Ajout de la transition pour l'effet de mouvement */
-    transition: color 0.3s ease, transform 0.3s ease; 
-    
+    transition: color 0.3s;
 }
 
 header.main-header ul.nav-links li a:hover {
-    /* ⬅️ Effet 1 : Changer la couleur (vers votre couleur accent, par exemple) */
-    color: var(--color-accent); /* Votre cyan vif */
-    
-    /* ⬅️ Effet 2 : Léger soulèvement (le mouvement que vous voulez) */
-    transform: translateY(-2px); 
+    color: var(--color-accent);
 }
 
-/* ⬅️ AJOUTEZ : Centrage du contenu (paragraphe + bouton) dans l'image */
+/* Hero Content */
 .hero-content {
-    top: 55%; /* Légèrement plus bas que 50% pour laisser de la place au menu */
+    position: absolute;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%); 
     text-align: center;
     max-width: 800px;
-    color: white; /* Pour la lisibilité sur l'image */
+    color: white;
     z-index: 5;
-    margin-top: 40px; 
-    
 }
 
+/* Introduction Message */
 .intro-message-container {
     padding: 40px 20px;
-    max-width: 800px; /* Largeur de lecture confortable */
-    margin: 0 auto; /* ⬅️ Centrage horizontal de tout le bloc */
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .introduction-text {
     font-size: 1.2em;
     line-height: 1.6;
-    margin-bottom: 20px; /* Espace avant le bouton */
-    color: var(--color-primary); /* Utilise la couleur de texte principale de votre site */
+    margin-bottom: 20px;
+    color: var(--color-primary);
 }
 
 section {
@@ -204,77 +169,30 @@ section {
     margin: 0 auto;
 }
 
-/* ========================================= */
-/* 3. NAVIGATION (HEADER) */
-/* ========================================= */
-header { /* Ou utilisez .main-header si vous avez ajouté cette classe en HTML */
-    /* ⬅️ MODIFIER : Rendre le fond transparent pour voir l'image du hero */
-    background: none; 
-    
-    padding: 20px 5%;
-    
-    /* ⬅️ SUPPRIMER : On n'utilise plus position: sticky car il est dans le hero */
-    /* position: sticky; */ 
-    
-    /* ⬅️ AJOUTER : Positionnement pour la navigation en haut de l'image */
-    top: 0;
-    width: 100%;
-    
-    /* ⬅️ AJOUTER : S'assurer que les liens sont lisibles */
-    color: white; /* Pour le texte du logo */
-    
-    /* Utiliser Flexbox pour aligner logo et menu */
+/* Logo styling */
+.logo a {
     display: flex;
-    justify-content: space-between; 
     align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
-/* ⬅️ AJOUTER : Pour les liens spécifiques */
-header nav a {
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Améliore le contraste */
-}
-
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* 📌 COLLEZ ICI LE NOUVEAU CODE CSS DU LOGO IMAGE */
 .agency-logo {
     height: 48px; 
     width: auto;
     display: block;
-
-     /* 2. Ajouter une ombre subtile pour le faire ressortir du fond clair */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Ombre très légère et discrète */
-    border-radius: 4px; /* Un léger arrondi si l'image le permet */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
 }
 
-/* Optionnel : Rendre la barre de navigation plus fine en réduisant le padding */
-header {
-    padding: 15px 5%; /* Réduit le padding de 20px à 15px */
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
+.site-name-text {
+    font-family: "Dancing Script", serif;
+    font-size: 1.8em; 
+    color: #007bff;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
     text-decoration: none;
-    color: var(--color-primary);
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--color-accent); /* Effet moderne au survol */
+    margin-left: 10px;
 }
 
 /* ========================================= */
@@ -293,20 +211,17 @@ header {
     border-radius: 4px;
 }
 
-/* Bouton Principal (Couleur d'accent) */
 .button.primary {
     background-color: var(--color-accent);
     color: var(--color-primary); 
-    /* Ombre subtile pour le faire ressortir */
     box-shadow: 0 4px 15px rgba(0, 255, 192, 0.3);
 }
 
 .button.primary:hover {
-    transform: translateY(-2px); /* Léger soulèvement au survol (micro-interaction) */
+    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 255, 192, 0.5);
 }
 
-/* Bouton Secondaire (Style "Ghost" ou Outline) */
 .button.secondary {
     background-color: transparent;
     color: var(--color-primary);
@@ -322,6 +237,7 @@ header {
 /* ========================================= */
 /* 5. SECTIONS SPECIFIQUES (Fondations & Process) */
 /* ========================================= */
+
 .values-section, .process-section {
     padding: 80px 5%;
     max-width: 1200px;
@@ -333,7 +249,6 @@ header {
     margin-bottom: 60px;
 }
 
-/* Mise en page des 3 points (Fondations) */
 .value-points, .process-steps {
     display: flex;
     gap: 40px;
@@ -343,7 +258,7 @@ header {
 .value-points article, .process-steps article {
     flex: 1;
     padding: 20px;
-    border-left: 3px solid var(--color-accent); /* Accent visuel moderne */
+    border-left: 3px solid var(--color-accent);
 }
 
 .value-points h3, .process-steps h3 {
@@ -351,13 +266,13 @@ header {
     margin-bottom: 15px;
 }
 
-/* Preuve sociale (Logos discrets) */
 .social-proof {
     margin-top: 50px;
     padding-top: 20px;
-    border-top: 1px solid #E0E0E0; /* Ligne fine et discrète */
+    border-top: 1px solid #E0E0E0;
     color: var(--color-secondary);
 }
+
 .social-proof .logos span {
     font-size: 0.9rem;
     margin-right: 20px;
@@ -365,33 +280,7 @@ header {
 }
 
 /* ========================================= */
-/* 6. RESPONSIVE (POUR LE MOBILE) */
-/* ========================================= */
-
-@media (max-width: 900px) {
-    .value-points, .process-steps {
-        flex-direction: column;
-    }
-    
-    .hero-section {
-        padding: 100px 5% 60px 5%;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-
-    section {
-        padding: 60px 5%;
-    }
-
-    .nav-links {
-        display: none; 
-    }
- }
-
-/* ========================================= */
-/* FOOTER */
+/* 6. FOOTER */
 /* ========================================= */
 
 footer {
@@ -438,30 +327,35 @@ footer {
 .legal a {
     margin: 0 15px;
 }
-/* Style du lien pour aligner verticalement le logo et le texte */
-.logo a {
-    display: flex;
-    align-items: center; /* Centre verticalement l'image et le texte */
-    gap: 10px; /* Ajoute un petit espace entre le logo et le texte */
-    text-decoration: none; /* Enlève le soulignement du lien */
+
+/* ========================================= */
+/* 7. RESPONSIVE (POUR LE MOBILE) */
+/* ========================================= */
+
+@media (max-width: 900px) {
+    .value-points, .process-steps {
+        flex-direction: column;
+    }
+    
+    .hero-section {
+        height: 400px;
+        padding: 60px 5%;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header.main-header ul.nav-links li a {
+        font-size: 1.1em;
+    }
 }
-/* Nouveau style pour le nom du site à côté du logo */
-.site-name-text {
-    /* 1. Changer la Police (Remplacez par le nom d'une police que vous avez chargée) */
-    font-family: "Dancing Script", serif; /* Exemple d'une police élégante */
-    /* 2. Changer la Taille du Texte */
-    font-size: 1.8em; 
-    /* 3. Définir une Belle Couleur */
-    color: #007bff; /* Un bleu vif, à ajuster selon votre thème */
-    /* 4. Rendre le Texte Gras */
-    font-weight: 700;
-    /* 5. Ajouter une Ombre Discrète (pour un effet de relief) */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
-    /* 6. Supprimer le soulignement (au cas où un style par défaut s'appliquerait) */
-    text-decoration: none;
-    /* 7. Ajouter un petit espace entre le logo et le nom */
-    margin-left: 10px;
-
-}
-
-
