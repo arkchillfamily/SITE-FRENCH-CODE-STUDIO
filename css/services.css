@@ -77,6 +77,55 @@ a:hover {
 }
 
 /* =============================== */
+/* BOUTON RETOUR - Style moderne zen */
+/* =============================== */
+
+.back-button-fixed {
+    position: fixed; 
+    top: 30px;
+    left: 30px;
+    z-index: 1000;
+}
+
+.back-button-fixed .back-link {
+    font-size: 2.2rem;
+    color: var(--color-dark);
+    background: var(--color-bg);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.back-button-fixed .back-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-bg-alt);
+}
+
+/* Mobile - Bouton retour plus petit */
+@media (max-width: 768px) {
+    .back-button-fixed {
+        top: 20px;
+        left: 20px;
+    }
+    
+    .back-button-fixed .back-link {
+        width: 48px;
+        height: 48px;
+        font-size: 1.8rem;
+    }
+}
+
+/* =============================== */
 /* HEADER - Minimaliste et élégant */
 /* =============================== */
 
@@ -550,38 +599,3 @@ main {
 .pack:nth-child(1) { animation-delay: 0.1s; }
 .pack:nth-child(2) { animation-delay: 0.2s; }
 .pack:nth-child(3) { animation-delay: 0.3s; }
-
-}
-
-/* =============================== */
-/* STYLE POUR BOUTON RETOUR FIXE */
-/* =============================== */
-
-/* Conteneur fixe, non dépendant d'un header */
-.back-button-fixed {
-    /* Positionne le bouton dans le coin de la fenêtre */
-    position: fixed; 
-    top: 25px;       /* Marge depuis le haut */
-    left: 25px;      /* Marge depuis la gauche */
-    z-index: 1000;   /* Assure qu'il est au-dessus de tout le contenu */
-}
-
-.back-button-fixed .back-link {
-    /* Style visuel de la flèche */
-    font-size: 1.6rem; 
-    color: var(--color-dark); 
-    padding: 10px 12px;
-    background-color: var(--color-header-bg); /* Fond blanc */
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre pour le relief */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-
-.back-button-fixed .back-link:hover {
-    color: var(--color-primary); 
-    background-color: var(--color-background); 
-    transform: translateY(-2px); /* Petit effet de soulèvement au survol */
-}
