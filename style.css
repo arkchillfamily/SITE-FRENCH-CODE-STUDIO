@@ -1,44 +1,37 @@
-/* Importation de la police Google Fonts (Poppins pour Bold/Titres et Inter pour le corps) */
+/* Importation de la police Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&family=Inter:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 /* ========================================= */
-/* 1. FONDATIONS & VARIABLES (CONTRASTES) */
+/* 1. VARIABLES ET RESET */
 /* ========================================= */
 
 :root {
-    /* Palette de Couleurs */
     --color-primary: #1A1A1A;
     --color-background: #F8F8F8;
     --color-accent: #00FFC0;
     --color-secondary: #555555;
-    
-    /* Typographie */
     --font-heading: 'Poppins', sans-serif; 
     --font-body: 'Inter', sans-serif; 
 }
 
-/* Reset de base pour un look propre */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Dégradé léger appliqué au corps entier */
 body {
     font-family: var(--font-body);
     color: var(--color-primary);
     line-height: 1.7; 
-    background: 
-        linear-gradient(to bottom, 
-            rgba(0, 255, 192, 0.05),
-            rgba(255, 255, 255, 0) 50%
-        ),
-        var(--color-background);
+    background: linear-gradient(to bottom, 
+        rgba(0, 255, 192, 0.05),
+        rgba(255, 255, 255, 0) 50%
+    ), var(--color-background);
 }
 
-/* LOGO DE FOND FIXE SUR TOUTE LA PAGE */
+/* Logo de fond fixe */
 body::before {
     content: "";
     position: fixed;
@@ -57,7 +50,7 @@ body::before {
 }
 
 /* ========================================= */
-/* 2. TYPOGRAPHIE (BOLD & IMPACT) */
+/* 2. TYPOGRAPHIE */
 /* ========================================= */
 
 h1, h2, h3 {
@@ -67,90 +60,143 @@ h1, h2, h3 {
     margin-bottom: 0.5em;
 }
 
-.hero-section h1 {
-    font-size: clamp(3rem, 7vw, 6rem); 
+h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* ========================================= */
+/* 3. HEADER - NAVIGATION PRINCIPALE (HAUT DE PAGE) */
+/* ========================================= */
+
+header.main-header {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.agency-logo {
+    height: 48px; 
+    width: auto;
+    display: block;
+}
+
+.site-name-text {
+    font-family: "Dancing Script", serif;
+    font-size: 1.8em; 
+    color: #007bff;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
     color: var(--color-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* ========================================= */
+/* 4. SECTION HERO */
+/* ========================================= */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-image: url('LOGO FCS.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Overlay sombre pour améliorer la lisibilité */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 800px;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem); 
+    color: white;
     margin-bottom: 25px;
-    letter-spacing: -1.5px; 
-    font-weight: 900; 
+    letter-spacing: -1.5px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .hero-section p {
     font-size: 1.15rem;
-    color: #444444;
+    color: rgba(255, 255, 255, 0.95);
     max-width: 600px;
-    margin-bottom: 40px;
-    line-height: 1.75; 
+    margin: 0 auto 40px;
+    line-height: 1.75;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
-.hero-section {
-    position: relative;
-    z-index: 2;
+/* ========================================= */
+/* 5. SECTIONS GÉNÉRALES */
+/* ========================================= */
+
+section {
+    padding: 80px 5%;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
-    height: 600px; 
-    background-image: url('LOGO FCS.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    padding: 0 !important; 
 }
 
-/* ========================================= */
-/* 3. NAVIGATION (HEADER) */
-/* ========================================= */
-
-header.main-header {
-    background: none; 
-    padding: 20px 5%;
-    width: 100%; 
-    z-index: 10;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: white;  
-}
-
-header.main-header ul.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-header.main-header ul.nav-links li a {
-    font-size: 1.3em;
-    font-weight: bold; 
-    padding: 10px 25px;
-    color: white; 
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-header.main-header ul.nav-links li a:hover {
-    color: var(--color-accent);
-}
-
-/* Hero Content */
-.hero-content {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    text-align: center;
-    max-width: 800px;
-    color: white;
-    z-index: 5;
-}
-
-/* Introduction Message */
 .intro-message-container {
-    padding: 40px 20px;
+    padding: 60px 20px;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -163,40 +209,8 @@ header.main-header ul.nav-links li a:hover {
     color: var(--color-primary);
 }
 
-section {
-    padding: 80px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Logo styling */
-.logo a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.agency-logo {
-    height: 48px; 
-    width: auto;
-    display: block;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-}
-
-.site-name-text {
-    font-family: "Dancing Script", serif;
-    font-size: 1.8em; 
-    color: #007bff;
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
-    text-decoration: none;
-    margin-left: 10px;
-}
-
 /* ========================================= */
-/* 4. BOUTONS (CTA) & MICRO-INTERACTIONS */
+/* 6. BOUTONS */
 /* ========================================= */
 
 .button {
@@ -224,24 +238,22 @@ section {
 
 .button.secondary {
     background-color: transparent;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    color: white;
+    border: 2px solid white;
     margin-left: 20px;
 }
 
 .button.secondary:hover {
-    background-color: var(--color-primary);
-    color: var(--color-background);
+    background-color: white;
+    color: var(--color-primary);
 }
 
 /* ========================================= */
-/* 5. SECTIONS SPECIFIQUES (Fondations & Process) */
+/* 7. SECTIONS VALUES & PROCESS */
 /* ========================================= */
 
 .values-section, .process-section {
     padding: 80px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .values-section h2, .process-section h2 {
@@ -250,37 +262,59 @@ section {
 }
 
 .value-points, .process-steps {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     text-align: left;
 }
 
 .value-points article, .process-steps article {
-    flex: 1;
-    padding: 20px;
-    border-left: 3px solid var(--color-accent);
+    padding: 30px;
+    border-left: 4px solid var(--color-accent);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .value-points h3, .process-steps h3 {
-    font-size: 1.5rem;
     margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.value-points p, .process-steps p {
+    color: var(--color-secondary);
+    line-height: 1.6;
 }
 
 .social-proof {
     margin-top: 50px;
-    padding-top: 20px;
+    padding-top: 30px;
     border-top: 1px solid #E0E0E0;
+    text-align: center;
+}
+
+.social-proof p {
     color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.social-proof .logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .social-proof .logos span {
     font-size: 0.9rem;
-    margin-right: 20px;
     opacity: 0.7;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
 }
 
 /* ========================================= */
-/* 6. FOOTER */
+/* 8. FOOTER */
 /* ========================================= */
 
 footer {
@@ -296,15 +330,21 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
+    margin-bottom: 40px;
 }
 
 .footer-content h3 {
     color: var(--color-accent);
     margin-bottom: 20px;
+    font-size: 1.2rem;
 }
 
 .footer-content ul {
     list-style: none;
+}
+
+.footer-content ul li {
+    margin-bottom: 10px;
 }
 
 .footer-content a {
@@ -318,44 +358,64 @@ footer {
 }
 
 .legal {
-    margin-top: 40px;
-    padding-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
     border-top: 1px solid rgba(255,255,255,0.1);
     text-align: center;
 }
 
+.legal p {
+    margin-bottom: 15px;
+}
+
 .legal a {
+    color: var(--color-background);
     margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.legal a:hover {
+    color: var(--color-accent);
 }
 
 /* ========================================= */
-/* 7. RESPONSIVE (POUR LE MOBILE) */
+/* 9. RESPONSIVE */
 /* ========================================= */
 
-@media (max-width: 900px) {
-    .value-points, .process-steps {
-        flex-direction: column;
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
     }
     
     .hero-section {
-        height: 400px;
-        padding: 60px 5%;
+        height: 500px;
     }
     
     .hero-section h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
     section {
         padding: 60px 5%;
     }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
+    
+    .value-points, .process-steps {
+        grid-template-columns: 1fr;
     }
     
-    header.main-header ul.nav-links li a {
-        font-size: 1.1em;
+    .button.secondary {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 }
