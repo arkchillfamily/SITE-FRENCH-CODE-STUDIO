@@ -204,9 +204,16 @@ header.main-header nav {
 }
 
 .button.primary {
+    /* Style Noir + Texte Menthe */
     background-color: var(--color-primary); 
     color: var(--color-accent); 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    background-color: #333333;
 }
 
 .button.primary.large {
@@ -255,7 +262,6 @@ section {
     color: var(--color-primary); 
     font-family: var(--font-heading);
     font-weight: 900;
-    /* Hérite de la taille et du centrage du h2 global */
 }
 
 .value-points {
