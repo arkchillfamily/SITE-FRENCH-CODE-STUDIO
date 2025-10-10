@@ -188,16 +188,77 @@ header.main-header nav {
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 600px; 
+    min-height: 700px; 
     background-image: url('../image/LOGO FCS.jpg'); 
-    background-size: 60%; 
-    background-position: center 100px;
+    background-size: 75%; 
+    background-position: center 80px;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    padding: 80px 20px 60px 20px; 
+    padding: 80px 20px 60px 20px;
+    animation: logoAppear 1.5s ease-out;
+}
+
+/* Animation d'apparition du logo */
+@keyframes logoAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Effet de brillance qui passe sur le logo */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 500px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 255, 192, 0.15) 45%,
+        rgba(0, 255, 192, 0.3) 50%,
+        rgba(0, 255, 192, 0.15) 55%,
+        transparent 100%
+    );
+    animation: shine 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* Effet de pulsation subtile */
+.hero-section {
+    animation: logoAppear 1.5s ease-out, logoPulse 4s ease-in-out infinite 1.5s;
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        filter: brightness(1) drop-shadow(0 0 0 transparent);
+    }
+    50% {
+        filter: brightness(1.05) drop-shadow(0 0 30px rgba(0, 255, 192, 0.3));
+    }
 }
 
 /* BLOC CTA DÉPLACÉ (Harmonisation Mint) */
@@ -410,7 +471,7 @@ footer {
 
 @media (max-width: 1024px) {
     header.main-header nav {
-        top: 550px;
+        top: 600px;
     }
     
     .nav-links {
@@ -420,7 +481,13 @@ footer {
     }
     
     .hero-section {
-        min-height: 500px;
+        min-height: 600px;
+        background-size: 70%;
+    }
+    
+    .hero-section::after {
+        width: 70%;
+        height: 450px;
     }
 }
 
@@ -430,7 +497,7 @@ footer {
     }
 
     header.main-header nav {
-        top: 350px;
+        top: 450px;
     }
 
     .nav-links {
@@ -461,8 +528,14 @@ footer {
     }
     
     .hero-section {
-        min-height: 400px;
+        min-height: 500px;
         padding: 40px 20px;
+        background-size: 85%;
+    }
+
+    .hero-section::after {
+        width: 85%;
+        height: 350px;
     }
 
     .intro-message-container-deplace {
