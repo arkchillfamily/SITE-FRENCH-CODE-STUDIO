@@ -95,7 +95,7 @@ header.main-header nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 80px; /* Espacement encore augmenté à 80px */
+    gap: 80px;
     align-items: center;
     padding: 0;
 }
@@ -112,23 +112,8 @@ header.main-header nav {
     white-space: nowrap;
     position: relative;
     overflow: hidden;
-}
-
-/* Dégradé simple du noir au mint de gauche à droite */
-.nav-links li:nth-child(1) a {
-    background: linear-gradient(135deg, #1A1A1A 0%, #242424 100%);
-}
-
-.nav-links li:nth-child(2) a {
-    background: linear-gradient(135deg, #242424 0%, #2d2d2d 100%);
-}
-
-.nav-links li:nth-child(3) a {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1f4d42 100%);
-}
-
-.nav-links li:nth-child(4) a {
-    background: linear-gradient(135deg, #1f4d42 0%, #00a37a 100%);
+    /* COULEUR UNIFORME POUR TOUS LES ONGLETS */
+    background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 100%);
 }
 
 /* Effet de brillance au survol */
@@ -153,7 +138,7 @@ header.main-header nav {
 }
 
 .nav-links a.cta-nav {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #00e6ad 100%);
     color: var(--color-primary);
     font-weight: 700;
     box-shadow: 0 4px 20px rgba(0, 255, 192, 0.5);
@@ -163,7 +148,7 @@ header.main-header nav {
 .nav-links a.cta-nav:hover {
     box-shadow: 0 8px 30px rgba(0, 255, 192, 0.7);
     transform: translateY(-3px) scale(1.05);
-    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
+    background: linear-gradient(135deg, #00e6ad 0%, var(--color-accent) 100%);
 }
 
 /* Liens réseaux sociaux - EN HAUT À DROITE */
@@ -520,7 +505,7 @@ footer {
 /* Grand écran desktop */
 @media (min-width: 1440px) {
     .nav-links {
-        gap: 90px; /* Encore plus d'espace sur grands écrans */
+        gap: 90px;
     }
 }
 
