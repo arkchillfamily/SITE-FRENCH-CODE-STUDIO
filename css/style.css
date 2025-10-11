@@ -70,7 +70,7 @@ h3 {
 }
 
 /* ========================================= */
-/* 3. HEADER - NAVIGATION MODIFIÉE */
+/* 3. HEADER - NAVIGATION OPTIMISÉE */
 /* ========================================= */
 
 header.main-header {
@@ -95,32 +95,58 @@ header.main-header nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 50px;
+    gap: 60px; /* Espacement augmenté de 50px à 60px */
     align-items: center;
     padding: 0;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--color-primary);
+    color: white;
     font-weight: 700;
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    padding: 12px 24px;
+    padding: 12px 28px; /* Augmenté de 24px à 28px */
     border-radius: 8px;
-    background: var(--color-accent);
-    box-shadow: 0 4px 15px rgba(0, 255, 192, 0.3);
+    background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; /* Évite le retour à la ligne */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de brillance au survol */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 192, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-links a:hover::before {
+    left: 100%;
 }
 
 .nav-links a:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.4);
+    background: linear-gradient(135deg, #2d2d2d 0%, #1A1A1A 100%);
 }
 
 .nav-links a.cta-nav {
-    background: var(--color-accent);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #00e6ad 100%);
     color: var(--color-primary);
     font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0, 255, 192, 0.4);
+}
+
+.nav-links a.cta-nav:hover {
+    background: linear-gradient(135deg, #00e6ad 0%, var(--color-accent) 100%);
+    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.6);
 }
 
 /* Liens réseaux sociaux - EN HAUT À DROITE */
@@ -471,54 +497,101 @@ footer {
 }
 
 /* ========================================= */
-/* 11. RESPONSIVE (Styles pour mobile) */
+/* 11. RESPONSIVE - OPTIMISÉ POUR TABLETTES ET MOBILES */
 /* ========================================= */
 
-@media (max-width: 1024px) {
+/* Grand écran desktop */
+@media (min-width: 1440px) {
+    .nav-links {
+        gap: 70px; /* Encore plus d'espace sur grands écrans */
+    }
+}
+
+/* Tablette paysage (1024px - 1280px) */
+@media (max-width: 1280px) {
     header.main-header nav {
-        top: 800px;
+        top: 850px;
     }
     
     .nav-links {
+        gap: 45px;
+    }
+    
+    .nav-links a {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablette standard (768px - 1024px) */
+@media (max-width: 1024px) {
+    header.main-header nav {
+        top: 750px;
+    }
+    
+    .nav-links {
+        gap: 35px;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 30px;
+        max-width: 600px;
+    }
+    
+    .nav-links a {
+        padding: 11px 22px;
+        font-size: 0.88rem;
     }
     
     .hero-section {
         min-height: 700px;
-        background-size: 80%;
+        background-size: 85%;
     }
     
     .hero-section::after {
-        width: 80%;
+        width: 85%;
         height: 550px;
+    }
+    
+    .intro-message-container-deplace {
+        padding: 50px 5%;
+    }
+    
+    .introduction-text-deplace {
+        font-size: 1.3rem;
     }
 }
 
+/* Petite tablette / Grand mobile paysage (600px - 768px) */
 @media (max-width: 768px) {
     header.main-header {
         padding: 15px 5%;
     }
 
     header.main-header nav {
-        top: 550px;
+        top: 580px;
     }
 
     .nav-links {
-        gap: 10px;
+        gap: 15px;
         flex-direction: column;
+        width: 100%;
     }
     
     .nav-links a {
-        font-size: 0.85rem;
-        padding: 10px 20px;
+        font-size: 0.9rem;
+        padding: 12px 30px;
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+    
+    .social-nav {
+        gap: 12px;
     }
     
     .social-nav a {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
+        width: 42px;
+        height: 42px;
+        font-size: 1.15rem;
     }
 
     .back-button-fixed {
@@ -533,57 +606,152 @@ footer {
     }
     
     .hero-section {
-        min-height: 600px;
-        padding: 40px 20px;
-        background-size: 95%;
+        min-height: 620px;
+        padding: 30px 15px;
+        background-size: 90%;
+        background-position: center 30px;
     }
 
     .hero-section::after {
-        width: 95%;
-        height: 450px;
+        width: 90%;
+        height: 480px;
     }
 
     .intro-message-container-deplace {
-        padding: 30px 5%;
-        margin: 30px 0;
+        padding: 40px 5%;
+        margin: 30px 15px;
     }
 
     .introduction-text-deplace {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
     
     section {
-        padding: 40px 5%;
+        padding: 50px 5%;
     }
     
     .value-points {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
     
     .process-steps {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     
     .process-steps article:nth-child(4) {
-        grid-column: 1; 
+        grid-column: 1;
     }
     
     .final-cta {
         padding: 60px 5%;
+        margin: 40px 15px;
     }
     
     .button.primary.large {
         padding: 18px 35px;
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
     
     .image-placeholder {
-        height: 200px;
+        min-height: 220px;
     }
+}
 
+/* Mobile standard (480px - 600px) */
+@media (max-width: 600px) {
+    header.main-header nav {
+        top: 540px;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 11px 25px;
+    }
+    
+    .hero-section {
+        min-height: 580px;
+        background-size: 95%;
+    }
+    
+    .hero-section::after {
+        height: 450px;
+    }
+    
+    .introduction-text-deplace {
+        font-size: 1.1rem;
+    }
+}
+
+/* Petit mobile (320px - 480px) */
+@media (max-width: 480px) {
+    header.main-header nav {
+        top: 500px;
+    }
+    
+    .nav-links {
+        gap: 12px;
+    }
+    
+    .nav-links a {
+        font-size: 0.82rem;
+        padding: 10px 20px;
+        max-width: 240px;
+    }
+    
+    .social-nav a {
+        width: 38px;
+        height: 38px;
+        font-size: 1.05rem;
+    }
+    
+    .back-button-fixed {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .back-button-fixed .back-link {
+        width: 45px;
+        height: 45px;
+        font-size: 1.8rem;
+    }
+    
+    .hero-section {
+        min-height: 520px;
+        background-size: 100%;
+    }
+    
+    .hero-section::after {
+        width: 100%;
+        height: 420px;
+    }
+    
+    .intro-message-container-deplace {
+        padding: 30px 4%;
+        margin: 20px 10px;
+    }
+    
+    .introduction-text-deplace {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    section {
+        padding: 40px 4%;
+    }
+    
+    h2 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+    
+    .button.primary.large {
+        padding: 16px 28px;
+        font-size: 1rem;
+    }
+    
     .legal a {
-        display: block; 
-        margin: 5px 0;
+        display: block;
+        margin: 8px 0;
     }
 }
