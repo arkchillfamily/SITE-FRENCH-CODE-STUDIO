@@ -1,22 +1,25 @@
 /* ========================================= */
-/* À PROPOS - STYLE MINT/NOIR PROFESSIONNEL */
+/* À PROPOS - STYLE ÉLÉGANT & PROFESSIONNEL */
 /* ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Lato:wght@300;400;600;700&display=swap');
 
 :root {
-    --color-primary: #1A1A1A;
-    --color-background: #F8F8F8;
-    --color-accent: #00FFC0;
-    --color-accent-dark: #00e6ad;
-    --color-secondary: #555555;
-    --color-text-light: #777777;
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --color-primary: #1B2838;
+    --color-secondary: #2C3E50;
+    --color-accent: #D4AF37;
+    --color-accent-light: #E8C766;
+    --color-background: #FAFBFC;
+    --color-text: #34495E;
+    --color-text-light: #7F8C8D;
+    --color-white: #FFFFFF;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ========================================= */
-/* 1. BASE ET FOND */
+/* 1. BASE & RÉINITIALISATION */
 /* ========================================= */
 
 * {
@@ -27,26 +30,29 @@
 
 body {
     font-family: var(--font-body);
-    line-height: 1.7;
-    color: var(--color-primary);
-    background: linear-gradient(to bottom, rgba(0, 255, 192, 0.03), rgba(255, 255, 255, 0) 50%), var(--color-background);
+    line-height: 1.8;
+    color: var(--color-text);
+    background: linear-gradient(180deg, #FAFBFC 0%, #F5F7FA 100%);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Logo en fond fixe */
+/* Watermark subtil avec le logo */
 body::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    height: 70vh;
     background-image: url('../image/LOGO FCS.jpg');
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 90%;
-    filter: grayscale(80%) blur(0.5px) sepia(20%);
-    opacity: 0.04;
+    background-position: center;
+    background-size: contain;
+    filter: grayscale(100%) brightness(1.3);
+    opacity: 0.02;
     z-index: -1;
     pointer-events: none;
 }
@@ -56,20 +62,22 @@ body::before {
 /* ========================================= */
 
 .container {
-    max-width: 1200px;
-    margin: 80px auto 60px;
-    padding: 60px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    max-width: 1100px;
+    margin: 100px auto 80px;
+    padding: 80px 70px;
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        0 8px 24px rgba(0, 0, 0, 0.06);
     position: relative;
-    animation: fadeIn 0.8s ease-out;
+    animation: fadeInContainer 1s ease-out;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInContainer {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -77,32 +85,34 @@ body::before {
     }
 }
 
-/* Bordure accent en haut */
+/* Accent doré discret en haut */
 .container::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-    border-radius: 20px 20px 0 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    border-radius: 0 0 3px 3px;
 }
 
 /* ========================================= */
-/* 3. TYPOGRAPHIE */
+/* 3. TYPOGRAPHIE RAFFINÉE */
 /* ========================================= */
 
 h1 {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 900;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     color: var(--color-primary);
+    letter-spacing: -0.5px;
     position: relative;
-    padding-bottom: 25px;
-    animation: fadeInDown 0.8s ease-out;
+    padding-bottom: 30px;
+    animation: fadeInTitle 1.2s ease-out;
 }
 
 h1::after {
@@ -111,16 +121,15 @@ h1::after {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 5px;
+    width: 60px;
+    height: 3px;
     background: var(--color-accent);
-    border-radius: 3px;
 }
 
-@keyframes fadeInDown {
+@keyframes fadeInTitle {
     from {
         opacity: 0;
-        transform: translateY(-30px);
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
@@ -130,63 +139,70 @@ h1::after {
 
 h2 {
     font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 4vw, 2.2rem);
-    font-weight: 800;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 600;
     color: var(--color-primary);
-    margin: 50px 0 25px 0;
-    padding-left: 25px;
-    border-left: 5px solid var(--color-accent);
+    margin: 60px 0 30px 0;
+    letter-spacing: -0.3px;
     position: relative;
-    transition: all 0.3s ease;
+    padding-left: 30px;
 }
 
-h2:hover {
-    transform: translateX(5px);
-    border-left-color: var(--color-accent-dark);
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 70%;
+    background: linear-gradient(180deg, var(--color-accent), var(--color-accent-light));
+    border-radius: 3px;
 }
 
 h3 {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 30px 0 15px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin: 35px 0 18px 0;
+    letter-spacing: -0.2px;
 }
 
 hr {
     border: none;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-    margin: 60px 0;
-    opacity: 0.3;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+    margin: 70px 0;
 }
 
 p {
-    margin-bottom: 20px;
-    color: var(--color-secondary);
-    line-height: 1.8;
-    font-size: 1.05rem;
+    margin-bottom: 24px;
+    color: var(--color-text);
+    line-height: 1.9;
+    font-size: 1.075rem;
+    font-weight: 400;
 }
 
 /* ========================================= */
-/* 4. SECTIONS AVEC ALTERNANCE */
+/* 4. SECTIONS ÉLÉGANTES */
 /* ========================================= */
 
 .section {
-    padding: 50px 40px;
-    margin-bottom: 50px;
-    background: #fafafa;
-    border-radius: 16px;
-    border: 1px solid rgba(0, 255, 192, 0.1);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: all 0.4s ease;
-    animation: slideInUp 0.6s ease-out backwards;
+    padding: 55px 45px;
+    margin-bottom: 55px;
+    background: linear-gradient(135deg, #FEFEFE 0%, #F9FAFB 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+    animation: slideInSection 0.8s ease-out backwards;
 }
 
-@keyframes slideInUp {
+@keyframes slideInSection {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(25px);
     }
     to {
         opacity: 1;
@@ -194,26 +210,27 @@ p {
     }
 }
 
-.section:nth-child(1) { animation-delay: 0.1s; }
-.section:nth-child(2) { animation-delay: 0.2s; }
-.section:nth-child(3) { animation-delay: 0.3s; }
-.section:nth-child(4) { animation-delay: 0.4s; }
+.section:nth-child(1) { animation-delay: 0.15s; }
+.section:nth-child(2) { animation-delay: 0.25s; }
+.section:nth-child(3) { animation-delay: 0.35s; }
+.section:nth-child(4) { animation-delay: 0.45s; }
 
 .section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 192, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.15);
 }
 
-/* Layout image/texte en ligne */
+/* Layout image + texte */
 .content-row {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 55px;
 }
 
 .image-col {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 42%;
+    max-width: 42%;
 }
 
 .text-col {
@@ -223,204 +240,189 @@ p {
 .section-image {
     width: 100%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
-    border: 3px solid transparent;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    filter: grayscale(10%);
 }
 
 .section-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(0, 255, 192, 0.3);
-    border-color: var(--color-accent);
+    transform: scale(1.03);
+    box-shadow: 0 12px 32px rgba(212, 175, 55, 0.2);
+    filter: grayscale(0%);
 }
 
-/* Alternance : image à droite */
+/* Alternance image à droite */
 .section.row-reverse .content-row {
     flex-direction: row-reverse;
 }
 
 /* ========================================= */
-/* 5. LISTES AVEC CHECKMARKS */
+/* 5. LISTES RAFFINÉES */
 /* ========================================= */
 
 ul {
     list-style: none;
     padding-left: 0;
-    margin: 25px 0;
+    margin: 30px 0;
 }
 
 ul li {
-    padding-left: 40px;
+    padding-left: 45px;
     position: relative;
-    margin-bottom: 18px;
-    color: var(--color-secondary);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    transition: transform 0.2s ease;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    font-size: 1.075rem;
+    line-height: 1.8;
+    transition: var(--transition);
 }
 
 ul li:hover {
-    transform: translateX(5px);
+    color: var(--color-secondary);
+    transform: translateX(3px);
 }
 
 ul li::before {
-    content: '✓';
+    content: '';
     position: absolute;
     left: 0;
-    top: 2px;
-    color: var(--color-accent);
-    font-weight: 900;
-    font-size: 1.4em;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 255, 192, 0.1);
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent);
     border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.12);
 }
 
 /* ========================================= */
-/* 6. HIGHLIGHT BOX - PROPRIÉTÉ TOTALE */
+/* 6. ENCADRÉ SPÉCIAL - PROPRIÉTÉ */
 /* ========================================= */
 
 .highlight-box {
     background: linear-gradient(135deg, 
-        rgba(0, 255, 192, 0.08) 0%, 
-        rgba(0, 230, 173, 0.12) 100%);
-    border: 3px solid var(--color-accent);
-    padding: 50px;
-    margin: 60px 0;
-    border-radius: 16px;
+        rgba(212, 175, 55, 0.04) 0%, 
+        rgba(232, 199, 102, 0.06) 100%);
+    border: 2px solid var(--color-accent);
+    padding: 55px 50px;
+    margin: 70px 0;
+    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 255, 192, 0.2);
+    box-shadow: 
+        0 4px 16px rgba(212, 175, 55, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
     position: relative;
-    overflow: hidden;
-    animation: pulse 3s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 10px 30px rgba(0, 255, 192, 0.2);
-    }
-    50% {
-        box-shadow: 0 15px 40px rgba(0, 255, 192, 0.35);
-    }
-}
-
-/* Icône décorative */
 .highlight-box::before {
-    content: '🏆';
+    content: '★';
     position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 4em;
-    opacity: 0.15;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    top: 25px;
+    right: 35px;
+    font-size: 3.5em;
+    color: var(--color-accent);
+    opacity: 0.08;
 }
 
 .highlight-box p {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-primary);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--color-secondary);
     margin: 0;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 .highlight-box strong {
-    color: var(--color-accent-dark);
-    font-weight: 800;
-    font-size: 1.15em;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.1em;
 }
 
-/* Badge "100% PROPRIÉTÉ" */
 .highlight-box .badge {
     display: inline-block;
     background: var(--color-accent);
-    color: var(--color-primary);
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-weight: 800;
-    font-size: 0.95rem;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0, 255, 192, 0.4);
+    color: var(--color-white);
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 25px;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+}
+
+.highlight-box .badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
 }
 
 /* ========================================= */
-/* 7. PROCESSUS AVEC NUMÉROS */
+/* 7. ÉTAPES DE PROCESSUS */
 /* ========================================= */
 
 .process-step {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 30px;
-    padding: 25px;
-    border-radius: 12px;
-    background: white;
-    border-left: 4px solid var(--color-accent);
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 35px;
+    padding: 30px;
+    border-radius: 8px;
+    background: var(--color-white);
+    border-left: 3px solid var(--color-accent);
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .process-step:hover {
-    transform: translateX(10px);
-    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.15);
-    border-left-color: var(--color-accent-dark);
+    transform: translateX(8px);
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.12);
 }
 
 .step-number {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-    color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    color: var(--color-white);
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6em;
-    font-weight: 900;
+    font-size: 1.7em;
+    font-weight: 700;
     font-family: var(--font-heading);
-    margin-right: 25px;
+    margin-right: 28px;
     flex-shrink: 0;
-    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.4);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    transition: var(--transition);
 }
 
 .process-step:hover .step-number {
-    transform: scale(1.1) rotate(360deg);
+    transform: scale(1.08);
 }
 
 .step-content h3 {
-    margin-top: 0;
+    margin-top: 5px;
     color: var(--color-primary);
-    font-size: 1.3rem;
+    font-size: 1.35rem;
 }
 
 .step-content p {
-    margin: 0;
-    color: var(--color-secondary);
+    margin: 10px 0 0 0;
+    color: var(--color-text);
 }
 
 /* ========================================= */
-/* 8. CTA (CALL TO ACTION) */
+/* 8. CALL TO ACTION SOPHISTIQUÉ */
 /* ========================================= */
 
 .cta {
     text-align: center;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #2d2d2d 100%);
-    color: white;
-    padding: 70px 50px;
-    margin-top: 80px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-white);
+    padding: 75px 55px;
+    margin-top: 90px;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(27, 40, 56, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -428,43 +430,46 @@ ul li::before {
 .cta::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top right, rgba(0, 255, 192, 0.1) 0%, transparent 60%);
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
     pointer-events: none;
 }
 
 .cta h3 {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 25px;
-    color: white;
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    letter-spacing: -0.3px;
 }
 
 .cta p {
     font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 35px;
-    max-width: 700px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 40px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.8;
 }
 
 .cta a {
     display: inline-block;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-    color: var(--color-primary);
-    padding: 20px 50px;
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: 18px 50px;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: 800;
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 255, 192, 0.4);
+    font-weight: 700;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -472,39 +477,43 @@ ul li::before {
 .cta a::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
 }
 
 .cta a:hover::before {
-    left: 100%;
+    width: 300px;
+    height: 300px;
 }
 
 .cta a:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 35px rgba(0, 255, 192, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.45);
+    background: var(--color-accent-light);
 }
 
 /* ========================================= */
-/* 9. BOUTON RETOUR FIXE */
+/* 9. BOUTON RETOUR ÉLÉGANT */
 /* ========================================= */
 
 .back-button-fixed {
     position: fixed;
-    top: 30px;
-    left: 30px;
+    top: 35px;
+    left: 35px;
     z-index: 1000;
-    animation: slideInLeft 0.5s ease-out;
+    animation: fadeInBack 0.8s ease-out;
 }
 
-@keyframes slideInLeft {
+@keyframes fadeInBack {
     from {
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateX(-15px);
     }
     to {
         opacity: 1;
@@ -516,41 +525,41 @@ ul li::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    background: var(--color-accent);
+    width: 55px;
+    height: 55px;
+    font-size: 2.2rem;
+    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
     border-radius: 50%;
     text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.4);
+    transition: var(--transition);
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
 }
 
 .back-button-fixed .back-link:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 255, 192, 0.6);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.45);
 }
 
 /* ========================================= */
-/* 10. RESPONSIVE */
+/* 10. RESPONSIVE DESIGN */
 /* ========================================= */
 
 @media (max-width: 1024px) {
     .container {
-        margin: 60px 30px;
-        padding: 50px 40px;
+        margin: 80px 40px;
+        padding: 65px 50px;
     }
     
     .content-row {
-        gap: 40px;
+        gap: 45px;
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        margin: 40px 20px;
-        padding: 40px 30px;
+        margin: 60px 25px;
+        padding: 50px 35px;
     }
     
     .content-row,
@@ -565,41 +574,37 @@ ul li::before {
     }
     
     h1 {
-        font-size: 2.2rem;
-        margin-bottom: 40px;
+        font-size: 2.3rem;
+        margin-bottom: 50px;
     }
     
     h2 {
-        font-size: 1.6rem;
-        padding-left: 20px;
+        font-size: 1.7rem;
+        padding-left: 25px;
     }
     
     .section {
-        padding: 35px 25px;
-        margin-bottom: 35px;
+        padding: 40px 30px;
+        margin-bottom: 40px;
     }
     
     .highlight-box {
-        padding: 35px 25px;
-        margin: 40px 0;
-    }
-    
-    .highlight-box p {
-        font-size: 1.1rem;
+        padding: 40px 30px;
+        margin: 55px 0;
     }
     
     .cta {
-        padding: 50px 30px;
-        margin-top: 60px;
+        padding: 55px 35px;
+        margin-top: 70px;
     }
     
     .cta h3 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
     
     .back-button-fixed {
-        top: 20px;
-        left: 20px;
+        top: 25px;
+        left: 25px;
     }
     
     .back-button-fixed .back-link {
@@ -611,64 +616,59 @@ ul li::before {
 
 @media (max-width: 480px) {
     .container {
-        margin: 30px 15px;
-        padding: 30px 20px;
-    }
-    
-    h1 {
-        font-size: 1.8rem;
-    }
-    
-    h2 {
-        font-size: 1.4rem;
-    }
-    
-    .section {
-        padding: 25px 20px;
-    }
-    
-    .highlight-box {
-        padding: 30px 20px;
-    }
-    
-    .highlight-box::before {
-        font-size: 3em;
-        right: 15px;
-    }
-    
-    .process-step {
-        padding: 20px;
-    }
-    
-    .step-number {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3em;
-        margin-right: 15px;
-    }
-    
-    .cta {
+        margin: 40px 15px;
         padding: 40px 25px;
     }
     
-    .cta h3 {
+    h1 {
+        font-size: 1.9rem;
+    }
+    
+    h2 {
         font-size: 1.5rem;
     }
     
+    .section {
+        padding: 30px 25px;
+    }
+    
+    .highlight-box {
+        padding: 35px 25px;
+    }
+    
+    .process-step {
+        padding: 25px 20px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4em;
+        margin-right: 20px;
+    }
+    
+    .cta {
+        padding: 45px 25px;
+    }
+    
+    .cta h3 {
+        font-size: 1.6rem;
+    }
+    
     .cta a {
-        padding: 16px 35px;
+        padding: 16px 40px;
         font-size: 1rem;
     }
     
     .back-button-fixed {
-        top: 15px;
-        left: 15px;
+        top: 20px;
+        left: 20px;
     }
     
     .back-button-fixed .back-link {
-        width: 45px;
-        height: 45px;
-        font-size: 1.8rem;
+        width: 48px;
+        height: 48px;
+        font-size: 1.9rem;
     }
 }
 
@@ -681,10 +681,9 @@ button:focus,
 .cta a:focus,
 .back-button-fixed .back-link:focus {
     outline: 3px solid var(--color-accent);
-    outline-offset: 3px;
+    outline-offset: 4px;
 }
 
-/* Réduire les animations pour ceux qui les préfèrent */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -693,4 +692,30 @@ button:focus,
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* ========================================= */
+/* 12. AMÉLIORATIONS VISUELLES */
+/* ========================================= */
+
+::selection {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--color-primary);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-light);
 }
