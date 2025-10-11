@@ -153,15 +153,17 @@ header.main-header nav {
 }
 
 .nav-links a.cta-nav {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%) !important;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
     color: var(--color-primary);
     font-weight: 700;
     box-shadow: 0 4px 20px rgba(0, 255, 192, 0.5);
+    border-color: rgba(0, 255, 192, 0.3);
 }
 
 .nav-links a.cta-nav:hover {
     box-shadow: 0 8px 30px rgba(0, 255, 192, 0.7);
     transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%);
 }
 
 /* Liens réseaux sociaux - EN HAUT À DROITE */
