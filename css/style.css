@@ -95,7 +95,7 @@ header.main-header nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 60px; /* Espacement augmenté de 50px à 60px */
+    gap: 80px; /* Espacement encore augmenté à 80px */
     align-items: center;
     padding: 0;
 }
@@ -106,13 +106,30 @@ header.main-header nav {
     font-weight: 700;
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    padding: 12px 28px; /* Augmenté de 24px à 28px */
-    border-radius: 8px;
-    background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 100%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    white-space: nowrap; /* Évite le retour à la ligne */
+    padding: 14px 32px; /* Augmenté pour plus d'espace */
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 50%, #1A1A1A 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
     position: relative;
     overflow: hidden;
+}
+
+/* Dégradé animé en arrière-plan */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 255, 192, 0) 0%, 
+        rgba(0, 255, 192, 0.15) 50%, 
+        rgba(0, 255, 192, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
 }
 
 /* Effet de brillance au survol */
@@ -123,30 +140,44 @@ header.main-header nav {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 192, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 192, 0.4), transparent);
     transition: left 0.5s ease;
+    z-index: 1;
 }
 
 .nav-links a:hover::before {
     left: 100%;
 }
 
+.nav-links a:hover::after {
+    opacity: 1;
+}
+
 .nav-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.4);
-    background: linear-gradient(135deg, #2d2d2d 0%, #1A1A1A 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 255, 192, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, #2d2d2d 0%, #1A1A1A 50%, #2d2d2d 100%);
 }
 
 .nav-links a.cta-nav {
-    background: linear-gradient(135deg, var(--color-accent) 0%, #00e6ad 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #00e6ad 50%, var(--color-accent) 100%);
     color: var(--color-primary);
     font-weight: 700;
-    box-shadow: 0 4px 15px rgba(0, 255, 192, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 255, 192, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-links a.cta-nav::after {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        rgba(255, 255, 255, 0) 100%);
 }
 
 .nav-links a.cta-nav:hover {
-    background: linear-gradient(135deg, #00e6ad 0%, var(--color-accent) 100%);
-    box-shadow: 0 6px 20px rgba(0, 255, 192, 0.6);
+    background: linear-gradient(135deg, #00e6ad 0%, var(--color-accent) 50%, #00e6ad 100%);
+    box-shadow: 0 8px 30px rgba(0, 255, 192, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px) scale(1.05);
 }
 
 /* Liens réseaux sociaux - EN HAUT À DROITE */
@@ -503,7 +534,7 @@ footer {
 /* Grand écran desktop */
 @media (min-width: 1440px) {
     .nav-links {
-        gap: 70px; /* Encore plus d'espace sur grands écrans */
+        gap: 90px; /* Encore plus d'espace sur grands écrans */
     }
 }
 
@@ -514,11 +545,11 @@ footer {
     }
     
     .nav-links {
-        gap: 45px;
+        gap: 55px;
     }
     
     .nav-links a {
-        padding: 12px 24px;
+        padding: 12px 26px;
         font-size: 0.9rem;
     }
 }
@@ -530,14 +561,14 @@ footer {
     }
     
     .nav-links {
-        gap: 35px;
+        gap: 40px;
         flex-wrap: wrap;
         justify-content: center;
-        max-width: 600px;
+        max-width: 650px;
     }
     
     .nav-links a {
-        padding: 11px 22px;
+        padding: 12px 24px;
         font-size: 0.88rem;
     }
     
