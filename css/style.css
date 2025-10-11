@@ -108,11 +108,17 @@ header.main-header nav {
     transition: all 0.3s ease;
     padding: 14px 32px; /* Augmenté pour plus d'espace */
     border-radius: 10px;
-    background: linear-gradient(135deg, #1A1A1A 0%, #2d2d2d 50%, #1A1A1A 100%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, 
+        #1A1A1A 0%, 
+        #2d2d2d 25%,
+        rgba(0, 255, 192, 0.15) 50%,
+        #2d2d2d 75%,
+        #1A1A1A 100%);
+    box-shadow: 0 4px 15px rgba(0, 255, 192, 0.2), inset 0 1px 0 rgba(0, 255, 192, 0.1);
     white-space: nowrap;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(0, 255, 192, 0.2);
 }
 
 /* Dégradé animé en arrière-plan */
@@ -124,9 +130,9 @@ header.main-header nav {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, 
-        rgba(0, 255, 192, 0) 0%, 
-        rgba(0, 255, 192, 0.15) 50%, 
-        rgba(0, 255, 192, 0) 100%);
+        rgba(0, 255, 192, 0.1) 0%, 
+        rgba(0, 255, 192, 0.3) 50%, 
+        rgba(0, 255, 192, 0.1) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -1;
@@ -140,7 +146,10 @@ header.main-header nav {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 192, 0.4), transparent);
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 255, 192, 0.5), 
+        transparent);
     transition: left 0.5s ease;
     z-index: 1;
 }
@@ -155,29 +164,45 @@ header.main-header nav {
 
 .nav-links a:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(0, 255, 192, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    background: linear-gradient(135deg, #2d2d2d 0%, #1A1A1A 50%, #2d2d2d 100%);
+    box-shadow: 0 8px 25px rgba(0, 255, 192, 0.6), inset 0 1px 0 rgba(0, 255, 192, 0.3);
+    background: linear-gradient(135deg, 
+        #2d2d2d 0%, 
+        rgba(0, 255, 192, 0.2) 50%, 
+        #2d2d2d 100%);
+    border-color: rgba(0, 255, 192, 0.5);
 }
 
 .nav-links a.cta-nav {
-    background: linear-gradient(135deg, var(--color-accent) 0%, #00e6ad 50%, var(--color-accent) 100%);
+    background: linear-gradient(135deg, 
+        var(--color-accent) 0%, 
+        #00e6ad 20%,
+        rgba(255, 255, 255, 0.3) 50%,
+        #00e6ad 80%,
+        var(--color-accent) 100%);
     color: var(--color-primary);
     font-weight: 700;
-    box-shadow: 0 4px 20px rgba(0, 255, 192, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 255, 192, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links a.cta-nav::after {
     background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0) 0%, 
-        rgba(255, 255, 255, 0.2) 50%, 
-        rgba(255, 255, 255, 0) 100%);
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        rgba(255, 255, 255, 0.1) 100%);
 }
 
 .nav-links a.cta-nav:hover {
-    background: linear-gradient(135deg, #00e6ad 0%, var(--color-accent) 50%, #00e6ad 100%);
-    box-shadow: 0 8px 30px rgba(0, 255, 192, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    background: linear-gradient(135deg, 
+        #00e6ad 0%, 
+        var(--color-accent) 20%,
+        rgba(255, 255, 255, 0.4) 50%,
+        var(--color-accent) 80%,
+        #00e6ad 100%);
+    box-shadow: 0 8px 30px rgba(0, 255, 192, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.6);
     transform: translateY(-3px) scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Liens réseaux sociaux - EN HAUT À DROITE */
